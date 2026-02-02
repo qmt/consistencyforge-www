@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConsistencyForge — Sign a contract with yourself</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <canvas id="particles"></canvas>
+
+    <nav class="nav">
+        <div class="nav-logo">⚒</div>
+        <div class="nav-links">
+            <a href="#how" class="nav-link">How it works</a>
+            <a href="#pricing" class="nav-link">Pricing</a>
+            <a href="https://app.consistencyforge.com/login" class="nav-signin">Sign In</a>
+        </div>
+    </nav>
+
+    <main class="main">
+        <!-- Section 1: Hero -->
+        <section class="section section-hero" data-section="1">
+            <div class="hero-content">
+                <div class="hero-symbol">
+                    <span class="symbol-glow"></span>
+                    <span class="symbol-icon">⚒</span>
+                </div>
+                <h1 class="hero-title">
+                    <span class="title-line"><span class="title-word">CONSISTENCY</span></span>
+                    <span class="title-line"><span class="title-word forge">FORGE</span></span>
+                </h1>
+                <div class="hero-line"></div>
+                <p class="hero-tagline">Sign a contract with yourself. Keep it. Become.</p>
+                <div class="hero-cta">
+                    <a href="https://app.consistencyforge.com" class="btn-primary">Start Forging <span class="btn-arrow">→</span></a>
+                    <a href="#how" class="btn-ghost">See how it works</a>
+                </div>
+                <div class="hero-trust">
+                    <span>Free to start</span>
+                    <span class="trust-dot">·</span>
+                    <span>No credit card</span>
+                    <span class="trust-dot">·</span>
+                    <span>2 min setup</span>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <span class="scroll-text">Scroll</span>
+                <div class="scroll-line"></div>
+            </div>
+        </section>
+
+        <!-- Section 2: How it Works -->
+        <section id="how" class="section section-how" data-section="2">
+            <div class="how-content">
+                <div class="section-label">How it works</div>
+                <h2 class="section-title">Write a promise to yourself.<br>Then make it unbreakable.</h2>
+                <div class="how-steps">
+                    <div class="how-step">
+                        <div class="step-number">01</div>
+                        <img src="img/icon-contract.png" alt="Forge a Contract" class="step-icon">
+                        <h3 class="step-title">Forge a Contract</h3>
+                        <p class="step-desc">Write a Soul Contract — a specific, time-bound promise to yourself about the habit you'll build.</p>
+                    </div>
+                    <div class="how-step">
+                        <div class="step-number">02</div>
+                        <img src="img/icon-checkin.png" alt="Confirm via Email" class="step-icon">
+                        <h3 class="step-title">Confirm via Email</h3>
+                        <p class="step-desc">We send you a daily email. Click a link to confirm — done. No app login needed, no friction.</p>
+                    </div>
+                    <div class="how-step">
+                        <div class="step-number">03</div>
+                        <img src="img/icon-rank.png" alt="Rise in Rank" class="step-icon">
+                        <h3 class="step-title">Rise in Rank</h3>
+                        <p class="step-desc">Build streaks, earn ranks, unlock new visual themes. Your consistency becomes visible proof.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="section-counter">02</div>
+        </section>
+
+        <!-- Section 3: Features -->
+        <section class="section section-features" data-section="3">
+            <div class="features-content">
+                <div class="section-label">Features</div>
+                <h2 class="section-title">Built for iron will.</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <img src="img/icon-schedule.png" alt="Flexible Schedules" class="feature-icon">
+                        <h3 class="feature-title">Flexible Schedules</h3>
+                        <p class="feature-desc">Daily, weekly, monthly, or pick custom days. Your rhythm, your rules.</p>
+                    </div>
+                    <div class="feature-card">
+                        <img src="img/icon-email-confirm.png" alt="Zero-Friction Check-Ins" class="feature-icon">
+                        <h3 class="feature-title">Zero-Friction Check-Ins</h3>
+                        <p class="feature-desc">Get a daily email, click a link to confirm. No app login needed.</p>
+                    </div>
+                    <div class="feature-card">
+                        <img src="img/icon-stakes.png" alt="Financial Stakes" class="feature-icon">
+                        <h3 class="feature-title">Financial Stakes</h3>
+                        <p class="feature-desc">Optional. Put $1 to $1,000 on the line. Your money becomes your motivation.</p>
+                    </div>
+                    <div class="feature-card">
+                        <img src="img/icon-group.png" alt="Group Contracts" class="feature-icon">
+                        <h3 class="feature-title">Group Contracts</h3>
+                        <p class="feature-desc">Create shared contracts. Hold each other accountable. Miss once — everyone knows.</p>
+                    </div>
+                    <div class="feature-card">
+                        <img src="img/icon-ranks.png" alt="20 Rank Themes" class="feature-icon">
+                        <h3 class="feature-title">20 Rank Themes</h3>
+                        <p class="feature-desc">Roman legions, samurai clans, pirate crews. Choose your progression fantasy.</p>
+                    </div>
+                    <div class="feature-card">
+                        <img src="img/icon-themes.png" alt="14 Visual Themes" class="feature-icon">
+                        <h3 class="feature-title">14 Visual Themes</h3>
+                        <p class="feature-desc">From minimal frost to imperial gold. Unlock new looks as you rank up.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="section-counter">03</div>
+        </section>
+
+        <!-- Section 4: Words -->
+        <section class="section section-words" data-section="4">
+            <div class="words-container">
+                <div class="word-item" data-speed="0.5">Commitment</div>
+                <div class="word-item" data-speed="0.8">Discipline</div>
+                <div class="word-item" data-speed="0.3">Resolve</div>
+                <div class="word-item" data-speed="0.6">Purpose</div>
+                <div class="word-item" data-speed="0.4">Intention</div>
+            </div>
+            <div class="section-counter">04</div>
+        </section>
+
+        <!-- Section 5: The Promise -->
+        <section class="section section-promise" data-section="5">
+            <div class="promise-content">
+                <div class="promise-brackets">[</div>
+                <div class="promise-text">
+                    <span class="promise-line">Some promises</span>
+                    <span class="promise-line">are made to be</span>
+                    <span class="promise-line highlight">unbreakable.</span>
+                </div>
+                <div class="promise-brackets">]</div>
+            </div>
+            <div class="section-counter">05</div>
+        </section>
+
+        <!-- Section 6: Pricing -->
+        <section id="pricing" class="section section-pricing" data-section="6">
+            <div class="pricing-content">
+                <div class="section-label">Pricing</div>
+                <h2 class="section-title">The Forge Model</h2>
+                <p class="pricing-subtitle">Not a subscription. A commitment.</p>
+                <div class="pricing-cards">
+                    <div class="pricing-card">
+                        <div class="pricing-card-header">
+                            <h3 class="pricing-name">The Free Forge</h3>
+                            <div class="pricing-price">$0 <span class="pricing-period">/ always</span></div>
+                        </div>
+                        <ul class="pricing-features">
+                            <li>Unlimited contracts</li>
+                            <li>All schedules</li>
+                            <li>Email check-ins</li>
+                            <li>Streaks & ranks</li>
+                            <li>All 20 rank sets</li>
+                            <li>All themes</li>
+                            <li>Achievements</li>
+                        </ul>
+                        <p class="pricing-tagline">Your word is your only stake.</p>
+                        <a href="https://app.consistencyforge.com" class="btn-primary btn-pricing">Start Free <span class="btn-arrow">→</span></a>
+                    </div>
+                    <div class="pricing-card pricing-card-staked">
+                        <div class="pricing-card-header">
+                            <h3 class="pricing-name">The Staked Forge</h3>
+                            <div class="pricing-price">You set the amount</div>
+                        </div>
+                        <p class="pricing-plus">Everything free, plus:</p>
+                        <ul class="pricing-features">
+                            <li>Financial accountability</li>
+                            <li>Higher point earnings</li>
+                            <li>Faster rank progression</li>
+                            <li>Optional recurring billing</li>
+                            <li>Reactivation after failure</li>
+                        </ul>
+                        <p class="pricing-tagline">Put your money where your mouth is.</p>
+                        <a href="https://app.consistencyforge.com" class="btn-primary btn-pricing">Forge a Staked Contract <span class="btn-arrow">→</span></a>
+                    </div>
+                </div>
+                <p class="pricing-footnote">The platform is free forever. You only pay yourself — if you want the extra accountability.</p>
+            </div>
+            <div class="section-counter">06</div>
+        </section>
+
+        <!-- Section 7: Final CTA -->
+        <section class="section section-final-cta" data-section="7">
+            <div class="final-cta-content">
+                <div class="section-label">Your word awaits</div>
+                <h2 class="final-cta-title">Ready to forge your first contract?</h2>
+                <p class="final-cta-text">It starts with a single promise. Make it to yourself. Keep it. Watch who you become.</p>
+                <a href="https://app.consistencyforge.com" class="btn-primary btn-large">Start Forging <span class="btn-arrow">→</span></a>
+                <div class="hero-trust">
+                    <span>Free to start</span>
+                    <span class="trust-dot">·</span>
+                    <span>No credit card</span>
+                    <span class="trust-dot">·</span>
+                    <span>2 min setup</span>
+                </div>
+            </div>
+            <div class="section-counter">07</div>
+        </section>
+
+        <!-- Section 8: Footer -->
+        <section class="section section-footer" data-section="8">
+            <div class="footer-content">
+                <div class="footer-logo">⚒</div>
+                <div class="footer-text">CONSISTENCYFORGE</div>
+                <div class="footer-links">
+                    <a href="https://app.consistencyforge.com/terms" class="footer-link">Terms</a>
+                    <a href="https://app.consistencyforge.com/privacy" class="footer-link">Privacy</a>
+                    <a href="mailto:support@qmt.email" class="footer-link">Contact</a>
+                </div>
+                <div class="footer-year">2026</div>
+            </div>
+        </section>
+    </main>
+
+    <div class="progress-bar"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
