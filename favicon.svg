@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" fill="#000"/>
+  <!-- Chain links — alternating z-order for interlocking -->
+  <!-- Bottom layer (edges 0, 2, 4) -->
+  <rect x="-70" y="-25" width="140" height="50" rx="20" fill="#000" stroke="#fff" stroke-width="10" transform="translate(343,106) rotate(30)"/>
+  <rect x="-70" y="-25" width="140" height="50" rx="20" fill="#000" stroke="#fff" stroke-width="10" transform="translate(343,406) rotate(150)"/>
+  <rect x="-70" y="-25" width="140" height="50" rx="20" fill="#000" stroke="#fff" stroke-width="10" transform="translate(83,256) rotate(270)"/>
+  <!-- Top layer (edges 1, 3, 5) -->
+  <rect x="-70" y="-25" width="140" height="50" rx="20" fill="#000" stroke="#fff" stroke-width="10" transform="translate(429,256) rotate(90)"/>
+  <rect x="-70" y="-25" width="140" height="50" rx="20" fill="#000" stroke="#fff" stroke-width="10" transform="translate(169,406) rotate(210)"/>
+  <rect x="-70" y="-25" width="140" height="50" rx="20" fill="#000" stroke="#fff" stroke-width="10" transform="translate(169,106) rotate(330)"/>
+  <!-- CF Letters -->
+  <g fill="#fff">
+    <!-- C -->
+    <path d="M176,201 h76 v26 h-50 v58 h50 v26 h-76 z"/>
+    <!-- F -->
+    <path d="M264,201 h76 v26 h-50 v16 h40 v24 h-40 v44 h-26 z"/>
+  </g>
+</svg>
