@@ -5,9 +5,9 @@
 }
 
 :root {
-    --color-bg: #000000;
+    --color-bg: #0D1B2A;
     --color-text: #ffffff;
-    --color-accent: #ffffff;
+    --color-accent: #F08C2E;
     --color-muted: rgba(255, 255, 255, 0.4);
     --color-subtle: rgba(255, 255, 255, 0.1);
     --font-main: 'Space Grotesk', -apple-system, sans-serif;
@@ -84,7 +84,6 @@ body {
     justify-content: space-between;
     align-items: center;
     z-index: 100;
-    mix-blend-mode: difference;
 }
 
 .nav-logo {
@@ -123,7 +122,7 @@ body {
     letter-spacing: 2px;
     text-transform: uppercase;
     color: var(--color-bg);
-    background: var(--color-text);
+    background: var(--color-accent);
     text-decoration: none;
     padding: 8px 20px;
     transition: opacity 0.3s ease, transform 0.3s var(--ease-out-expo);
@@ -140,7 +139,7 @@ body {
     top: 0;
     left: 0;
     height: 2px;
-    background: linear-gradient(90deg, var(--color-text), rgba(255,255,255,0.3));
+    background: linear-gradient(90deg, var(--color-accent), rgba(240,140,46,0.3));
     width: 0%;
     z-index: 1000;
     transform-origin: left;
@@ -216,7 +215,7 @@ body {
     left: 50%;
     width: 150px;
     height: 150px;
-    background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(240,140,46,0.2) 0%, transparent 70%);
     transform: translate(-50%, -50%);
     border-radius: 50%;
     animation: glowPulse 3s ease-in-out infinite;
@@ -235,7 +234,7 @@ body {
     display: block;
     opacity: 0;
     transform: scale(0.5) rotate(-180deg);
-    filter: drop-shadow(0 0 30px rgba(255,255,255,0.3));
+    filter: drop-shadow(0 0 30px rgba(240,140,46,0.4));
 }
 
 .hero-title {
@@ -258,7 +257,7 @@ body {
 
 .title-word.forge {
     font-weight: 400;
-    background: linear-gradient(180deg, #fff 0%, #666 100%);
+    background: linear-gradient(180deg, #F08C2E 0%, #c06a1a 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -267,7 +266,7 @@ body {
 .hero-line {
     width: 0;
     height: 1px;
-    background: linear-gradient(90deg, transparent, var(--color-text), transparent);
+    background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
     margin: 0 auto 2rem;
 }
 
@@ -299,7 +298,7 @@ body {
     font-size: 0.9rem;
     font-family: var(--font-main);
     font-weight: 600;
-    background: var(--color-text);
+    background: var(--color-accent);
     color: var(--color-bg);
     border: none;
     text-decoration: none;
@@ -326,7 +325,7 @@ body {
 
 .btn-primary:hover {
     transform: scale(1.02);
-    box-shadow: 0 10px 40px rgba(255, 255, 255, 0.2);
+    box-shadow: 0 10px 40px rgba(240, 140, 46, 0.3);
 }
 
 .btn-primary:hover .btn-arrow {
@@ -395,7 +394,7 @@ body {
 .scroll-line {
     width: 1px;
     height: 60px;
-    background: linear-gradient(180deg, var(--color-text), transparent);
+    background: linear-gradient(180deg, var(--color-accent), transparent);
     animation: scrollLine 2s ease-in-out infinite;
 }
 
@@ -411,7 +410,7 @@ body {
    ============================================ */
 .section-how {
     flex-direction: column;
-    background: linear-gradient(180deg, var(--color-bg) 0%, #050505 100%);
+    background: linear-gradient(180deg, var(--color-bg) 0%, #091422 100%);
 }
 
 .how-content {
@@ -476,7 +475,7 @@ body {
    ============================================ */
 .section-features {
     flex-direction: column;
-    background: #050505;
+    background: #091422;
 }
 
 .features-content {
@@ -502,7 +501,7 @@ body {
 }
 
 .feature-card:hover {
-    border-color: rgba(255, 255, 255, 0.15);
+    border-color: rgba(240, 140, 46, 0.3);
 }
 
 .feature-icon {
@@ -535,7 +534,7 @@ body {
    WORDS SECTION (preserved)
    ============================================ */
 .section-words {
-    background: linear-gradient(180deg, #050505 0%, #030303 100%);
+    background: linear-gradient(180deg, #091422 0%, #070f1a 100%);
     overflow: hidden;
 }
 
@@ -559,16 +558,16 @@ body {
 }
 
 .word-item:hover {
-    color: var(--color-text);
+    color: var(--color-accent);
     -webkit-text-stroke: 1px transparent;
-    text-shadow: 0 0 60px rgba(255, 255, 255, 0.5);
+    text-shadow: 0 0 60px rgba(240, 140, 46, 0.5);
 }
 
 /* ============================================
    PROMISE SECTION (preserved)
    ============================================ */
 .section-promise {
-    background: #030303;
+    background: #070f1a;
 }
 
 .promise-content {
@@ -601,7 +600,7 @@ body {
 
 .promise-line.highlight {
     font-weight: 700;
-    background: linear-gradient(90deg, #fff, #888);
+    background: linear-gradient(90deg, #F08C2E, #e07020);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -612,7 +611,7 @@ body {
    ============================================ */
 .section-pricing {
     flex-direction: column;
-    background: linear-gradient(180deg, #030303 0%, var(--color-bg) 100%);
+    background: linear-gradient(180deg, #070f1a 0%, var(--color-bg) 100%);
 }
 
 .pricing-content {
@@ -649,11 +648,11 @@ body {
 }
 
 .pricing-card:hover {
-    border-color: rgba(255, 255, 255, 0.15);
+    border-color: rgba(240, 140, 46, 0.3);
 }
 
 .pricing-card-staked {
-    border-color: rgba(255, 255, 255, 0.15);
+    border-color: rgba(240, 140, 46, 0.3);
 }
 
 .pricing-card-header {
@@ -703,7 +702,7 @@ body {
     content: '✓';
     position: absolute;
     left: 0;
-    color: var(--color-muted);
+    color: var(--color-accent);
     font-size: 0.75rem;
 }
 
@@ -734,7 +733,7 @@ body {
    ============================================ */
 .section-final-cta {
     flex-direction: column;
-    background: linear-gradient(180deg, var(--color-bg) 0%, #030303 100%);
+    background: linear-gradient(180deg, var(--color-bg) 0%, #070f1a 100%);
 }
 
 .final-cta-content {
@@ -922,7 +921,7 @@ body {
 
 /* Selection */
 ::selection {
-    background: var(--color-text);
+    background: var(--color-accent);
     color: var(--color-bg);
 }
 

@@ -66,6 +66,8 @@ class Particle {
         this.speedY = (Math.random() - 0.5) * 0.3;
         this.opacity = Math.random() * 0.5 + 0.1;
         this.fadeDirection = Math.random() > 0.5 ? 1 : -1;
+        // ~30% of particles are orange accent
+        this.isAccent = Math.random() < 0.3;
     }
 
     update() {
@@ -86,7 +88,9 @@ class Particle {
     draw() {
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
+        ctx.fillStyle = this.isAccent
+            ? `rgba(240, 140, 46, ${this.opacity})`
+            : `rgba(255, 255, 255, ${this.opacity})`;
         ctx.fill();
     }
 }
@@ -106,10 +110,13 @@ function connectParticles() {
 
             if (distance < 120) {
                 const opacity = (1 - distance / 120) * 0.15;
+                const useAccent = particles[i].isAccent || particles[j].isAccent;
                 ctx.beginPath();
                 ctx.moveTo(particles[i].x, particles[i].y);
                 ctx.lineTo(particles[j].x, particles[j].y);
-                ctx.strokeStyle = `rgba(255, 255, 255, ${opacity})`;
+                ctx.strokeStyle = useAccent
+                    ? `rgba(240, 140, 46, ${opacity})`
+                    : `rgba(255, 255, 255, ${opacity})`;
                 ctx.lineWidth = 0.5;
                 ctx.stroke();
             }
@@ -595,5 +602,5 @@ document.querySelectorAll('.btn-primary').forEach(btn => {
     });
 });
 
-console.log('%c⚒ CONSISTENCYFORGE', 'font-size: 24px; font-weight: bold; color: white; background: black; padding: 10px 20px;');
-console.log('%cForge your word into iron.', 'color: gray; font-style: italic;');
+console.log('%c⚒ CONSISTENCYFORGE', 'font-size: 24px; font-weight: bold; color: #F08C2E; background: #0D1B2A; padding: 10px 20px;');
+console.log('%cForge your word into iron.', 'color: #F08C2E; font-style: italic;');
