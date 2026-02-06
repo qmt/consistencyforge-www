@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ConsistencyForge — Sign a contract with yourself</title>
     <meta name="description" content="Free habit accountability platform. Sign a contract with yourself, confirm via daily email, build streaks and rise in rank. No app login needed, no friction.">
+    <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://www.consistencyforge.com/">
     <!-- Favicons -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -12,6 +13,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
 
     <!-- Safari Pinned Tab -->
     <link rel="mask-icon" href="safari-pinned-tab.svg" color="#F08C2E">
@@ -25,17 +27,19 @@
 
     <!-- Open Graph -->
     <meta property="og:title" content="ConsistencyForge — Sign a contract with yourself">
-    <meta property="og:description" content="Write a promise to yourself. Keep it. Become.">
+    <meta property="og:description" content="Free habit accountability platform. Sign a contract with yourself, confirm via daily email, build streaks and rise in rank.">
     <meta property="og:image" content="https://www.consistencyforge.com/og-image.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.consistencyforge.com">
+    <meta property="og:site_name" content="ConsistencyForge">
+    <meta property="og:locale" content="en_US">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="ConsistencyForge — Sign a contract with yourself">
-    <meta name="twitter:description" content="Write a promise to yourself. Keep it. Become.">
+    <meta name="twitter:description" content="Free habit accountability platform. Sign a contract with yourself, confirm via daily email, build streaks and rise in rank.">
     <meta name="twitter:image" content="https://www.consistencyforge.com/twitter-card.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -85,6 +89,27 @@
       ]
     }
     </script>
+
+    <!-- Fallback for no-JS crawlers -->
+    <noscript>
+        <style>
+            .nav-logo, .nav-links, .section-label, .section-title,
+            .hero-tagline, .hero-cta, .hero-trust, .scroll-indicator,
+            .symbol-icon, .title-word, .how-step, .feature-card,
+            .word-item, .promise-brackets, .promise-line,
+            .pricing-subtitle, .pricing-card, .pricing-footnote,
+            .final-cta-title, .final-cta-text,
+            .final-cta-content .btn-primary,
+            .final-cta-content .hero-trust,
+            .footer-content {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+            .hero-line {
+                width: 150px !important;
+            }
+        </style>
+    </noscript>
 </head>
 <body>
     <div class="cursor"></div>
@@ -92,7 +117,7 @@
 
     <canvas id="particles"></canvas>
 
-    <nav class="nav">
+    <nav class="nav" aria-label="Main navigation">
         <div class="nav-logo"><img src="logo.svg" alt="ConsistencyForge" class="nav-logo-img"></div>
         <div class="nav-links">
             <a href="#how" class="nav-link">How it works</a>
@@ -141,19 +166,19 @@
                 <div class="how-steps">
                     <div class="how-step">
                         <div class="step-number">01</div>
-                        <img src="img/icon-contract.png" alt="Forge a Contract" class="step-icon">
+                        <img src="img/icon-contract.png" alt="Forge a Contract" class="step-icon" loading="lazy">
                         <h3 class="step-title">Forge a Contract</h3>
                         <p class="step-desc">Write a Soul Contract — a specific, time-bound promise to yourself about the habit you'll build.</p>
                     </div>
                     <div class="how-step">
                         <div class="step-number">02</div>
-                        <img src="img/icon-checkin.png" alt="Confirm via Email" class="step-icon">
+                        <img src="img/icon-checkin.png" alt="Confirm via Email" class="step-icon" loading="lazy">
                         <h3 class="step-title">Confirm via Email</h3>
                         <p class="step-desc">We send you a daily email. Click a link to confirm — done. No app login needed, no friction.</p>
                     </div>
                     <div class="how-step">
                         <div class="step-number">03</div>
-                        <img src="img/icon-rank.png" alt="Rise in Rank" class="step-icon">
+                        <img src="img/icon-rank.png" alt="Rise in Rank" class="step-icon" loading="lazy">
                         <h3 class="step-title">Rise in Rank</h3>
                         <p class="step-desc">Build streaks, earn ranks, unlock new visual themes. Your consistency becomes visible proof.</p>
                     </div>
@@ -169,32 +194,32 @@
                 <h2 class="section-title">Built for iron will.</h2>
                 <div class="features-grid">
                     <div class="feature-card">
-                        <img src="img/icon-schedule.png" alt="Flexible Schedules" class="feature-icon">
+                        <img src="img/icon-schedule.png" alt="Flexible Schedules" class="feature-icon" loading="lazy">
                         <h3 class="feature-title">Flexible Schedules</h3>
                         <p class="feature-desc">Daily, weekly, monthly, or pick custom days. Your rhythm, your rules.</p>
                     </div>
                     <div class="feature-card">
-                        <img src="img/icon-email-confirm.png" alt="Zero-Friction Check-Ins" class="feature-icon">
+                        <img src="img/icon-email-confirm.png" alt="Zero-Friction Check-Ins" class="feature-icon" loading="lazy">
                         <h3 class="feature-title">Zero-Friction Check-Ins</h3>
                         <p class="feature-desc">Get a daily email, click a link to confirm. No app login needed.</p>
                     </div>
                     <div class="feature-card">
-                        <img src="img/icon-stakes.png" alt="Financial Stakes" class="feature-icon">
+                        <img src="img/icon-stakes.png" alt="Financial Stakes" class="feature-icon" loading="lazy">
                         <h3 class="feature-title">Financial Stakes</h3>
                         <p class="feature-desc">Optional. Put $1 to $1,000 on the line. Your money becomes your motivation.</p>
                     </div>
                     <div class="feature-card">
-                        <img src="img/icon-group.png" alt="Group Contracts" class="feature-icon">
+                        <img src="img/icon-group.png" alt="Group Contracts" class="feature-icon" loading="lazy">
                         <h3 class="feature-title">Group Contracts</h3>
                         <p class="feature-desc">Create shared contracts. Hold each other accountable. Miss once — everyone knows.</p>
                     </div>
                     <div class="feature-card">
-                        <img src="img/icon-ranks.png" alt="20 Rank Themes" class="feature-icon">
+                        <img src="img/icon-ranks.png" alt="20 Rank Themes" class="feature-icon" loading="lazy">
                         <h3 class="feature-title">20 Rank Themes</h3>
                         <p class="feature-desc">Roman legions, samurai clans, pirate crews. Choose your progression fantasy.</p>
                     </div>
                     <div class="feature-card">
-                        <img src="img/icon-themes.png" alt="14 Visual Themes" class="feature-icon">
+                        <img src="img/icon-themes.png" alt="14 Visual Themes" class="feature-icon" loading="lazy">
                         <h3 class="feature-title">14 Visual Themes</h3>
                         <p class="feature-desc">From minimal frost to imperial gold. Unlock new looks as you rank up.</p>
                     </div>
@@ -241,7 +266,7 @@
                             <h3 class="pricing-name">The Free Forge</h3>
                             <div class="pricing-price">$0 <span class="pricing-period">/ always</span></div>
                         </div>
-                        <ul class="pricing-features">
+                        <ul class="pricing-features" role="list">
                             <li>Unlimited contracts</li>
                             <li>All schedules</li>
                             <li>Email check-ins</li>
@@ -259,7 +284,7 @@
                             <div class="pricing-price">You set the amount</div>
                         </div>
                         <p class="pricing-plus">Everything free, plus:</p>
-                        <ul class="pricing-features">
+                        <ul class="pricing-features" role="list">
                             <li>Financial accountability</li>
                             <li>Higher point earnings</li>
                             <li>Faster rank progression</li>
@@ -294,9 +319,9 @@
         </section>
 
         <!-- Section 8: Footer -->
-        <section class="section section-footer" data-section="8">
+        <footer class="section section-footer" data-section="8">
             <div class="footer-content">
-                <div class="footer-logo"><img src="logo.svg" alt="ConsistencyForge" class="footer-logo-img"></div>
+                <div class="footer-logo"><img src="logo.svg" alt="ConsistencyForge" class="footer-logo-img" loading="lazy"></div>
                 <div class="footer-text">CONSISTENCYFORGE</div>
                 <div class="footer-links">
                     <a href="https://app.consistencyforge.com/terms" class="footer-link">Terms</a>
@@ -305,13 +330,13 @@
                 </div>
                 <div class="footer-year">2026</div>
             </div>
-        </section>
+        </footer>
     </main>
 
     <div class="progress-bar"></div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
