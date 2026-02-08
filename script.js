@@ -604,3 +604,127 @@ document.querySelectorAll('.btn-primary').forEach(btn => {
 
 console.log('%c⚒ CONSISTENCYFORGE', 'font-size: 24px; font-weight: bold; color: #F08C2E; background: #0D1B2A; padding: 10px 20px;');
 console.log('%cForge your word into iron.', 'color: #F08C2E; font-style: italic;');
+
+// ============================================
+// A/B TEST TRACKING
+// ============================================
+(function() {
+    const API_BASE = 'https://app.consistencyforge.com/api/ab';
+    let _visitorId = null;
+    let _testId = null;
+    let _pageStartTime = Date.now();
+    let _scrollThresholds = { 25: false, 50: false, 75: false, 100: false };
+
+    // Cookie helpers
+    function getCookie(name) {
+        const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+        return match ? match[2] : null;
+    }
+
+    function setCookie(name, value, days) {
+        const expires = new Date(Date.now() + days * 864e5).toUTCString();
+        document.cookie = name + '=' + value + '; expires=' + expires + '; path=/; SameSite=None; Secure';
+    }
+
+    // Send event (non-blocking)
+    function trackEvent(eventType, eventData) {
+        if (!_testId || !_visitorId) return;
+        const payload = JSON.stringify({
+            testId: _testId,
+            visitorId: _visitorId,
+            eventType: eventType,
+            eventData: eventData || null,
+            pageUrl: window.location.href
+        });
+
+        if (navigator.sendBeacon) {
+            navigator.sendBeacon(API_BASE + '/track', new Blob([payload], { type: 'application/json' }));
+        } else {
+            fetch(API_BASE + '/track', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: payload,
+                keepalive: true
+            }).catch(function() {});
+        }
+    }
+
+    // Update CTA links based on assigned variant
+    function updateCtaLinks(targetUrl) {
+        if (!targetUrl) return;
+        document.querySelectorAll('a.btn-primary').forEach(function(link) {
+            link.href = targetUrl;
+        });
+    }
+
+    // Initialize: get assignment from API
+    function init() {
+        var existingVisitorId = getCookie('cf_visitor_id');
+        var body = existingVisitorId ? JSON.stringify({ visitorId: existingVisitorId }) : '{}';
+
+        fetch(API_BASE + '/assign', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: body,
+            credentials: 'include'
+        })
+        .then(function(res) { return res.json(); })
+        .then(function(data) {
+            _visitorId = data.visitorId;
+            _testId = data.testId;
+
+            // Store visitor ID in cookie (2 years)
+            if (_visitorId) {
+                setCookie('cf_visitor_id', _visitorId, 730);
+            }
+
+            // Update CTA links based on variant
+            if (data.targetUrl) {
+                updateCtaLinks(data.targetUrl);
+            }
+
+            // Track landing visit
+            trackEvent('landing_visit', { variant: data.variant });
+        })
+        .catch(function() {
+            // Silently fail - don't break landing page
+        });
+    }
+
+    // Scroll depth tracking
+    function onScroll() {
+        var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        if (docHeight <= 0) return;
+
+        var scrollPercent = Math.round((scrollTop / docHeight) * 100);
+
+        [25, 50, 75, 100].forEach(function(threshold) {
+            if (scrollPercent >= threshold && !_scrollThresholds[threshold]) {
+                _scrollThresholds[threshold] = true;
+                trackEvent('landing_scroll_' + threshold, { percent: threshold });
+            }
+        });
+    }
+
+    // CTA click tracking
+    function onCtaClick(e) {
+        var link = e.target.closest('a.btn-primary');
+        if (!link) return;
+        trackEvent('landing_cta_click', { href: link.href, text: link.textContent.trim() });
+    }
+
+    // Time on page (sent before unload)
+    function onBeforeUnload() {
+        var duration = Math.round((Date.now() - _pageStartTime) / 1000);
+        trackEvent('landing_time_on_page', { seconds: duration });
+    }
+
+    // Set up listeners
+    window.addEventListener('scroll', onScroll, { passive: true });
+    document.addEventListener('click', onCtaClick);
+    window.addEventListener('beforeunload', onBeforeUnload);
+
+    // Start
+    init();
+})();
