@@ -1,21 +1,24 @@
 # Landing Page Variants
 
 ConsistencyForge runs multiple landing page variants for audience-targeted ad campaigns.
-Both variants are live simultaneously — traffic is directed via ad campaign URLs.
+All variants are live simultaneously — traffic is directed via ad campaign URLs.
 
 ## Active Variants
 
-| Path | Codename | Tone | Sections | Target Audience |
-|------|----------|------|----------|-----------------|
-| `/` | Original | Friendly, zero-friction | 8 | Broad / organic / SEO |
-| `/go/` | SimonSays | Aggressive, accountability-first | 12 | Paid ads, high-intent, loss-aversion audiences |
+| Path | Codename | Tone | Format | Target Audience |
+|------|----------|------|--------|-----------------|
+| `/` | Original | Friendly, zero-friction | 8 sections | Broad / organic / SEO |
+| `/go/` | SimonSays | Aggressive, accountability-first | 12 sections | Paid ads, high-intent, loss-aversion audiences |
+| `/start/` | QuizFunnel | Interactive, emotional | 9-page quiz | Social media ads |
 
 ## URL Structure
 
 - **Original**: `https://www.consistencyforge.com/`
 - **SimonSays**: `https://www.consistencyforge.com/go/`
+- **QuizFunnel**: `https://www.consistencyforge.com/start/`
 
 The `/go/` path follows industry standard for campaign landing pages (short, memorable, action-oriented).
+The `/start/` path is designed for social media ad campaigns with a quiz-based engagement funnel.
 
 ## Variant Details
 
@@ -31,16 +34,27 @@ The `/go/` path follows industry standard for campaign landing pages (short, mem
 - AI-generated assets: hero video (Veo 2), textures, illustrations (Imagen 4)
 - Full copy framework in `go/docs/LANDING-COPY.md`
 
+### `/start/` — QuizFunnel (9-page quiz)
+- Pages: Hero, Q1-Q6, Results + Email, Commitment Form, Thank You
+- 6-question emotional quiz flow with personalized results
+- Collects email + commitment details, sends to onboard API
+- API creates account + $25 contract + sends magic link email
+- Fire video background, animated mascot, pulsing motivational quotes
+- Inter font (vs Space Grotesk on other variants)
+- Assets in `start/assets/` (fire-bg.mp4, mascot.mp4, hamster-forge.png, fox.png)
+
 ## Ad Campaign Usage
 
 Use variant URLs in ad platforms:
 - **Google Ads / Meta**: Direct high-intent keywords to `/go/`
+- **Social Media (Meta, TikTok, Instagram)**: Use `/start/` quiz funnel for engagement
 - **Organic / SEO**: Root `/` handles broad discovery
 - **Retargeting**: Consider `/go/` for users who bounced from `/`
 
 ## Tech Notes
 
-- Both variants are static HTML/CSS/JS — no build step
+- All variants are static HTML/CSS/JS — no build step
 - Deployed on Vercel via auto-deploy from `main` branch
 - Security headers (CSP, X-Frame, etc.) apply to all paths via `vercel.json`
 - Each variant has its own SEO metadata (canonical, OG, structured data)
+- `/start/` connects to `app.consistencyforge.com/api/landing/onboard` for account creation

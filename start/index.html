@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ConsistencyForge — 2-Minute Quiz to Break Your Excuses</title>
+    <meta name="description" content="Take a 2-minute quiz, face the truth about your excuses, and create a personalized commitment contract. Free accountability platform — no app login needed.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.consistencyforge.com/start/">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- Safari Pinned Tab -->
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#F08C2E">
+
+    <!-- Microsoft Tiles -->
+    <meta name="msapplication-TileColor" content="#0D1B2A">
+    <meta name="msapplication-config" content="/browserconfig.xml">
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#0a0a0a">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="ConsistencyForge — 2-Minute Quiz to Break Your Excuses">
+    <meta property="og:description" content="Take a 2-minute quiz, face the truth about your excuses, and create a personalized commitment contract. Free accountability platform.">
+    <meta property="og:image" content="https://www.consistencyforge.com/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.consistencyforge.com/start/">
+    <meta property="og:site_name" content="ConsistencyForge">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ConsistencyForge — 2-Minute Quiz to Break Your Excuses">
+    <meta name="twitter:description" content="Take a 2-minute quiz, face the truth about your excuses, and create a personalized commitment contract.">
+    <meta name="twitter:image" content="https://www.consistencyforge.com/twitter-card.png">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "ConsistencyForge Quiz — Break Your Excuses",
+        "description": "Take a 2-minute quiz to face the truth about your excuses and create a personalized commitment contract.",
+        "url": "https://www.consistencyforge.com/start/",
+        "isPartOf": {
+            "@type": "WebSite",
+            "name": "ConsistencyForge",
+            "url": "https://www.consistencyforge.com"
+        },
+        "provider": {
+            "@type": "Organization",
+            "name": "ConsistencyForge",
+            "url": "https://www.consistencyforge.com"
+        }
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Video Background -->
+    <div class="video-bg">
+        <video autoplay muted loop playsinline>
+            <source src="assets/fire-bg.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="progress-wrap" id="progressWrap">
+        <div class="progress-inner">
+            <button class="progress-back" onclick="goBack()">&larr;</button>
+            <div class="progress-bar-bg">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+            <span class="progress-text" id="progressText">0%</span>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Hero / Landing -->
+        <div class="page active" id="page-hero">
+            <div class="hero">
+                <div class="mascot-container">
+                    <video src="assets/mascot.mp4" class="mascot" autoplay muted loop playsinline></video>
+                </div>
+                <div style="font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; color: var(--orange-500); margin-bottom: 16px;">No Excuses</div>
+                <h1>You've Been Lying<br><span>To Yourself.</span></h1>
+                <p class="hero-sub">For how long? Let's find out. 2 minutes to face the truth — and finally break the cycle.</p>
+
+                <div class="hero-features">
+                    <div class="hero-feature">
+                        <span class="check">&check;</span>
+                        <span>"No time"? Excuse me? Still WORKS!</span>
+                    </div>
+                    <div class="hero-feature">
+                        <span class="check">&check;</span>
+                        <span>Willpower builds slowly, but constantly</span>
+                    </div>
+                    <div class="hero-feature">
+                        <span class="check">&check;</span>
+                        <span>Commit to a personalized strategy</span>
+                    </div>
+                </div>
+
+                <button class="btn btn-primary" onclick="startQuiz()">Face The Truth &rarr;</button>
+                <div style="font-size: 13px; color: rgba(255,255,255,0.6); margin-top: 12px;">(let yourself be guided)</div>
+            </div>
+        </div>
+
+        <!-- Q1: What do you want to do? -->
+        <div class="page" id="page-q1">
+            <div class="question-page">
+                <div class="question-header">
+                    <div class="mascot-container"><video src="assets/mascot.mp4" class="mascot" autoplay muted loop playsinline></video></div>
+                    <div class="question-header-text">
+                        <div class="question-label">Question 1 of 6</div>
+                        <div class="question-text">What have you been avoiding?</div>
+                    </div>
+                </div>
+                <div class="answers">
+                    <button class="answer-btn" onclick="answer(1, 'fitness')">
+                        <span class="answer-icon">&#127939;</span>
+                        <span>Exercise & fitness</span>
+                    </button>
+                    <button class="answer-btn" onclick="answer(1, 'hobby')">
+                        <span class="answer-icon">&#127912;</span>
+                        <span>Creative hobby (music, art, crafts...)</span>
+                    </button>
+                    <button class="answer-btn" onclick="answer(1, 'learning')">
+                        <span class="answer-icon">&#128218;</span>
+                        <span>Learning & self-improvement</span>
+                    </button>
+                    <button class="answer-btn" onclick="answer(1, 'health')">
+                        <span class="answer-icon">&#129496;</span>
+                        <span>Health & mindfulness</span>
+                    </button>
+                    <button class="answer-btn" onclick="answer(1, 'project')">
+                        <span class="answer-icon">&#128188;</span>
+                        <span>Side project or business</span>
+                    </button>
+                    <button class="answer-btn" onclick="answer(1, 'other')">
+                        <span class="answer-icon">&#10024;</span>
+                        <span>Something else</span>
+                    </button>
+                </div>
+                <div class="forge-quote">"The fire starts with a single spark."</div>
+            </div>
+        </div>
+
+        <!-- Q2: What's your excuse? -->
+        <div class="page" id="page-q2">
+            <div class="question-page">
+                <div class="question-header">
+                    <div class="mascot-container"><video src="assets/mascot.mp4" class="mascot" autoplay muted loop playsinline></video></div>
+                    <div class="question-header-text">
+                        <div class="question-label">Question 2 of 6</div>
+                        <div class="question-text">What bullshit do you tell yourself?</div>
+                    </div>
+                </div>
+                <div class="answers">
+                    <button class="answer-btn" onclick="answer(2, 'time')">
+                        <span class="answer-icon">&#9200;</span>
+                        <span>"I don't have time"</span>
+                    </button>
+                    <button class="answer-btn" onclick="answer(2, 'tired')">
+                        <span class="answer-icon">&#128564;</span>
+                        <span>"I'm too tired after work"</span>
+                    </button>
+                    <button class="answer-btn" onclick="answer(2, 'kids')">
+                        <span class="answer-icon">&#128118;</span>
+                        <span>"When the kids are older..."</span>
+                    </button>
+                    <button class="answer-btn" onclick="answer(2, 'someday')">
+                        <span class="answer-icon">&#128197;</span>
+                        <span>"I'll start someday, not now"</span>
+                    </button>
+                    <button class="answer-btn" onclick="answer(2, 'perfect')">
+                        <span class="answer-icon">&#127919;</span>
+                        <span>"I need perfect conditions"</span>
+                    </button>
+                    <button class="answer-btn" onclick="answer(2, 'motivation')">
+                        <span class="answer-icon">&#128170;</span>
+                        <span>"I lack motivation"</span>
+                    </button>
+                </div>
+                <div class="forge-quote">"Excuses are comfortable lies."</div>
+            </div>
+        </div>
+
+        <!-- Q3: How long? -->
+        <div class="page" id="page-q3">
+            <div class="question-page">
+                <div class="question-header">
+                    <div class="mascot-container"><video src="assets/mascot.mp4" class="mascot" autoplay muted loop playsinline></video></div>
+                    <div class="question-header-text">
+                        <div class="question-label">Question 3 of 6</div>
+                        <div class="question-text">How many years have you wasted on this excuse?</div>
+                    </div>
+                </div>
+                <div class="answers">
+                    <button class="answer-btn" onclick="answer(3, 'weeks')">
+                        <span class="answer-icon">&#128198;</span>
+                        <span>A few weeks</span>
+                    </button>
+                    <button class="answer-btn" onclick="answer(3, 'months')">
+                        <span class="answer-icon">&#128197;</span>
+                        <span>A few months</span>
+                    </button>
+                    <button class="answer-btn" onclick="answer(3, 'year')">
+                        <span class="answer-icon">&#128197;</span>
+                        <span>About a year</span>
+                    </button>
+                    <button class="answer-btn" onclick="answer(3, 'years')">
+                        <span class="answer-icon">&#9203;</span>
+                        <span>Several years</span>
+                    </button>
+                    <button class="answer-btn" onclick="answer(3, 'decade')">
+                        <span class="answer-icon">&#128532;</span>
+                        <span>Over 10 years...</span>
+                    </button>
+                </div>
+                <div class="forge-quote">"Time you'll never get back. But today is new."</div>
+            </div>
+        </div>
+
+        <!-- Q4: 30 seconds -->
+        <div class="page" id="page-q4">
+            <div class="question-page">
+                <div class="question-header">
+                    <div class="mascot-container"><video src="assets/mascot.mp4" class="mascot" autoplay muted loop playsinline></video></div>
+                    <div class="question-header-text">
+                        <div class="question-label">Question 4 of 6</div>
+                        <div class="question-text">How much time can you ACTUALLY commit? Be honest.</div>
+                    </div>
+                </div>
+                <div class="answers">
+                    <button class="answer-btn" onclick="answer(4, '30sec')">
+                        <span class="answer-icon">&#9889;</span>
+                        <span>30 seconds — just to start</span>
+                    </button>
+                    <button class="answer-btn" onclick="answer(4, '2-3min')">
+                        <span class="answer-icon">&#128293;</span>
+                        <span>2-3 minutes — quick win</span>
+                    </button>
+                    <button class="answer-btn" onclick="answer(4, '5-10min')">
+                        <span class="answer-icon">&#128170;</span>
+                        <span>5-10 minutes — solid effort</span>
+                    </button>
+                    <button class="answer-btn" onclick="answer(4, '15-30min')">
+                        <span class="answer-icon">&#128640;</span>
+                        <span>15-30 minutes — I'm serious</span>
+                    </button>
+                    <button class="answer-btn" onclick="answer(4, 'unsure')">
+                        <span class="answer-icon">&#129300;</span>
+                        <span>Not sure yet — any time counts to start</span>
+                    </button>
+                </div>
+                <div class="forge-quote">"Small steps forge mighty commitments."</div>
+            </div>
+        </div>
+
+        <!-- Q5: What would it mean? -->
+        <div class="page" id="page-q5">
+            <div class="question-page">
+                <div class="question-header">
+                    <div class="mascot-container"><video src="assets/mascot.mp4" class="mascot" autoplay muted loop playsinline></video></div>
+                    <div class="question-header-text">
+                        <div class="question-label">Question 5 of 6</div>
+                        <div class="question-text">What's at stake if you keep living in a lie?</div>
+                    </div>
+                </div>
+                <div class="answers">
+                    <button class="answer-btn" onclick="answer(5, 'respect')">
+                        <span class="answer-icon">&#128128;</span>
+                        <span>My self-respect</span>
+                    </button>
+                    <button class="answer-btn" onclick="answer(5, 'health')">
+                        <span class="answer-icon">&#9888;&#65039;</span>
+                        <span>My health</span>
+                    </button>
+                    <button class="answer-btn" onclick="answer(5, 'dreams')">
+                        <span class="answer-icon">&#128148;</span>
+                        <span>My dreams dying slowly</span>
+                    </button>
+                    <button class="answer-btn" onclick="answer(5, 'regret')">
+                        <span class="answer-icon">&#128532;</span>
+                        <span>A lifetime of regret</span>
+                    </button>
+                    <button class="answer-btn" onclick="answer(5, 'all')">
+                        <span class="answer-icon">&#128293;</span>
+                        <span>All of it. Everything.</span>
+                    </button>
+                </div>
+                <div class="forge-quote">"The truth hurts. Lies hurt more."</div>
+            </div>
+        </div>
+
+        <!-- Q6: What do you need? -->
+        <div class="page" id="page-q6">
+            <div class="question-page">
+                <div class="question-header">
+                    <div class="mascot-container"><video src="assets/mascot.mp4" class="mascot" autoplay muted loop playsinline></video></div>
+                    <div class="question-header-text">
+                        <div class="question-label">Question 6 of 6</div>
+                        <div class="question-text">What's actually stopping you? Pick one.</div>
+                    </div>
+                </div>
+                <div class="answers">
+                    <button class="answer-btn" onclick="answer(6, 'plan')">
+                        <span class="answer-icon">&#128203;</span>
+                        <span>A simple plan to start</span>
+                    </button>
+                    <button class="answer-btn" onclick="answer(6, 'accountability')">
+                        <span class="answer-icon">&#129309;</span>
+                        <span>Someone to hold me accountable</span>
+                    </button>
+                    <button class="answer-btn" onclick="answer(6, 'motivation')">
+                        <span class="answer-icon">&#9889;</span>
+                        <span>A boost of motivation</span>
+                    </button>
+                    <button class="answer-btn" onclick="answer(6, 'system')">
+                        <span class="answer-icon">&#9881;&#65039;</span>
+                        <span>A system that works</span>
+                    </button>
+                </div>
+                <div class="forge-quote">"Forge the willpower that sleeps inside you."</div>
+            </div>
+        </div>
+
+        <!-- Results + Email -->
+        <div class="page" id="page-results">
+            <div class="result-page">
+                <div class="result-card">
+                    <h3>&#128293; You have everything you need.</h3>
+                    <p id="resultText">
+                        I see you've been putting off what matters to you. And I get it — life is full of excuses.
+                        <br><br>
+                        But here's the truth: <strong>You DO have time.</strong>
+                        Today it can be 30 seconds. Tomorrow, 3 minutes.
+                        Next week? Maybe 30 minutes that change everything.
+                        <br><br>
+                        You don't need to do it like you used to — for 3-4 hours. <strong>Consistency beats intensity.</strong>
+                        A small step every day. That's all it takes.
+                    </p>
+                </div>
+
+                <div class="incentive-box" style="display: flex; align-items: center; justify-content: center; gap: 16px; text-align: left;">
+                    <div>
+                        <div class="incentive-value">
+                            <span class="strike">$29</span> &rarr; <span class="free">FREE</span>
+                        </div>
+                        <div class="incentive-text">Personal commitment coaching session</div>
+                    </div>
+                    <video src="assets/mascot.mp4" class="mascot" autoplay muted loop playsinline style="width:60px;height:60px;border-radius:50%;flex-shrink:0;"></video>
+                </div>
+
+                <div class="form-group">
+                    <label>Your email</label>
+                    <input type="email" id="email" placeholder="you@example.com">
+                </div>
+
+                <button class="btn btn-primary" onclick="submitEmail()">I Commit &rarr;</button>
+            </div>
+        </div>
+
+        <!-- Commitment Form -->
+        <div class="page" id="page-commitment">
+            <div class="result-page">
+                <h2 style="font-size: 24px; font-weight: 700; margin-bottom: 8px; color: #fff;">Create Your Commitment</h2>
+                <p style="color: rgba(255,255,255,0.8); margin-bottom: 28px;">This is your contract with yourself. Name it and choose your schedule.</p>
+
+                <div class="form-group">
+                    <label>Name your commitment</label>
+                    <input type="text" id="commitmentName" placeholder="e.g., 10 daily pushups, Guitar practice, Morning meditation...">
+                </div>
+
+                <div class="form-group">
+                    <label>How often?</label>
+                    <select id="schedule">
+                        <option value="daily">Every day</option>
+                        <option value="weekdays">Weekdays (Mon-Fri)</option>
+                        <option value="weekends">Weekends only</option>
+                        <option value="3x">3 times a week</option>
+                        <option value="weekly">Once a week</option>
+                        <option value="monthly">Once a month</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Why does this matter to you? (optional)</label>
+                    <textarea id="why" placeholder="This will help you remember your 'why'..."></textarea>
+                </div>
+
+                <button class="btn btn-primary" onclick="submitCommitment()">Forge My Commitment &#128293;</button>
+                <div id="formError" class="form-error"></div>
+            </div>
+        </div>
+
+        <!-- Thank You -->
+        <div class="page" id="page-thanks">
+            <div class="thankyou">
+                <div class="mascot-container"><video src="assets/mascot.mp4" class="mascot" autoplay muted loop playsinline style="width:150px;height:150px"></video></div>
+                <h2>You're In!</h2>
+                <p>Check your inbox — we've sent you a link to activate your ConsistencyForge account with your personalized commitment contract. You can edit it anytime.</p>
+                <div class="thankyou-note">
+                    Remember: Today, just 30 seconds is enough.<br>
+                    Start small. Stay consistent. The rest will follow.
+                </div>
+                <div class="forge-quote" style="font-size: 18px; color: var(--orange-500); opacity: 1;">
+                    "Now go forge yourself."
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
