@@ -80,7 +80,7 @@
     <!-- Progress Bar -->
     <div class="progress-wrap" id="progressWrap">
         <div class="progress-inner">
-            <button class="progress-back" onclick="goBack()">&larr;</button>
+            <button class="progress-back" id="btnBack">&larr;</button>
             <div class="progress-bar-bg">
                 <div class="progress-bar" id="progressBar"></div>
             </div>
@@ -114,7 +114,7 @@
                     </div>
                 </div>
 
-                <button class="btn btn-primary" onclick="startQuiz()">Face The Truth &rarr;</button>
+                <button class="btn btn-primary" id="btnStart">Face The Truth &rarr;</button>
                 <div style="font-size: 13px; color: rgba(255,255,255,0.6); margin-top: 12px;">(let yourself be guided)</div>
             </div>
         </div>
@@ -130,27 +130,27 @@
                     </div>
                 </div>
                 <div class="answers">
-                    <button class="answer-btn" onclick="answer(1, 'fitness')">
+                    <button class="answer-btn" data-q="1" data-value="fitness">
                         <span class="answer-icon">&#127939;</span>
                         <span>Exercise & fitness</span>
                     </button>
-                    <button class="answer-btn" onclick="answer(1, 'hobby')">
+                    <button class="answer-btn" data-q="1" data-value="hobby">
                         <span class="answer-icon">&#127912;</span>
                         <span>Creative hobby (music, art, crafts...)</span>
                     </button>
-                    <button class="answer-btn" onclick="answer(1, 'learning')">
+                    <button class="answer-btn" data-q="1" data-value="learning">
                         <span class="answer-icon">&#128218;</span>
                         <span>Learning & self-improvement</span>
                     </button>
-                    <button class="answer-btn" onclick="answer(1, 'health')">
+                    <button class="answer-btn" data-q="1" data-value="health">
                         <span class="answer-icon">&#129496;</span>
                         <span>Health & mindfulness</span>
                     </button>
-                    <button class="answer-btn" onclick="answer(1, 'project')">
+                    <button class="answer-btn" data-q="1" data-value="project">
                         <span class="answer-icon">&#128188;</span>
                         <span>Side project or business</span>
                     </button>
-                    <button class="answer-btn" onclick="answer(1, 'other')">
+                    <button class="answer-btn" data-q="1" data-value="other">
                         <span class="answer-icon">&#10024;</span>
                         <span>Something else</span>
                     </button>
@@ -170,27 +170,27 @@
                     </div>
                 </div>
                 <div class="answers">
-                    <button class="answer-btn" onclick="answer(2, 'time')">
+                    <button class="answer-btn" data-q="2" data-value="time">
                         <span class="answer-icon">&#9200;</span>
                         <span>"I don't have time"</span>
                     </button>
-                    <button class="answer-btn" onclick="answer(2, 'tired')">
+                    <button class="answer-btn" data-q="2" data-value="tired">
                         <span class="answer-icon">&#128564;</span>
                         <span>"I'm too tired after work"</span>
                     </button>
-                    <button class="answer-btn" onclick="answer(2, 'kids')">
+                    <button class="answer-btn" data-q="2" data-value="kids">
                         <span class="answer-icon">&#128118;</span>
                         <span>"When the kids are older..."</span>
                     </button>
-                    <button class="answer-btn" onclick="answer(2, 'someday')">
+                    <button class="answer-btn" data-q="2" data-value="someday">
                         <span class="answer-icon">&#128197;</span>
                         <span>"I'll start someday, not now"</span>
                     </button>
-                    <button class="answer-btn" onclick="answer(2, 'perfect')">
+                    <button class="answer-btn" data-q="2" data-value="perfect">
                         <span class="answer-icon">&#127919;</span>
                         <span>"I need perfect conditions"</span>
                     </button>
-                    <button class="answer-btn" onclick="answer(2, 'motivation')">
+                    <button class="answer-btn" data-q="2" data-value="motivation">
                         <span class="answer-icon">&#128170;</span>
                         <span>"I lack motivation"</span>
                     </button>
@@ -210,23 +210,23 @@
                     </div>
                 </div>
                 <div class="answers">
-                    <button class="answer-btn" onclick="answer(3, 'weeks')">
+                    <button class="answer-btn" data-q="3" data-value="weeks">
                         <span class="answer-icon">&#128198;</span>
                         <span>A few weeks</span>
                     </button>
-                    <button class="answer-btn" onclick="answer(3, 'months')">
+                    <button class="answer-btn" data-q="3" data-value="months">
                         <span class="answer-icon">&#128197;</span>
                         <span>A few months</span>
                     </button>
-                    <button class="answer-btn" onclick="answer(3, 'year')">
+                    <button class="answer-btn" data-q="3" data-value="year">
                         <span class="answer-icon">&#128197;</span>
                         <span>About a year</span>
                     </button>
-                    <button class="answer-btn" onclick="answer(3, 'years')">
+                    <button class="answer-btn" data-q="3" data-value="years">
                         <span class="answer-icon">&#9203;</span>
                         <span>Several years</span>
                     </button>
-                    <button class="answer-btn" onclick="answer(3, 'decade')">
+                    <button class="answer-btn" data-q="3" data-value="decade">
                         <span class="answer-icon">&#128532;</span>
                         <span>Over 10 years...</span>
                     </button>
@@ -246,23 +246,23 @@
                     </div>
                 </div>
                 <div class="answers">
-                    <button class="answer-btn" onclick="answer(4, '30sec')">
+                    <button class="answer-btn" data-q="4" data-value="30sec">
                         <span class="answer-icon">&#9889;</span>
                         <span>30 seconds — just to start</span>
                     </button>
-                    <button class="answer-btn" onclick="answer(4, '2-3min')">
+                    <button class="answer-btn" data-q="4" data-value="2-3min">
                         <span class="answer-icon">&#128293;</span>
                         <span>2-3 minutes — quick win</span>
                     </button>
-                    <button class="answer-btn" onclick="answer(4, '5-10min')">
+                    <button class="answer-btn" data-q="4" data-value="5-10min">
                         <span class="answer-icon">&#128170;</span>
                         <span>5-10 minutes — solid effort</span>
                     </button>
-                    <button class="answer-btn" onclick="answer(4, '15-30min')">
+                    <button class="answer-btn" data-q="4" data-value="15-30min">
                         <span class="answer-icon">&#128640;</span>
                         <span>15-30 minutes — I'm serious</span>
                     </button>
-                    <button class="answer-btn" onclick="answer(4, 'unsure')">
+                    <button class="answer-btn" data-q="4" data-value="unsure">
                         <span class="answer-icon">&#129300;</span>
                         <span>Not sure yet — any time counts to start</span>
                     </button>
@@ -282,23 +282,23 @@
                     </div>
                 </div>
                 <div class="answers">
-                    <button class="answer-btn" onclick="answer(5, 'respect')">
+                    <button class="answer-btn" data-q="5" data-value="respect">
                         <span class="answer-icon">&#128128;</span>
                         <span>My self-respect</span>
                     </button>
-                    <button class="answer-btn" onclick="answer(5, 'health')">
+                    <button class="answer-btn" data-q="5" data-value="health">
                         <span class="answer-icon">&#9888;&#65039;</span>
                         <span>My health</span>
                     </button>
-                    <button class="answer-btn" onclick="answer(5, 'dreams')">
+                    <button class="answer-btn" data-q="5" data-value="dreams">
                         <span class="answer-icon">&#128148;</span>
                         <span>My dreams dying slowly</span>
                     </button>
-                    <button class="answer-btn" onclick="answer(5, 'regret')">
+                    <button class="answer-btn" data-q="5" data-value="regret">
                         <span class="answer-icon">&#128532;</span>
                         <span>A lifetime of regret</span>
                     </button>
-                    <button class="answer-btn" onclick="answer(5, 'all')">
+                    <button class="answer-btn" data-q="5" data-value="all">
                         <span class="answer-icon">&#128293;</span>
                         <span>All of it. Everything.</span>
                     </button>
@@ -318,19 +318,19 @@
                     </div>
                 </div>
                 <div class="answers">
-                    <button class="answer-btn" onclick="answer(6, 'plan')">
+                    <button class="answer-btn" data-q="6" data-value="plan">
                         <span class="answer-icon">&#128203;</span>
                         <span>A simple plan to start</span>
                     </button>
-                    <button class="answer-btn" onclick="answer(6, 'accountability')">
+                    <button class="answer-btn" data-q="6" data-value="accountability">
                         <span class="answer-icon">&#129309;</span>
                         <span>Someone to hold me accountable</span>
                     </button>
-                    <button class="answer-btn" onclick="answer(6, 'motivation')">
+                    <button class="answer-btn" data-q="6" data-value="motivation">
                         <span class="answer-icon">&#9889;</span>
                         <span>A boost of motivation</span>
                     </button>
-                    <button class="answer-btn" onclick="answer(6, 'system')">
+                    <button class="answer-btn" data-q="6" data-value="system">
                         <span class="answer-icon">&#9881;&#65039;</span>
                         <span>A system that works</span>
                     </button>
@@ -371,7 +371,7 @@
                     <input type="email" id="email" placeholder="you@example.com">
                 </div>
 
-                <button class="btn btn-primary" onclick="submitEmail()">I Commit &rarr;</button>
+                <button class="btn btn-primary" id="btnEmail">I Commit &rarr;</button>
             </div>
         </div>
 
@@ -403,7 +403,7 @@
                     <textarea id="why" placeholder="This will help you remember your 'why'..."></textarea>
                 </div>
 
-                <button class="btn btn-primary" onclick="submitCommitment()">Forge My Commitment &#128293;</button>
+                <button class="btn btn-primary" id="btnCommit">Forge My Commitment &#128293;</button>
                 <div id="formError" class="form-error"></div>
             </div>
         </div>
