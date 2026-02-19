@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'X-Landing-Secret': '<LANDING_ONBOARD_SECRET>',
+                    'X-Landing-Secret': '34ba25af77603821540bfecad43e81670f97c3c8146e114a1f1cfb30ef647e08',
                 },
                 body: JSON.stringify({
                     email: email,
