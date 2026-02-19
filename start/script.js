@@ -8,13 +8,13 @@ function showPage(pageId) {
     document.getElementById('page-' + pageId).classList.add('active');
     currentPage = pageId;
 
-    const showProgress = pageId.startsWith('q') || pageId === 'results' || pageId === 'commitment';
+    const showProgress = pageId.startsWith('q') || pageId === 'results';
     document.getElementById('progressWrap').classList.toggle('active', showProgress);
 
     if (pageId.startsWith('q')) {
         const qNum = parseInt(pageId.substring(1));
         updateProgress(qNum, totalQuestions);
-    } else if (pageId === 'results' || pageId === 'commitment') {
+    } else if (pageId === 'results') {
         updateProgress(totalQuestions, totalQuestions);
     }
 
@@ -114,32 +114,18 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Email submit
-    document.getElementById('btnEmail').addEventListener('click', function () {
+    // Email submit — calls onboard API and redirects to app
+    document.getElementById('btnEmail').addEventListener('click', async function () {
         var email = document.getElementById('email').value;
         if (!email || !email.includes('@')) {
             showError('Please enter a valid email address');
             return;
         }
-        answers.email = email;
-        pageHistory.push('commitment');
-        showPage('commitment');
-    });
-
-    // Commitment submit
-    document.getElementById('btnCommit').addEventListener('click', async function () {
-        var name = document.getElementById('commitmentName').value;
-        var schedule = document.getElementById('schedule').value;
-        var why = document.getElementById('why').value;
-
-        if (!name) {
-            showError('Name your commitment');
-            return;
-        }
 
         var btn = this;
         btn.disabled = true;
-        btn.textContent = 'Creating your commitment...';
+        var originalText = btn.textContent;
+        btn.textContent = 'Creating your account...';
 
         try {
             var res = await fetch('https://app.consistencyforge.com/api/landing/onboard', {
@@ -149,7 +135,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     'X-Landing-Secret': '<LANDING_ONBOARD_SECRET>',
                 },
                 body: JSON.stringify({
-                    email: answers.email,
+                    email: email,
                     quizAnswers: {
                         q1: answers.q1,
                         q2: answers.q2,
@@ -158,19 +144,18 @@ document.addEventListener('DOMContentLoaded', function () {
                         q5: answers.q5,
                         q6: answers.q6,
                     },
-                    commitmentName: name,
-                    schedule: schedule,
-                    why: why || null,
                     source: 'quiz-v3',
                 }),
             });
 
             var data = await res.json();
             if (!res.ok) throw new Error(data.error || 'Something went wrong');
-            showPage('thanks');
+
+            // Redirect to app — user will be auto-logged in via magic link
+            window.location.href = data.loginUrl;
         } catch (err) {
             btn.disabled = false;
-            btn.textContent = 'Forge My Commitment \uD83D\uDD25';
+            btn.textContent = originalText;
             showError(err.message || 'Network error. Please try again.');
         }
     });
