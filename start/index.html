@@ -72,7 +72,7 @@
 <body>
     <!-- Video Background -->
     <div class="video-bg">
-        <video autoplay muted loop playsinline>
+        <video autoplay muted loop playsinline preload="metadata" poster="assets/fire-bg-poster.jpg">
             <source src="assets/fire-bg.mp4" type="video/mp4">
         </video>
     </div>
@@ -93,7 +93,7 @@
         <div class="page active" id="page-hero">
             <div class="hero">
                 <div class="mascot-container">
-                    <video src="assets/mascot.mp4" class="mascot" autoplay muted loop playsinline></video>
+                    <video src="assets/mascot.mp4" class="mascot" autoplay muted loop playsinline preload="metadata"></video>
                 </div>
                 <div style="font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; color: var(--orange-500); margin-bottom: 16px;">No Excuses</div>
                 <h1>You've Been Lying<br><span>To Yourself.</span></h1>
@@ -123,7 +123,7 @@
         <div class="page" id="page-q1">
             <div class="question-page">
                 <div class="question-header">
-                    <div class="mascot-container"><video src="assets/mascot.mp4" class="mascot" autoplay muted loop playsinline></video></div>
+                    <div class="mascot-container"><video data-src="assets/mascot.mp4" class="mascot" muted loop playsinline preload="none"></video></div>
                     <div class="question-header-text">
                         <div class="question-label">Question 1 of 6</div>
                         <div class="question-text">What have you been avoiding?</div>
@@ -163,7 +163,7 @@
         <div class="page" id="page-q2">
             <div class="question-page">
                 <div class="question-header">
-                    <div class="mascot-container"><video src="assets/mascot.mp4" class="mascot" autoplay muted loop playsinline></video></div>
+                    <div class="mascot-container"><video data-src="assets/mascot.mp4" class="mascot" muted loop playsinline preload="none"></video></div>
                     <div class="question-header-text">
                         <div class="question-label">Question 2 of 6</div>
                         <div class="question-text">What bullshit do you tell yourself?</div>
@@ -203,7 +203,7 @@
         <div class="page" id="page-q3">
             <div class="question-page">
                 <div class="question-header">
-                    <div class="mascot-container"><video src="assets/mascot.mp4" class="mascot" autoplay muted loop playsinline></video></div>
+                    <div class="mascot-container"><video data-src="assets/mascot.mp4" class="mascot" muted loop playsinline preload="none"></video></div>
                     <div class="question-header-text">
                         <div class="question-label">Question 3 of 6</div>
                         <div class="question-text">How many years have you wasted on this excuse?</div>
@@ -239,7 +239,7 @@
         <div class="page" id="page-q4">
             <div class="question-page">
                 <div class="question-header">
-                    <div class="mascot-container"><video src="assets/mascot.mp4" class="mascot" autoplay muted loop playsinline></video></div>
+                    <div class="mascot-container"><video data-src="assets/mascot.mp4" class="mascot" muted loop playsinline preload="none"></video></div>
                     <div class="question-header-text">
                         <div class="question-label">Question 4 of 6</div>
                         <div class="question-text">How much time can you ACTUALLY commit? Be honest.</div>
@@ -275,7 +275,7 @@
         <div class="page" id="page-q5">
             <div class="question-page">
                 <div class="question-header">
-                    <div class="mascot-container"><video src="assets/mascot.mp4" class="mascot" autoplay muted loop playsinline></video></div>
+                    <div class="mascot-container"><video data-src="assets/mascot.mp4" class="mascot" muted loop playsinline preload="none"></video></div>
                     <div class="question-header-text">
                         <div class="question-label">Question 5 of 6</div>
                         <div class="question-text">What's at stake if you keep living in a lie?</div>
@@ -311,7 +311,7 @@
         <div class="page" id="page-q6">
             <div class="question-page">
                 <div class="question-header">
-                    <div class="mascot-container"><video src="assets/mascot.mp4" class="mascot" autoplay muted loop playsinline></video></div>
+                    <div class="mascot-container"><video data-src="assets/mascot.mp4" class="mascot" muted loop playsinline preload="none"></video></div>
                     <div class="question-header-text">
                         <div class="question-label">Question 6 of 6</div>
                         <div class="question-text">What's actually stopping you? Pick one.</div>
@@ -363,7 +363,7 @@
                         </div>
                         <div class="incentive-text">Personal commitment coaching session</div>
                     </div>
-                    <video src="assets/mascot.mp4" class="mascot" autoplay muted loop playsinline style="width:60px;height:60px;border-radius:50%;flex-shrink:0;"></video>
+                    <video data-src="assets/mascot.mp4" class="mascot" muted loop playsinline preload="none" style="width:60px;height:60px;border-radius:50%;flex-shrink:0;"></video>
                 </div>
 
                 <div class="form-group">
@@ -411,7 +411,7 @@
         <!-- Thank You -->
         <div class="page" id="page-thanks">
             <div class="thankyou">
-                <div class="mascot-container"><video src="assets/mascot.mp4" class="mascot" autoplay muted loop playsinline style="width:150px;height:150px"></video></div>
+                <div class="mascot-container"><video data-src="assets/mascot.mp4" class="mascot" muted loop playsinline preload="none" style="width:150px;height:150px"></video></div>
                 <h2>You're In!</h2>
                 <p>Check your inbox — we've sent you a link to activate your ConsistencyForge account with your personalized commitment contract. You can edit it anytime.</p>
                 <div class="thankyou-note">

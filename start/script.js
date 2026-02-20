@@ -5,14 +5,23 @@ let pageHistory = ['hero'];
 
 function showPage(pageId) {
     document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-    document.getElementById('page-' + pageId).classList.add('active');
+    var page = document.getElementById('page-' + pageId);
+    page.classList.add('active');
     currentPage = pageId;
 
-    const showProgress = pageId.startsWith('q') || pageId === 'results';
+    // Lazy load mascot videos when page becomes visible
+    var videos = page.querySelectorAll('video[data-src]');
+    videos.forEach(function (v) {
+        v.src = v.getAttribute('data-src');
+        v.removeAttribute('data-src');
+        v.play();
+    });
+
+    var showProgress = pageId.startsWith('q') || pageId === 'results';
     document.getElementById('progressWrap').classList.toggle('active', showProgress);
 
     if (pageId.startsWith('q')) {
-        const qNum = parseInt(pageId.substring(1));
+        var qNum = parseInt(pageId.substring(1));
         updateProgress(qNum, totalQuestions);
     } else if (pageId === 'results') {
         updateProgress(totalQuestions, totalQuestions);
