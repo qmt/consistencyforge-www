@@ -47,7 +47,7 @@ function trackEvent(eventName, eventData) {
     };
     if (eventData) payload.eventData = eventData;
 
-    var url = 'https://app.consistencyforge.com/api/ab/track';
+    var url = 'https://app.consistencyforge.com/api/quiz/track';
     if (navigator.sendBeacon) {
         navigator.sendBeacon(url, JSON.stringify(payload));
     } else {
