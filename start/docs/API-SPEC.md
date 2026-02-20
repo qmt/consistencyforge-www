@@ -6,7 +6,7 @@
 POST https://app.consistencyforge.com/api/landing/onboard
 ```
 
-**Status:** NOT YET BUILT — scheduled for a future session in `consistencyforge-app`.
+**Status:** LIVE — deployed 2026-02-20 on both dev and production.
 
 ## Authentication
 
@@ -37,20 +37,35 @@ OPTIONS handler returns 204 with CORS headers.
 
 ```typescript
 {
-  email: string,                      // User's email address
-  quizAnswers: Record<string, string>, // q1-q6 quiz answers
-  commitmentName: string,              // e.g. "10 daily pushups"
-  schedule: 'daily' | 'weekdays' | 'weekends' | '3x' | 'weekly' | 'monthly',
-  why?: string,                        // Optional motivation text
-  source: string                       // Always "quiz-v3" from this landing
+  email: string,                        // User's email address
+  quizAnswers: {                        // q1-q6 quiz answers (Zod-validated)
+    q1: 'fitness' | 'hobby' | 'learning' | 'health' | 'project' | 'other',
+    q2: 'time' | 'tired' | 'kids' | 'someday' | 'perfect' | 'motivation',
+    q3: 'weeks' | 'months' | 'year' | 'years' | 'decade',
+    q4: '30sec' | '2-3min' | '5-10min' | '15-30min' | 'unsure',
+    q5: 'respect' | 'health' | 'dreams' | 'regret' | 'all',
+    q6: 'plan' | 'accountability' | 'motivation' | 'system',
+  },
+  source?: string,                      // Default: "quiz-v3"
+  utm?: {                               // UTM attribution (optional)
+    utm_source?: string,                // e.g. "facebook"
+    utm_medium?: string,                // e.g. "paid"
+    utm_campaign?: string,              // e.g. "quiz-feb-cold-traffic"
+    utm_content?: string,               // e.g. "video-v1"
+    utm_term?: string,                  // e.g. "habit-tracker" (Google Ads)
+    fbclid?: string,                    // Facebook click ID (auto-added by Meta)
+    gclid?: string,                     // Google click ID (auto-added by Google)
+  }
 }
 ```
 
+**Note:** The commitment name and schedule are auto-generated server-side from quiz answers via `lib/landing/quiz-mapping.ts`. The landing page does NOT send `commitmentName` or `schedule`.
+
 ## Response
 
-### Success (200)
+### Success (201)
 ```json
-{ "success": true }
+{ "loginUrl": "https://app.consistencyforge.com/auth/magic?token=...", "contractId": "01J..." }
 ```
 
 ### Errors
@@ -65,8 +80,8 @@ OPTIONS handler returns 204 with CORS headers.
 ## Rate Limiting
 
 Using `lib/utils/rate-limiter.ts`:
-- **20/hour per IP**
-- **3/day per email** (if hit: return "Check your inbox for the link we already sent")
+- **10/hour per IP** (min interval 10s)
+- **3/hour per email** (min interval 30s; if hit: return "Check your inbox for the link we already sent")
 
 ## Server-Side Logic (Sequential)
 
@@ -98,10 +113,10 @@ Pattern: `contracts/route.ts:246-271`
 - `generateULID()` for contractId
 - `status: 'active'`
 - `paymentStatus: 'paid'`
-- `contractValue: 2500` (= $25.00)
-- `title: commitmentName`
-- `description: why || null`
-- `scheduleType` + `scheduleConfig` from mapping
+- `contractValue: 2900` (= $29.00)
+- `title`: auto-generated from Q1 answer via `lib/landing/quiz-mapping.ts`
+- `description`: auto-generated from Q2/Q3/Q5/Q6 answers (SimonSays style)
+- `scheduleType: 'daily'`, `scheduleConfig: { time: '20:00' }`
 - `startDate: now`
 - `endDate: null`
 - `sendReminder: true`
@@ -116,7 +131,7 @@ Pattern: `contracts/route.ts:279-293`
 `createAndSendMagicLink(email)` from `lib/auth/magic-link.ts:145`
 
 ### 8. Return success
-`{ success: true }`
+`{ loginUrl: "https://app.consistencyforge.com/auth/magic?token=...", contractId: "..." }`
 
 ## Key Imports
 
@@ -140,13 +155,36 @@ import { users, contracts, checkIns } from '@/lib/db/schema';
 
 If user already exists: contract is created for existing userId, new magic link is sent. User sees new contract on dashboard alongside existing ones.
 
+## Quiz Event Tracking
+
+**Endpoint:** `POST https://app.consistencyforge.com/api/quiz/track`
+
+Separate lightweight endpoint for quiz funnel analytics (not A/B test system).
+
+```json
+{ "event": "quiz_start", "visitorId": "cf-abc123", "page": "/start/", "eventData": {} }
+```
+
+- CORS: `*`
+- No auth header required
+- Rate limit: 30 req / 5 min per IP
+- Respects GPC signal (`Sec-GPC: 1`)
+- Valid events: `quiz_start`, `quiz_q1`-`quiz_q6`, `quiz_complete`, `quiz_email_submit`, `quiz_api_success`, `quiz_api_error`, `hero_cta_not_visible`
+- Stored in `quiz_events` table (separate from `funnel_events`)
+
+---
+
 ## Landing-Side Integration
 
 In `start/script.js`, `submitCommitment()`:
 - Sends POST with `X-Landing-Secret` header
-- On success: shows thank-you page
+- On success: redirects to loginUrl (auto-login to dashboard)
 - On error: re-enables button, shows inline error message
-- Placeholder secret: `<LANDING_ONBOARD_SECRET>` (replace after API is built)
+
+Quiz event tracking via `trackEvent()`:
+- Uses `navigator.sendBeacon()` to POST to `/api/quiz/track`
+- Falls back to `fetch()` if sendBeacon unavailable
+- Generates `visitorId` per session (stored in sessionStorage)
 
 ## Testing
 
@@ -160,15 +198,22 @@ curl -X OPTIONS https://dev.consistencyforge.com/api/landing/onboard -v
 curl -X POST https://dev.consistencyforge.com/api/landing/onboard \
   -H 'Content-Type: application/json' \
   -H 'X-Landing-Secret: <secret>' \
-  -d '{"email":"test@example.com","commitmentName":"10 pushups","schedule":"daily","quizAnswers":{"q1":"fitness"},"source":"quiz-v3"}'
+  -d '{"email":"test@example.com","quizAnswers":{"q1":"fitness","q2":"time","q3":"months","q4":"5-10min","q5":"all","q6":"system"},"source":"quiz-v3","utm":{"utm_source":"facebook","utm_campaign":"test"}}'
+```
+
+### Quiz event tracking
+```bash
+curl -X POST https://dev.consistencyforge.com/api/quiz/track \
+  -H 'Content-Type: application/json' \
+  -d '{"event":"quiz_start","visitorId":"test-123","page":"/start/"}'
 ```
 
 ### Verify in DB
-Check: user created + contract (active, $25, paid) + check-in + magic link token
+Check: user created + contract (active, $29, paid) + check-in + magic link token + funnel_events with UTM + quiz_events
 
 ### E2E (Playwright)
 Full flow from `/start/` hero -> quiz -> email -> commitment -> thank you -> verify API response 200.
 
 ---
 
-*Spec version 1.0 | Created 2026-02-17*
+*Spec version 2.0 | Created 2026-02-17 | Updated 2026-02-20 (API live, UTM support, quiz/track endpoint)*

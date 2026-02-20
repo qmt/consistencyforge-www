@@ -354,7 +354,7 @@ All quiz answers stored in `answers` object:
 - Dismissible (X button)
 
 ### Funnel Event Tracking
-Events sent to `/api/ab/track`:
+Events sent to `/api/quiz/track` (dedicated quiz tracking endpoint):
 | Event | When | Data |
 |-------|------|------|
 | `quiz_start` | "Face The Truth" clicked | — |
@@ -364,6 +364,9 @@ Events sent to `/api/ab/track`:
 | `quiz_api_success` | API 200 | — |
 | `quiz_api_error` | API error | `{ error }` |
 | `hero_cta_not_visible` | CTA below fold after 3s | `{ viewport_height }` |
+
+Tracking payload: `{ event, visitorId, page, eventData }`
+Stored in `quiz_events` table on the app server. Rate limited: 30 req/5min per IP. Respects GPC signal.
 
 ### UTM Capture
 - Parses on load: `utm_source`, `utm_medium`, `utm_campaign`, `utm_content`, `utm_term`, `fbclid`, `gclid`
