@@ -1,8 +1,8 @@
 # ConsistencyForge Quiz Funnel Copy
-## "QuizFunnel" Conversion Copy -- v1.0
+## "QuizFunnel" Conversion Copy -- v2.0 (Ad-Ready)
 
 **Brand:** ConsistencyForge
-**Voice:** Empathetic coach meets tough-love mentor
+**Voice:** Empathetic coach meets tough-love mentor (SimonSays aggressive)
 **Palette:** Orange (#f97316) on Dark (#0a0a0a) with fire video background
 **Font:** Inter (400-800)
 **Rule:** Every question builds emotional investment. By the time they reach email, they're already committed.
@@ -19,7 +19,7 @@ You've Been Lying
 **To Yourself.**
 
 ### Subheadline
-For how long? Let's find out. 2 minutes to face the truth — and finally break the cycle.
+You know what you need to do. You've known for years. 2 minutes to stop lying — and finally start.
 
 ### Feature bullets
 - "No time"? Excuse me? Still WORKS!
@@ -32,9 +32,19 @@ For how long? Let's find out. 2 minutes to face the truth — and finally break 
 ### Micro-copy
 (let yourself be guided)
 
+### Legal Footer
+Terms · Privacy · ConsistencyForge by qmediat.io
+- `font-size: 11px; color: rgba(255,255,255,0.3)`
+- Absolute bottom of hero, outside centered content
+
 ### Visual
-- Animated hamster mascot (mascot.mp4, circular, 120px)
+- Animated hamster mascot (mascot.mp4, circular, 120px desktop / 80px mobile)
 - Fire video background (fire-bg.mp4, fixed, 60% opacity)
+
+### Mobile (480px)
+- Features move BELOW CTA (CSS order)
+- Mascot reduced to 80px
+- Hero padding reduced
 
 ---
 
@@ -178,7 +188,7 @@ You have everything you need.
 
 ### Result Text (personalized)
 
-Dynamic text based on Q1 (activity) and Q2 (excuse):
+Dynamic text based on Q1 (activity), Q2 (excuse), and Q3 (duration):
 
 > I see you've been dreaming of **{activity}**, but **{excuse}** always gets in the way.
 >
@@ -187,6 +197,8 @@ Dynamic text based on Q1 (activity) and Q2 (excuse):
 > But here's the truth: **You DO have time.** Today it can be 30 seconds. Tomorrow, 3 minutes. Next week? Maybe 30 minutes — and you'll feel like a new person.
 >
 > You don't have to do it like you used to, for 3-4 hours. **Consistency beats intensity.** A small step every day. That's all it takes.
+>
+> Here's the secret: even 30 seconds a day counts. Not hours — just 30 seconds, but **EVERY DAY.** That's how real consistency is built. The hardest part? Starting. But once you do, the rest follows.
 
 ### Activity mapping (Q1)
 | Value | Text |
@@ -210,14 +222,27 @@ Dynamic text based on Q1 (activity) and Q2 (excuse):
 
 ### Incentive Box
 ~~$29~~ -> **FREE**
-Personal commitment coaching session
+Your AI-powered commitment contract — on us
+
+### Micro-copy (below incentive)
+*Start with 30 seconds today. That's literally all it takes.*
 
 ### Email Field
 Label: "Your email"
 Placeholder: "you@example.com"
 
+### Consent Checkbox (REQUIRED — unchecked by default)
+**I'm ready to commit.** I agree to create my free ConsistencyForge account. Terms · Privacy
+- Button stays disabled until checked
+- Checking triggers glow animation on CTA
+- SimonSays: turns legal compliance into psychological micro-commitment
+
 ### CTA
-**I Commit ->**
+**I Commit ->** (disabled until consent checkbox checked)
+
+### Legal links present on this page
+- Consent checkbox links to Terms + Privacy
+- Links styled subtle (dotted underline, low opacity)
 
 ---
 
@@ -307,13 +332,48 @@ All quiz answers stored in `answers` object:
 {
   "email": "user@example.com",
   "quizAnswers": { "q1": "fitness", "q2": "time", "q3": "years", "q4": "5-10min", "q5": "all", "q6": "system" },
-  "commitmentName": "10 daily pushups",
-  "schedule": "daily",
-  "why": "optional text",
-  "source": "quiz-v3"
+  "source": "quiz-v3",
+  "utm": { "utm_source": "facebook", "utm_campaign": "launch-feb" }
 }
 ```
 
 ---
 
-*Copy version 1.0 | QuizFunnel Framework | Created 2026-02-17*
+## COMPLIANCE & UX ADDITIONS (v2.0)
+
+### Cookie Consent Banner
+- Fixed bottom, dark theme, non-blocking
+- "We use cookies to improve your experience." + Accept button
+- Stores in `localStorage('cf-cookie-consent')`
+- Dismisses on Accept
+
+### WebView Detection Banner
+- Detects: FBAN, FBAV, Instagram, Twitter, TikTok, Line, Snapchat, Yahoo
+- Fixed top banner: "For the best experience, open in your browser"
+- Open button (system browser) + Copy link (clipboard fallback)
+- Dismissible (X button)
+
+### Funnel Event Tracking
+Events sent to `/api/ab/track`:
+| Event | When | Data |
+|-------|------|------|
+| `quiz_start` | "Face The Truth" clicked | — |
+| `quiz_q1` - `quiz_q6` | Each answer | `{ answer: value }` |
+| `quiz_complete` | Q6 answered | — |
+| `quiz_email_submit` | Email form triggered | `{ email_domain }` |
+| `quiz_api_success` | API 200 | — |
+| `quiz_api_error` | API error | `{ error }` |
+| `hero_cta_not_visible` | CTA below fold after 3s | `{ viewport_height }` |
+
+### UTM Capture
+- Parses on load: `utm_source`, `utm_medium`, `utm_campaign`, `utm_content`, `utm_term`, `fbclid`, `gclid`
+- Stored in `sessionStorage('cf_utm')`
+- Included in onboard API request as `utm` object
+
+### Backdrop-filter Fallback
+- `@supports not (backdrop-filter: blur(10px))` — solid backgrounds
+- Prevents visual breakage in in-app browsers
+
+---
+
+*Copy version 2.0 (Ad-Ready) | QuizFunnel Framework | Updated 2026-02-20*

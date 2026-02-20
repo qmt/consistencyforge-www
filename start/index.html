@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ConsistencyForge — 2-Minute Quiz to Break Your Excuses</title>
     <meta name="description" content="Take a 2-minute quiz, face the truth about your excuses, and create a personalized commitment contract. Free accountability platform — no app login needed.">
     <meta name="robots" content="index, follow">
@@ -80,7 +80,7 @@
     <!-- Progress Bar -->
     <div class="progress-wrap" id="progressWrap">
         <div class="progress-inner">
-            <button class="progress-back" id="btnBack">&larr;</button>
+            <button class="progress-back" id="btnBack" aria-label="Go back">&larr;</button>
             <div class="progress-bar-bg">
                 <div class="progress-bar" id="progressBar"></div>
             </div>
@@ -97,25 +97,28 @@
                 </div>
                 <div style="font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; color: var(--orange-500); margin-bottom: 16px;">No Excuses</div>
                 <h1>You've Been Lying<br><span>To Yourself.</span></h1>
-                <p class="hero-sub">For how long? Let's find out. 2 minutes to face the truth — and finally break the cycle.</p>
+                <p class="hero-sub">You know what you need to do. You've known for years. 2 minutes to stop lying — and finally start.</p>
 
-                <div class="hero-features">
-                    <div class="hero-feature">
-                        <span class="check">&check;</span>
+                <ul class="hero-features">
+                    <li class="hero-feature">
+                        <span class="check" aria-hidden="true">&check;</span>
                         <span>"No time"? Excuse me? Still WORKS!</span>
-                    </div>
-                    <div class="hero-feature">
-                        <span class="check">&check;</span>
+                    </li>
+                    <li class="hero-feature">
+                        <span class="check" aria-hidden="true">&check;</span>
                         <span>Willpower builds slowly, but constantly</span>
-                    </div>
-                    <div class="hero-feature">
-                        <span class="check">&check;</span>
+                    </li>
+                    <li class="hero-feature">
+                        <span class="check" aria-hidden="true">&check;</span>
                         <span>Commit to a personalized strategy</span>
-                    </div>
-                </div>
+                    </li>
+                </ul>
 
                 <button class="btn btn-primary" id="btnStart">Face The Truth &rarr;</button>
                 <div style="font-size: 13px; color: rgba(255,255,255,0.6); margin-top: 12px;">(let yourself be guided)</div>
+                <div class="hero-legal">
+                    <a href="https://www.consistencyforge.com/terms" target="_blank" rel="noopener noreferrer">Terms</a> · <a href="https://www.consistencyforge.com/privacy" target="_blank" rel="noopener noreferrer">Privacy</a> · ConsistencyForge by <a href="https://qmediat.io" target="_blank" rel="noopener noreferrer">qmediat.io</a>
+                </div>
             </div>
         </div>
 
@@ -361,17 +364,25 @@
                         <div class="incentive-value">
                             <span class="strike">$29</span> &rarr; <span class="free">FREE</span>
                         </div>
-                        <div class="incentive-text">Personal commitment coaching session</div>
+                        <div class="incentive-text">Your AI-powered commitment contract — on us</div>
                     </div>
                     <video data-src="assets/mascot.mp4" class="mascot" muted loop playsinline preload="none" style="width:60px;height:60px;border-radius:50%;flex-shrink:0;"></video>
                 </div>
+
+                <div class="micro-copy">Start with 30 seconds today. That's literally all it takes.</div>
 
                 <div class="form-group">
                     <label>Your email</label>
                     <input type="email" id="email" placeholder="you@example.com">
                 </div>
 
-                <button class="btn btn-primary" id="btnEmail">I Commit &rarr;</button>
+                <label class="consent-label" for="consentCheck">
+                    <input type="checkbox" id="consentCheck">
+                    <span class="consent-checkmark"></span>
+                    <span class="consent-text"><strong>I'm ready to commit.</strong> I agree to create my free ConsistencyForge account. <a href="https://www.consistencyforge.com/terms" target="_blank" rel="noopener noreferrer">Terms</a> · <a href="https://www.consistencyforge.com/privacy" target="_blank" rel="noopener noreferrer">Privacy</a></span>
+                </label>
+
+                <button class="btn btn-primary" id="btnEmail" disabled>I Commit &rarr;</button>
             </div>
         </div>
 
@@ -423,6 +434,22 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <!-- Cookie Consent Banner -->
+    <div class="cookie-banner" id="cookieBanner">
+        <span>We use cookies to improve your experience.</span>
+        <button class="cookie-accept" id="cookieAccept">Accept</button>
+    </div>
+
+    <!-- WebView Banner -->
+    <div class="webview-banner" id="webviewBanner">
+        <span>For the best experience, open in your browser</span>
+        <div class="webview-actions">
+            <button id="webviewOpen">Open</button>
+            <button id="webviewCopy">Copy link</button>
+        </div>
+        <button class="webview-close" id="webviewClose">&times;</button>
     </div>
 
     <script src="script.js"></script>

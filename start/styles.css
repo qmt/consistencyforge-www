@@ -188,6 +188,7 @@ body {
     max-width: 320px;
     margin-left: auto;
     margin-right: auto;
+    list-style: none;
 }
 
 .hero-feature {
@@ -577,10 +578,283 @@ body {
     40% { transform: translateY(-8px); }
 }
 
+/* Hero Legal Footer */
+.hero {
+    position: relative;
+}
+
+.hero-legal {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 11px;
+    color: rgba(255,255,255,0.3);
+}
+
+.hero-legal a {
+    color: rgba(255,255,255,0.3);
+    text-decoration: none;
+}
+
+.hero-legal a:hover {
+    color: rgba(255,255,255,0.5);
+}
+
+/* Micro-copy */
+.micro-copy {
+    font-size: 14px;
+    color: rgba(255,255,255,0.7);
+    font-style: italic;
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+/* Consent Checkbox */
+.consent-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    padding: 14px 16px;
+    background: rgba(0,0,0,0.3);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+    transition: border-color 0.2s;
+}
+
+.consent-label:hover {
+    border-color: rgba(255,255,255,0.25);
+}
+
+.consent-label input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.consent-checkmark {
+    width: 22px;
+    height: 22px;
+    min-width: 22px;
+    border: 2px solid rgba(255,255,255,0.3);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    margin-top: 2px;
+}
+
+.consent-label input[type="checkbox"]:checked ~ .consent-checkmark {
+    background: var(--orange-500);
+    border-color: var(--orange-500);
+}
+
+.consent-label input[type="checkbox"]:checked ~ .consent-checkmark::after {
+    content: '\2713';
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.consent-text {
+    font-size: 14px;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.5;
+}
+
+.consent-text strong {
+    color: #fff;
+    font-weight: 600;
+}
+
+.consent-text a {
+    color: rgba(255,255,255,0.5);
+    text-decoration: underline;
+    text-decoration-style: dotted;
+}
+
+.consent-text a:hover {
+    color: var(--orange-400);
+}
+
+/* Button glow when consent given */
+.btn-primary.consent-active {
+    animation: consent-glow 1.5s ease-in-out 1;
+}
+
+@keyframes consent-glow {
+    0% { box-shadow: 0 4px 14px rgba(249, 115, 22, 0.35); }
+    50% { box-shadow: 0 4px 30px rgba(249, 115, 22, 0.7), 0 0 40px rgba(249, 115, 22, 0.3); }
+    100% { box-shadow: 0 4px 14px rgba(249, 115, 22, 0.35); }
+}
+
+/* Cookie Consent Banner */
+.cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(15,15,15,0.95);
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    z-index: 200;
+    font-size: 13px;
+    color: rgba(255,255,255,0.7);
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.cookie-banner.visible {
+    transform: translateY(0);
+}
+
+.cookie-accept {
+    background: var(--orange-500);
+    color: #fff;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+    white-space: nowrap;
+}
+
+.cookie-accept:hover {
+    background: var(--orange-600);
+}
+
+/* WebView Banner */
+.webview-banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(15,15,15,0.95);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding: 10px 16px;
+    display: none;
+    align-items: center;
+    gap: 12px;
+    z-index: 300;
+    font-size: 13px;
+    color: rgba(255,255,255,0.8);
+    backdrop-filter: blur(10px);
+}
+
+.webview-banner.visible {
+    display: flex;
+}
+
+.webview-actions {
+    display: flex;
+    gap: 8px;
+    margin-left: auto;
+}
+
+.webview-actions button {
+    background: var(--orange-500);
+    color: #fff;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.webview-actions button:last-child {
+    background: rgba(255,255,255,0.15);
+}
+
+.webview-close {
+    background: none;
+    border: none;
+    color: rgba(255,255,255,0.5);
+    font-size: 20px;
+    cursor: pointer;
+    padding: 0 4px;
+    line-height: 1;
+}
+
+.webview-close:hover {
+    color: #fff;
+}
+
+/* Backdrop-filter fallback for WebViews */
+@supports not (backdrop-filter: blur(10px)) {
+    .answer-btn {
+        background: rgba(0,0,0,0.85);
+    }
+    .progress-wrap {
+        background: rgba(10,10,10,0.98);
+    }
+    .cookie-banner {
+        background: rgba(15,15,15,0.98);
+    }
+    .webview-banner {
+        background: rgba(15,15,15,0.98);
+    }
+}
+
 /* Mobile adjustments */
 @media (max-width: 480px) {
     .container { padding: 20px; }
     .hero h1 { font-size: 28px; }
     .question-text { font-size: 22px; }
     .question-page { padding-top: 90px; }
+
+    /* CTA above fold — push features below button */
+    .hero .mascot-container .mascot {
+        width: 80px;
+        height: 80px;
+    }
+
+    .hero {
+        padding: 20px 0;
+    }
+
+    .hero-sub {
+        margin-bottom: 24px;
+    }
+
+    .hero-features {
+        order: 10;
+        margin-bottom: 0;
+        margin-top: 20px;
+    }
+
+    /* Compact answer buttons */
+    .answer-btn {
+        padding: 14px 16px;
+        font-size: 15px;
+    }
+
+    /* Cookie banner stacks on small screens */
+    .cookie-banner {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
 }
