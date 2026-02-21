@@ -1,5 +1,5 @@
 # ConsistencyForge Quiz Funnel Copy — Google Ads Variant
-## "QuizFunnel-Google" Conversion Copy -- v1.0 (Google Ads-Compliant)
+## "QuizFunnel-Google" Conversion Copy -- v1.1 (Google Ads-Compliant)
 
 **Brand:** ConsistencyForge
 **Voice:** Empathetic guide meets motivational coach (Sinek empathy + Goggins directness, compliance-safe)
@@ -7,7 +7,9 @@
 **Fonts:** Inter (400-800) for body; Exo 2 (700-800) for brand wordmark
 **Rule:** Every question builds emotional investment through supportive self-reflection. By the time they reach email, they're already committed.
 
-**Base:** Forked from `/start/` QuizFunnel v4.0 (Facebook-compliant). This variant adds Google Ads-specific compliance fixes (P0 + P1) for Misrepresentation, Unreliable Claims, Financial Services, Health, and Personal Attributes policies.
+**Base:** Forked from `/start/` QuizFunnel v4.0 (Facebook-compliant). This variant adds Google Ads-specific compliance fixes (P0 + P1 + P2) for Misrepresentation, Unreliable Claims, Financial Services, Health, Personal Attributes, Data Collection, and Destination Requirements policies.
+
+**Audit:** `consistencyforge-ads/google/audits/AUDIT-start-google-postfix-2026-02-21.md` — PASS (~85% approval, 0 FAILs, 2 minor BORDERLINEs)
 
 **Source:** `quiz-v3-google` (distinguishes Google traffic from Facebook `quiz-v3` in API analytics)
 
@@ -41,14 +43,30 @@
 | 13 | Q5 option "regret" | "Peace of mind and fulfillment" | "A sense of accomplishment" |
 | 14 | Navigation link | (none) | "Back to ConsistencyForge" link at top of hero |
 
+### P2 — Polish (Personal Attributes, Financial, Privacy, Navigation, Tone)
+
+| # | Element | v1.0 (P0+P1) | v1.1 (P0+P1+P2) |
+|---|---------|---------------|------------------|
+| 15 | Results header | "You Have What It Takes to Start." | "What It Takes to Start." |
+| 16 | Results body: "You've been thinking about" | "You've been thinking about {activity}..." | "Based on your answers: {barrier} keeps getting in the way of {activity}." |
+| 17 | Results body: "You DO have time" | "You DO have time" | "there IS time" |
+| 18 | Results body: "You don't need hours" | "You don't need hours" | "Hours aren't necessary" |
+| 19 | Results body: "But once you do" | "But once you do, the rest follows" | "But once it begins, the rest follows" |
+| 20 | Incentive: "motivational stake" | "$29 motivational stake" | "$29 accountability goal" |
+| 21 | Incentive: "The stake is" | "The stake is a self-motivation tool" | "The goal is a self-motivation tool" |
+| 22 | Q4 question | "How much time can you ACTUALLY commit? Be honest." | "How much time could you realistically set aside?" |
+| 23 | Cookie banner | "We use analytics cookies." + Accept | "We use analytics cookies to improve your experience. Privacy Policy" + Accept + Decline |
+| 24 | Thank-you page nav | (none) | "← Back to ConsistencyForge" link |
+
 ### Script Changes
 
 | # | Change | Detail |
 |---|--------|--------|
-| 15 | `source` field | `'quiz-v3'` -> `'quiz-v3-google'` |
-| 16 | Tracking page | `'/start/'` -> `'/start-google/'` |
-| 17 | Results personalization | Same softening as HTML defaults |
-| 18 | Asset paths | `assets/` -> `../start/assets/` |
+| 25 | `source` field | `'quiz-v3'` -> `'quiz-v3-google'` |
+| 26 | Tracking page | `'/start/'` -> `'/start-google/'` |
+| 27 | Results personalization | Depersonalized: "Based on your answers:", "there IS time", "Hours aren't necessary", "But once it begins" |
+| 28 | Asset paths | `assets/` -> `../start/assets/` |
+| 29 | Cookie decline handler | Added: stores `'declined'` in localStorage, hides banner |
 
 ---
 
@@ -130,12 +148,10 @@ How long has this barrier been in your way?
 
 ---
 
-## PAGE 5: QUESTION 4 — "The Commitment"
-
-*Identical to `/start/`*
+## PAGE 5: QUESTION 4 — "The Commitment" (MODIFIED)
 
 ### Question
-How much time can you ACTUALLY commit? Be honest.
+How much time could you realistically set aside?
 
 ---
 
@@ -167,26 +183,26 @@ What's actually stopping you? Pick one.
 ## PAGE 8: RESULTS + EMAIL — "The Reveal" (MODIFIED)
 
 ### Result Card Title
-You Have What It Takes to Start.
+What It Takes to Start.
 
 ### Result Text (personalized)
 
-> You've been thinking about **{activity}** — and **{barrier}** keeps getting in the way.
+> Based on your answers: **{barrier}** keeps getting in the way of **{activity}**.
 >
 > [If Q3 = years or decade:] It's been a long road. But every moment is a chance to begin anew.
 >
-> But here's the truth: **You DO have time.** Today it can be 30 seconds. Tomorrow, 3 minutes. Next week? Maybe 30 minutes that make a real difference.
+> But here's the good news: **there IS time.** Today it can be 30 seconds. Tomorrow, 3 minutes. Next week? Maybe 30 minutes that make a real difference.
 >
-> You don't need hours. **Consistency beats intensity.** A small step every day. That's how real consistency is built.
+> Hours aren't necessary. **Consistency beats intensity.** A small step every day. That's how real consistency is built.
 >
-> Even 30 seconds a day counts. Not hours — just 30 seconds, but **EVERY DAY.** That's how real consistency is built. The hardest part? Starting. But once you do, the rest follows.
+> Even 30 seconds a day counts. Not hours — just 30 seconds, but **EVERY DAY.** That's how real consistency is built. The hardest part? Starting. But once it begins, the rest follows.
 
 ### Results Disclaimer (NEW)
 *Individual results vary. ConsistencyForge is a habit-tracking tool, not a guarantee of outcomes.*
 
 ### Incentive Box
 **Free Commitment Contract**
-Your free commitment contract includes a $29 motivational stake. The app is 100% free — no payment required, ever. The stake is a self-motivation tool you control.
+Your free commitment contract includes a $29 accountability goal. The app is 100% free — no payment required, ever. The goal is a self-motivation tool you control.
 
 ### Consent Checkbox (MODIFIED)
 I agree to create a free ConsistencyForge account and accept the Terms and Privacy Policy.
@@ -202,9 +218,12 @@ ConsistencyForge is a habit accountability tool, not a medical or health service
 
 ---
 
-## PAGE 9B: THANK YOU — "The Seal"
+## PAGE 9B: THANK YOU — "The Seal" (MODIFIED)
 
-*Identical to `/start/`*
+### Navigation Link
+← Back to ConsistencyForge
+- Links to `https://www.consistencyforge.com/`
+- Displayed below thank-you content
 
 ---
 
@@ -226,7 +245,8 @@ ConsistencyForge is a habit accountability tool, not a medical or health service
 | Version | Date | Changes |
 |---------|------|---------|
 | v1.0 | 2026-02-21 | Initial Google Ads variant — P0+P1 compliance fixes from `/start/` v4.0 |
+| v1.1 | 2026-02-21 | P2 polish — depersonalized results, "accountability goal", cookie Decline, thank-you nav, Q4 tone. Audit: ~85% approval |
 
 ---
 
-*Copy version 1.0 (Google Ads-Compliant) | QuizFunnel-Google Framework | Created 2026-02-21*
+*Copy version 1.1 (Google Ads-Compliant) | QuizFunnel-Google Framework | Updated 2026-02-21*

@@ -116,20 +116,20 @@ function personalizeResults() {
 
     var longTime = answers.q3 === 'decade' || answers.q3 === 'years';
 
-    var text = 'You\'ve been thinking about ' + activity + ' — and ' + barrier + ' keeps getting in the way.';
+    var text = 'Based on your answers: ' + barrier + ' keeps getting in the way of ' + activity + '.';
     if (longTime) {
         text += '<br><br>It\'s been a long road. But every moment is a chance to begin anew.';
     }
     text += '<br><br>';
-    text += 'But here\'s the truth: <strong>You DO have time.</strong> ';
+    text += 'But here\'s the good news: <strong>there IS time.</strong> ';
     text += 'Today it can be 30 seconds. Tomorrow, 3 minutes. ';
     text += 'Next week? Maybe 30 minutes that make a real difference.';
     text += '<br><br>';
-    text += 'You don\'t need hours. <strong>Consistency beats intensity.</strong> ';
+    text += 'Hours aren\'t necessary. <strong>Consistency beats intensity.</strong> ';
     text += 'A small step every day. That\'s how real consistency is built.';
     text += '<br><br>';
     text += 'Even 30 seconds a day counts. Not hours — just 30 seconds, but <strong>EVERY DAY.</strong> ';
-    text += 'That\'s how real consistency is built. The hardest part? Starting. But once you do, the rest follows.';
+    text += 'That\'s how real consistency is built. The hardest part? Starting. But once it begins, the rest follows.';
 
     document.getElementById('resultText').innerHTML = text;
 }
@@ -196,6 +196,15 @@ document.addEventListener('DOMContentLoaded', function () {
     if (cookieAccept) {
         cookieAccept.addEventListener('click', function () {
             localStorage.setItem('cf-cookie-consent', 'accepted');
+            document.getElementById('cookieBanner').classList.remove('visible');
+        });
+    }
+
+    // Cookie consent decline
+    var cookieDecline = document.getElementById('cookieDecline');
+    if (cookieDecline) {
+        cookieDecline.addEventListener('click', function () {
+            localStorage.setItem('cf-cookie-consent', 'declined');
             document.getElementById('cookieBanner').classList.remove('visible');
         });
     }
