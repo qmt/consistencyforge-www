@@ -10,12 +10,14 @@ All variants are live simultaneously — traffic is directed via ad campaign URL
 | `/` | Original | Friendly, zero-friction | 8 sections | Broad / organic / SEO |
 | `/go/` | SimonSays | Aggressive, accountability-first | 12 sections | Paid ads, high-intent, loss-aversion audiences |
 | `/start/` | QuizFunnel | Guiding, supportive, aspirational | 9-page quiz | Social media ads (Facebook-compliant) |
+| `/start-google/` | QuizFunnel-Google | Guiding, supportive, aspirational | 9-page quiz | Google Ads (Google Ads-compliant) |
 
 ## URL Structure
 
 - **Original**: `https://www.consistencyforge.com/`
 - **SimonSays**: `https://www.consistencyforge.com/go/`
 - **QuizFunnel**: `https://www.consistencyforge.com/start/`
+- **QuizFunnel-Google**: `https://www.consistencyforge.com/start-google/`
 
 The `/go/` path follows industry standard for campaign landing pages (short, memorable, action-oriented).
 The `/start/` path is designed for social media ad campaigns with a quiz-based engagement funnel.
@@ -47,10 +49,18 @@ The `/start/` path is designed for social media ad campaigns with a quiz-based e
 - Assets in `start/assets/` (fire-bg.mp4, mascot.mp4, logo-white.svg)
 - Full changelog: `start/docs/CHANGELOG-v4.md`
 
+### `/start-google/` — QuizFunnel-Google (9-page quiz)
+- Fork of `/start/` with Google Ads policy compliance fixes (P0 + P1)
+- **Copy v1.0 (Google Ads-compliant)**: Softened claims, added disclaimers, clarified $29 stake
+- Key differences from `/start/`: toned-down headline ("Discover Your Path to Better Habits"), results disclaimer, health disclaimer, neutral consent checkbox, clarified incentive box
+- Shares assets from `start/assets/` via relative paths (no duplication)
+- API source: `quiz-v3-google` (vs `quiz-v3` for Facebook)
+- Full copy reference: `start-google/docs/GOOGLE-ADS-COPY.md`
+
 ## Ad Campaign Usage
 
 Use variant URLs in ad platforms:
-- **Google Ads / Meta**: Direct high-intent keywords to `/go/`
+- **Google Ads**: Use `/start-google/` quiz funnel (policy-compliant) or `/go/` for high-intent keywords
 - **Social Media (Meta, TikTok, Instagram)**: Use `/start/` quiz funnel for engagement
 - **Organic / SEO**: Root `/` handles broad discovery
 - **Retargeting**: Consider `/go/` for users who bounced from `/`

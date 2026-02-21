@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConsistencyForge — Start Your Consistency Journey</title>
+    <meta name="description" content="Take a 2-minute quiz, discover your path to better habits, and create a personalized commitment contract. Free accountability platform — no app login needed.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.consistencyforge.com/start-google/">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- Safari Pinned Tab -->
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#F08C2E">
+
+    <!-- Microsoft Tiles -->
+    <meta name="msapplication-TileColor" content="#0D1B2A">
+    <meta name="msapplication-config" content="/browserconfig.xml">
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#0a0a0a">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="ConsistencyForge — Start Your Consistency Journey">
+    <meta property="og:description" content="Take a 2-minute quiz, discover your path to better habits, and create a personalized commitment contract. Free accountability platform.">
+    <meta property="og:image" content="https://www.consistencyforge.com/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.consistencyforge.com/start-google/">
+    <meta property="og:site_name" content="ConsistencyForge">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ConsistencyForge — Start Your Consistency Journey">
+    <meta name="twitter:description" content="Take a 2-minute quiz, discover your path to better habits, and create a personalized commitment contract.">
+    <meta name="twitter:image" content="https://www.consistencyforge.com/twitter-card.png">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "ConsistencyForge Quiz — Start Your Consistency Journey",
+        "description": "Take a 2-minute quiz to discover your path to better habits and create a personalized commitment contract.",
+        "url": "https://www.consistencyforge.com/start-google/",
+        "isPartOf": {
+            "@type": "WebSite",
+            "name": "ConsistencyForge",
+            "url": "https://www.consistencyforge.com"
+        },
+        "provider": {
+            "@type": "Organization",
+            "name": "ConsistencyForge",
+            "url": "https://www.consistencyforge.com"
+        }
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Video Background -->
+    <div class="video-bg">
+        <video autoplay muted loop playsinline preload="metadata" poster="../start/assets/fire-bg-poster.jpg">
+            <source src="../start/assets/fire-bg.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="progress-wrap" id="progressWrap">
+        <div class="progress-inner">
+            <button class="progress-back" id="btnBack" aria-label="Go back">&larr;</button>
+            <div class="progress-bar-bg">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+            <span class="progress-text" id="progressText">0%</span>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Hero / Landing -->
+        <div class="page active" id="page-hero">
+            <div class="hero">
+                <a href="https://www.consistencyforge.com/" style="font-size: 13px; color: rgba(255,255,255,0.5); text-decoration: none; display: inline-block; margin-bottom: 16px;">&larr; Back to ConsistencyForge</a>
+                <div class="brand-header">
+                    <img src="/logo.svg" alt="ConsistencyForge" class="brand-logo">
+                    <span class="brand-name"><span class="brand-consistency">CONSISTENCY</span> <span class="brand-forge">FORGE</span></span>
+                </div>
+                <div class="mascot-container">
+                    <video src="../start/assets/mascot.mp4" class="mascot" autoplay muted loop playsinline preload="metadata"></video>
+                </div>
+                <div style="font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; color: var(--orange-500); margin-bottom: 16px;">Start Strong</div>
+                <h1>Discover Your Path to<br><span>Better Habits.</span></h1>
+                <p class="hero-sub">Many people have goals they've been thinking about for years. A 2-minute quiz can help you get clear — and start moving forward.</p>
+                <div class="hero-reclaim">OWN YOUR TIME</div>
+
+                <ul class="hero-features">
+                    <li class="hero-feature">
+                        <span class="check" aria-hidden="true">&check;</span>
+                        <span>No time? We've got you — designed to fit into just 30 seconds a day</span>
+                    </li>
+                    <li class="hero-feature">
+                        <span class="check" aria-hidden="true">&check;</span>
+                        <span>Personalized plans that fit your real life</span>
+                    </li>
+                    <li class="hero-feature">
+                        <span class="check" aria-hidden="true">&check;</span>
+                        <span>A habit-tracking tool with gentle reminders and real progress tracking</span>
+                    </li>
+                </ul>
+
+                <button class="btn btn-primary" id="btnStart">Uncover Your Path &rarr;</button>
+                <div style="font-size: 13px; color: rgba(255,255,255,0.6); margin-top: 12px;">(we'll guide you every step)</div>
+                <div class="hero-legal">
+                    <a href="https://www.consistencyforge.com/terms" target="_blank" rel="noopener noreferrer">Terms</a> · <a href="https://www.consistencyforge.com/privacy" target="_blank" rel="noopener noreferrer">Privacy</a> · ConsistencyForge by <a href="https://qmediat.io" target="_blank" rel="noopener noreferrer">qmediat.io</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Q1: What do you want to do? -->
+        <div class="page" id="page-q1">
+            <div class="question-page">
+                <div class="question-header">
+                    <div class="mascot-container"><video data-src="../start/assets/mascot.mp4" class="mascot" muted loop playsinline preload="none"></video></div>
+                    <div class="question-header-text">
+                        <div class="question-label">Question 1 of 6</div>
+                        <div class="question-text">What would you like to focus on?</div>
+                    </div>
+                </div>
+                <div class="answers">
+                    <button class="answer-btn" data-q="1" data-value="fitness">
+                        <span class="answer-icon">&#127939;</span>
+                        <span>Exercise & fitness</span>
+                    </button>
+                    <button class="answer-btn" data-q="1" data-value="hobby">
+                        <span class="answer-icon">&#127912;</span>
+                        <span>Creative hobby (music, art, crafts...)</span>
+                    </button>
+                    <button class="answer-btn" data-q="1" data-value="learning">
+                        <span class="answer-icon">&#128218;</span>
+                        <span>Learning & self-improvement</span>
+                    </button>
+                    <button class="answer-btn" data-q="1" data-value="health">
+                        <span class="answer-icon">&#129496;</span>
+                        <span>Health & mindfulness</span>
+                    </button>
+                    <button class="answer-btn" data-q="1" data-value="project">
+                        <span class="answer-icon">&#128188;</span>
+                        <span>Side project or business</span>
+                    </button>
+                    <button class="answer-btn" data-q="1" data-value="other">
+                        <span class="answer-icon">&#10024;</span>
+                        <span>Something else</span>
+                    </button>
+                </div>
+                <div class="forge-quote">"Clarity is the first step to real progress."</div>
+            </div>
+        </div>
+
+        <!-- Q2: What's your barrier? -->
+        <div class="page" id="page-q2">
+            <div class="question-page">
+                <div class="question-header">
+                    <div class="mascot-container"><video data-src="../start/assets/mascot.mp4" class="mascot" muted loop playsinline preload="none"></video></div>
+                    <div class="question-header-text">
+                        <div class="question-label">Question 2 of 6</div>
+                        <div class="question-text">What story do you tell yourself about why it's hard?</div>
+                    </div>
+                </div>
+                <div class="answers">
+                    <button class="answer-btn" data-q="2" data-value="time">
+                        <span class="answer-icon">&#9200;</span>
+                        <span>"I don't have time"</span>
+                    </button>
+                    <button class="answer-btn" data-q="2" data-value="tired">
+                        <span class="answer-icon">&#128564;</span>
+                        <span>"I'm too tired after work"</span>
+                    </button>
+                    <button class="answer-btn" data-q="2" data-value="kids">
+                        <span class="answer-icon">&#128118;</span>
+                        <span>"When the kids are older..."</span>
+                    </button>
+                    <button class="answer-btn" data-q="2" data-value="someday">
+                        <span class="answer-icon">&#128197;</span>
+                        <span>"I'll start someday, not now"</span>
+                    </button>
+                    <button class="answer-btn" data-q="2" data-value="perfect">
+                        <span class="answer-icon">&#127919;</span>
+                        <span>"I need perfect conditions"</span>
+                    </button>
+                    <button class="answer-btn" data-q="2" data-value="motivation">
+                        <span class="answer-icon">&#128170;</span>
+                        <span>"I lack motivation"</span>
+                    </button>
+                </div>
+                <div class="forge-quote">"Acknowledge the hurdles to leap over them."</div>
+            </div>
+        </div>
+
+        <!-- Q3: How long? -->
+        <div class="page" id="page-q3">
+            <div class="question-page">
+                <div class="question-header">
+                    <div class="mascot-container"><video data-src="../start/assets/mascot.mp4" class="mascot" muted loop playsinline preload="none"></video></div>
+                    <div class="question-header-text">
+                        <div class="question-label">Question 3 of 6</div>
+                        <div class="question-text">How long has this barrier been in your way?</div>
+                    </div>
+                </div>
+                <div class="answers">
+                    <button class="answer-btn" data-q="3" data-value="weeks">
+                        <span class="answer-icon">&#128198;</span>
+                        <span>A few weeks</span>
+                    </button>
+                    <button class="answer-btn" data-q="3" data-value="months">
+                        <span class="answer-icon">&#128197;</span>
+                        <span>A few months</span>
+                    </button>
+                    <button class="answer-btn" data-q="3" data-value="year">
+                        <span class="answer-icon">&#128197;</span>
+                        <span>About a year</span>
+                    </button>
+                    <button class="answer-btn" data-q="3" data-value="years">
+                        <span class="answer-icon">&#9203;</span>
+                        <span>Several years</span>
+                    </button>
+                    <button class="answer-btn" data-q="3" data-value="decade">
+                        <span class="answer-icon">&#128532;</span>
+                        <span>Over 10 years...</span>
+                    </button>
+                </div>
+                <div class="forge-quote">"Time invested in yourself is never lost."</div>
+            </div>
+        </div>
+
+        <!-- Q4: 30 seconds -->
+        <div class="page" id="page-q4">
+            <div class="question-page">
+                <div class="question-header">
+                    <div class="mascot-container"><video data-src="../start/assets/mascot.mp4" class="mascot" muted loop playsinline preload="none"></video></div>
+                    <div class="question-header-text">
+                        <div class="question-label">Question 4 of 6</div>
+                        <div class="question-text">How much time can you ACTUALLY commit? Be honest.</div>
+                    </div>
+                </div>
+                <div class="answers">
+                    <button class="answer-btn" data-q="4" data-value="30sec">
+                        <span class="answer-icon">&#9889;</span>
+                        <span>30 seconds — just to start</span>
+                    </button>
+                    <button class="answer-btn" data-q="4" data-value="2-3min">
+                        <span class="answer-icon">&#128293;</span>
+                        <span>2-3 minutes — quick win</span>
+                    </button>
+                    <button class="answer-btn" data-q="4" data-value="5-10min">
+                        <span class="answer-icon">&#128170;</span>
+                        <span>5-10 minutes — solid effort</span>
+                    </button>
+                    <button class="answer-btn" data-q="4" data-value="15-30min">
+                        <span class="answer-icon">&#128640;</span>
+                        <span>15-30 minutes — I'm serious</span>
+                    </button>
+                    <button class="answer-btn" data-q="4" data-value="unsure">
+                        <span class="answer-icon">&#129300;</span>
+                        <span>Not sure yet — any time counts to start</span>
+                    </button>
+                </div>
+                <div class="forge-quote">"Small commitments lead to big transformations."</div>
+            </div>
+        </div>
+
+        <!-- Q5: What would it mean? -->
+        <div class="page" id="page-q5">
+            <div class="question-page">
+                <div class="question-header">
+                    <div class="mascot-container"><video data-src="../start/assets/mascot.mp4" class="mascot" muted loop playsinline preload="none"></video></div>
+                    <div class="question-header-text">
+                        <div class="question-label">Question 5 of 6</div>
+                        <div class="question-text">What could you gain by overcoming this?</div>
+                    </div>
+                </div>
+                <div class="answers">
+                    <button class="answer-btn" data-q="5" data-value="respect">
+                        <span class="answer-icon">&#128170;</span>
+                        <span>Greater self-confidence</span>
+                    </button>
+                    <button class="answer-btn" data-q="5" data-value="health">
+                        <span class="answer-icon">&#128154;</span>
+                        <span>More energy and motivation</span>
+                    </button>
+                    <button class="answer-btn" data-q="5" data-value="dreams">
+                        <span class="answer-icon">&#11088;</span>
+                        <span>Finally pursuing my dreams</span>
+                    </button>
+                    <button class="answer-btn" data-q="5" data-value="regret">
+                        <span class="answer-icon">&#128522;</span>
+                        <span>A sense of accomplishment</span>
+                    </button>
+                    <button class="answer-btn" data-q="5" data-value="all">
+                        <span class="answer-icon">&#128293;</span>
+                        <span>All of it. Everything.</span>
+                    </button>
+                </div>
+                <div class="forge-quote">"What's worth fighting for in your life?"</div>
+            </div>
+        </div>
+
+        <!-- Q6: What do you need? -->
+        <div class="page" id="page-q6">
+            <div class="question-page">
+                <div class="question-header">
+                    <div class="mascot-container"><video data-src="../start/assets/mascot.mp4" class="mascot" muted loop playsinline preload="none"></video></div>
+                    <div class="question-header-text">
+                        <div class="question-label">Question 6 of 6</div>
+                        <div class="question-text">What's actually stopping you? Pick one.</div>
+                    </div>
+                </div>
+                <div class="answers">
+                    <button class="answer-btn" data-q="6" data-value="plan">
+                        <span class="answer-icon">&#128203;</span>
+                        <span>A simple plan to start</span>
+                    </button>
+                    <button class="answer-btn" data-q="6" data-value="accountability">
+                        <span class="answer-icon">&#129309;</span>
+                        <span>Someone to hold me accountable</span>
+                    </button>
+                    <button class="answer-btn" data-q="6" data-value="motivation">
+                        <span class="answer-icon">&#9889;</span>
+                        <span>A boost of motivation</span>
+                    </button>
+                    <button class="answer-btn" data-q="6" data-value="system">
+                        <span class="answer-icon">&#9881;&#65039;</span>
+                        <span>A system that works</span>
+                    </button>
+                </div>
+                <div class="forge-quote">"Forge the willpower that sleeps inside you."</div>
+
+            </div>
+        </div>
+
+        <!-- Results + Email -->
+        <div class="page" id="page-results">
+            <div class="result-page">
+                <div class="result-card">
+                    <h3>&#128293; You Have What It Takes to Start.</h3>
+                    <p id="resultText">
+                        You've been thinking about what matters to you — and everyday challenges keep getting in the way.
+                        <br><br>
+                        But here's the truth: <strong>You DO have time.</strong>
+                        Today it can be 30 seconds. Tomorrow, 3 minutes.
+                        Next week? Maybe 30 minutes that make a real difference.
+                        <br><br>
+                        You don't need hours. <strong>Consistency beats intensity.</strong>
+                        A small step every day. That's how real consistency is built.
+                    </p>
+                    <p style="font-size: 13px; color: rgba(255,255,255,0.5); margin-top: 16px; font-style: italic;">Individual results vary. ConsistencyForge is a habit-tracking tool, not a guarantee of outcomes.</p>
+                </div>
+
+                <div class="incentive-box" style="display: flex; align-items: center; justify-content: center; gap: 16px; text-align: left;">
+                    <div>
+                        <div class="incentive-value">
+                            <span class="free">Free Commitment Contract</span>
+                        </div>
+                        <div class="incentive-text">Your free commitment contract includes a $29 motivational stake. The app is 100% free — no payment required, ever. The stake is a self-motivation tool you control.</div>
+                    </div>
+                    <video data-src="../start/assets/mascot.mp4" class="mascot" muted loop playsinline preload="none" style="width:60px;height:60px;border-radius:50%;flex-shrink:0;"></video>
+                </div>
+
+                <div class="micro-copy">Start with 30 seconds today. That's literally all it takes.</div>
+
+                <div class="form-group">
+                    <label>Your email</label>
+                    <input type="email" id="email" placeholder="you@example.com">
+                </div>
+
+                <label class="consent-label" for="consentCheck">
+                    <input type="checkbox" id="consentCheck">
+                    <span class="consent-checkmark"></span>
+                    <span class="consent-text">I agree to create a free ConsistencyForge account and accept the <a href="https://www.consistencyforge.com/terms" target="_blank" rel="noopener noreferrer">Terms</a> and <a href="https://www.consistencyforge.com/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>.</span>
+                </label>
+
+                <button class="btn btn-primary btn-branded" id="btnEmail" disabled><img src="../start/assets/logo-white.svg" alt="" class="btn-logo" aria-hidden="true">I Commit &rarr;</button>
+
+                <p style="font-size: 12px; color: rgba(255,255,255,0.4); margin-top: 16px; text-align: center;">ConsistencyForge is a habit accountability tool, not a medical or health service. Consult a healthcare professional for medical advice.</p>
+            </div>
+        </div>
+
+        <!-- Commitment Form -->
+        <div class="page" id="page-commitment">
+            <div class="result-page">
+                <h2 style="font-size: 24px; font-weight: 700; margin-bottom: 8px; color: #fff;">Create Your Commitment</h2>
+                <p style="color: rgba(255,255,255,0.8); margin-bottom: 28px;">This is your contract with yourself. Name it and choose your schedule.</p>
+
+                <div class="form-group">
+                    <label>Name your commitment</label>
+                    <input type="text" id="commitmentName" placeholder="e.g., 10 daily pushups, Guitar practice, Morning meditation...">
+                </div>
+
+                <div class="form-group">
+                    <label>How often?</label>
+                    <select id="schedule">
+                        <option value="daily">Every day</option>
+                        <option value="weekdays">Weekdays (Mon-Fri)</option>
+                        <option value="weekends">Weekends only</option>
+                        <option value="3x">3 times a week</option>
+                        <option value="weekly">Once a week</option>
+                        <option value="monthly">Once a month</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Why does this matter to you? (optional)</label>
+                    <textarea id="why" placeholder="This will help you remember your 'why'..."></textarea>
+                </div>
+
+                <button class="btn btn-primary" id="btnCommit">Forge My Commitment &#128293;</button>
+                <div id="formError" class="form-error"></div>
+            </div>
+        </div>
+
+        <!-- Thank You -->
+        <div class="page" id="page-thanks">
+            <div class="thankyou">
+                <div class="mascot-container"><video data-src="../start/assets/mascot.mp4" class="mascot" muted loop playsinline preload="none" style="width:150px;height:150px"></video></div>
+                <h2>You're In!</h2>
+                <p>Check your inbox — we've sent you a link to activate your ConsistencyForge account with your personalized commitment contract. You can edit it anytime.</p>
+                <div class="thankyou-note">
+                    Remember: Today, just 30 seconds is enough.<br>
+                    Start small. Stay consistent. The rest will follow.
+                </div>
+                <div class="forge-quote" style="font-size: 18px; color: var(--orange-500); opacity: 1;">
+                    "You have the power to forge ahead."
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cookie Consent Banner -->
+    <div class="cookie-banner" id="cookieBanner">
+        <span>We use cookies to improve your experience.</span>
+        <button class="cookie-accept" id="cookieAccept">Accept</button>
+    </div>
+
+    <!-- WebView Banner -->
+    <div class="webview-banner" id="webviewBanner">
+        <span>For the best experience, open in your browser</span>
+        <div class="webview-actions">
+            <button id="webviewOpen">Open</button>
+            <button id="webviewCopy">Copy link</button>
+        </div>
+        <button class="webview-close" id="webviewClose">&times;</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

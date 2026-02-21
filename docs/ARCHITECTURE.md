@@ -80,6 +80,13 @@ consistencyforge-landing/
 │       ├── API-SPEC.md     # Onboard API endpoint spec
 │       └── CHANGELOG-v4.md # v4.0 Facebook compliance changelog
 │
+├── start-google/           # QuizFunnel-Google variant (/start-google/)
+│   ├── index.html          # 9-page quiz funnel (Google Ads-compliant copy)
+│   ├── styles.css          # Quiz styles (copy of start/styles.css)
+│   ├── script.js           # Quiz logic (source='quiz-v3-google', shared assets)
+│   └── docs/
+│       └── GOOGLE-ADS-COPY.md  # Full copy reference (Google variant)
+│
 ├── start-v1/               # Backup: QuizFunnel v1 (initial)
 ├── start-v2/               # Backup: QuizFunnel v2 (pre-branding)
 ├── start-v3/               # Backup: QuizFunnel v3 (pre-Facebook-compliance)
