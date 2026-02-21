@@ -177,16 +177,17 @@ body {
 
 /* Button with brand logo */
 .btn-branded {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 12px;
 }
 
 .btn-logo {
     width: 22px;
     height: 22px;
     flex-shrink: 0;
+    vertical-align: middle;
 }
 
 /* Hero */
