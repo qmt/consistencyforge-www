@@ -399,8 +399,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
             trackEvent('quiz_api_success');
 
-            // Google Ads conversion event — redirects to app via callback
-            gtag_report_conversion(data.loginUrl);
+            // Google Ads conversion event (fire and forget — no redirect)
+            gtag_report_conversion();
+
+            // Show thank you page (user must check email for magic link)
+            pageHistory.push('thanks');
+            showPage('thanks');
         } catch (err) {
             trackEvent('quiz_api_error', { error: err.message });
             btn.disabled = false;
