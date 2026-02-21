@@ -70,21 +70,14 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
 
-    // EEA + UK: deny by default (GDPR requires explicit consent)
+    // Consent Mode v2: deny by default for EEA + UK only
+    // Non-EEA users get granted automatically (Google's default when no region matches)
     gtag('consent', 'default', {
         'ad_storage': 'denied',
         'ad_user_data': 'denied',
         'ad_personalization': 'denied',
         'analytics_storage': 'denied',
         'region': ['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES','SE','IS','LI','NO','GB']
-    });
-
-    // Rest of world (incl. target markets: IN, AU, PH, MY, ZA, NG, KE, etc.): grant by default
-    gtag('consent', 'default', {
-        'ad_storage': 'granted',
-        'ad_user_data': 'granted',
-        'ad_personalization': 'granted',
-        'analytics_storage': 'granted'
     });
 
     gtag('js', new Date());
@@ -107,7 +100,10 @@
       gtag('event', 'conversion', {
           'send_to': 'AW-17968071912/xkGrCPTGyvwbEOiJ7PdC',
           'value': 1.0,
-          'currency': 'PLN'
+          'currency': 'PLN',
+          'event_callback': function() {
+              if (typeof console !== 'undefined') console.log('[CF] Google Ads conversion event sent');
+          }
       });
       return false;
     }
