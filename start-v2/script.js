@@ -311,8 +311,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
         var btn = this;
         btn.disabled = true;
-        var originalHTML = btn.innerHTML;
-        btn.innerHTML = 'Creating your account...';
+        var originalText = btn.textContent;
+        btn.textContent = 'Creating your account...';
 
         trackEvent('quiz_email_submit', { email_domain: email.split('@')[1] });
 
@@ -354,7 +354,7 @@ document.addEventListener('DOMContentLoaded', function () {
         } catch (err) {
             trackEvent('quiz_api_error', { error: err.message });
             btn.disabled = false;
-            btn.innerHTML = originalHTML;
+            btn.textContent = originalText;
             // Re-check consent state — keep button disabled if unchecked
             var consent = document.getElementById('consentCheck');
             if (consent && !consent.checked) btn.disabled = true;
