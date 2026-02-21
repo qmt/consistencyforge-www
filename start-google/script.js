@@ -1,3 +1,28 @@
+/* ── Google Ads (gtag.js) — Consent Mode v2 ── */
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+
+// Default: deny all until user consents
+gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied'
+});
+
+gtag('js', new Date());
+gtag('config', 'AW-17968071912');
+
+// If user previously accepted cookies, update consent immediately
+if (localStorage.getItem('cf-cookie-consent') === 'accepted') {
+    gtag('consent', 'update', {
+        'ad_storage': 'granted',
+        'ad_user_data': 'granted',
+        'ad_personalization': 'granted',
+        'analytics_storage': 'granted'
+    });
+}
+
 let answers = {};
 let currentPage = 'hero';
 const totalQuestions = 6;
@@ -197,6 +222,13 @@ document.addEventListener('DOMContentLoaded', function () {
         cookieAccept.addEventListener('click', function () {
             localStorage.setItem('cf-cookie-consent', 'accepted');
             document.getElementById('cookieBanner').classList.remove('visible');
+            // Grant Google Ads consent
+            gtag('consent', 'update', {
+                'ad_storage': 'granted',
+                'ad_user_data': 'granted',
+                'ad_personalization': 'granted',
+                'analytics_storage': 'granted'
+            });
         });
     }
 
@@ -357,6 +389,13 @@ document.addEventListener('DOMContentLoaded', function () {
             if (!res.ok) throw new Error(data.error || 'Something went wrong');
 
             trackEvent('quiz_api_success');
+
+            // Google Ads conversion event
+            gtag('event', 'conversion', {
+                'send_to': 'AW-17968071912',
+                'value': 1.0,
+                'currency': 'USD'
+            });
 
             // Redirect to app — user will be auto-logged in via magic link
             window.location.href = data.loginUrl;
