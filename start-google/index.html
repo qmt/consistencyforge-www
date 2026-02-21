@@ -70,8 +70,10 @@
     <!-- Event snippet for Przesłanie formularza kontaktowego conversion page -->
     <script>
     function gtag_report_conversion(url) {
+      var redirected = false;
       var callback = function () {
-        if (typeof(url) != 'undefined') {
+        if (!redirected && typeof(url) != 'undefined') {
+          redirected = true;
           window.location = url;
         }
       };
@@ -81,6 +83,8 @@
           'currency': 'PLN',
           'event_callback': callback
       });
+      // Fallback: redirect after 1.5s if callback never fires (ad blocker, consent denied, etc.)
+      setTimeout(callback, 1500);
       return false;
     }
     </script>
