@@ -72,18 +72,17 @@
 
     // Consent Mode v2: deny by default for EEA + UK only
     // Non-EEA users get granted automatically (Google's default when no region matches)
+    // wait_for_update: gives 500ms for consent update before processing tags
     gtag('consent', 'default', {
         'ad_storage': 'denied',
         'ad_user_data': 'denied',
         'ad_personalization': 'denied',
         'analytics_storage': 'denied',
+        'wait_for_update': 500,
         'region': ['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES','SE','IS','LI','NO','GB']
     });
 
-    gtag('js', new Date());
-    gtag('config', 'AW-17968071912');
-
-    // If user previously accepted cookies, update consent immediately
+    // If user previously accepted cookies, update consent BEFORE config
     if (localStorage.getItem('cf-cookie-consent') === 'accepted') {
         gtag('consent', 'update', {
             'ad_storage': 'granted',
@@ -92,6 +91,9 @@
             'analytics_storage': 'granted'
         });
     }
+
+    gtag('js', new Date());
+    gtag('config', 'AW-17968071912');
     </script>
 
     <!-- Event snippet for Przesłanie formularza kontaktowego conversion page -->
