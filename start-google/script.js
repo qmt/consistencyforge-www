@@ -392,9 +392,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Google Ads conversion event
             gtag('event', 'conversion', {
-                'send_to': 'AW-17968071912',
+                'send_to': 'AW-17968071912/xkGrCPTGyvwbEOiJ7PdC',
                 'value': 1.0,
-                'currency': 'USD'
+                'currency': 'PLN'
             });
 
             // Redirect to app — user will be auto-logged in via magic link
