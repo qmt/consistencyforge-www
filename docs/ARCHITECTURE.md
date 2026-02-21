@@ -67,16 +67,20 @@ consistencyforge-landing/
 │
 ├── start/                  # QuizFunnel variant (/start/)
 │   ├── index.html          # 9-page quiz funnel
-│   ├── styles.css          # Quiz styles (Inter font)
+│   ├── styles.css          # Quiz styles (Inter + Exo 2 for branding)
 │   ├── script.js           # Quiz logic + API integration
 │   ├── assets/
 │   │   ├── fire-bg.mp4     # Fire video background (6.9MB)
 │   │   ├── mascot.mp4      # Animated hamster mascot (3.3MB)
+│   │   ├── logo-white.svg  # White transparent brand icon (for CTA button)
 │   │   ├── hamster-forge.png  # Static mascot fallback
 │   │   └── fox.png         # Fox illustration
 │   └── docs/
 │       ├── QUIZ-COPY.md    # Full quiz copy reference
 │       └── API-SPEC.md     # Onboard API endpoint spec
+│
+├── start-v1/               # Backup: QuizFunnel v1 (pre-compliance)
+├── start-v2/               # Backup: QuizFunnel v2 (pre-branding)
 │
 └── docs/
     ├── ARCHITECTURE.md     # This file
@@ -92,7 +96,8 @@ Used by `/` and `/go/`:
 
 Used by all:
 - `Space Grotesk` — Google Fonts (`/`, `/go/`)
-- `Inter` — Google Fonts (`/start/`)
+- `Inter` — Google Fonts (`/start/` body text)
+- `Exo 2` — Google Fonts (`/start/` brand wordmark + tagline)
 
 ## Page Systems
 
@@ -128,7 +133,7 @@ Similar scroll-triggered system to root, plus:
 
 #### Quiz Flow
 9-page sequential flow managed by `showPage()`:
-1. **Hero** — hook + CTA to start quiz
+1. **Hero** — brand header (logo + CONSISTENCY FORGE wordmark) + "RECLAIM YOUR TIME" tagline + hook + CTA to start quiz
 2. **Q1-Q6** — single-answer questions with visual feedback
 3. **Results** — personalized text based on quiz answers + email collection
 4. **Commitment** — name, schedule, why fields

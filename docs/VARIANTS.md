@@ -36,12 +36,14 @@ The `/start/` path is designed for social media ad campaigns with a quiz-based e
 
 ### `/start/` — QuizFunnel (9-page quiz)
 - Pages: Hero, Q1-Q6, Results + Email, Commitment Form, Thank You
+- **Branding**: Logo + "CONSISTENCY FORGE" wordmark (Exo 2) on hero page; white logo icon in "I Commit" CTA button
+- "RECLAIM YOUR TIME" tagline on hero (Exo 2, orange, uppercase)
 - 6-question emotional quiz flow with personalized results
 - Collects email + commitment details, sends to onboard API
 - API creates account + $25 contract + sends magic link email
 - Fire video background, animated mascot, pulsing motivational quotes
-- Inter font (vs Space Grotesk on other variants)
-- Assets in `start/assets/` (fire-bg.mp4, mascot.mp4, hamster-forge.png, fox.png)
+- Inter font for body (vs Space Grotesk on other variants); Exo 2 for brand elements
+- Assets in `start/assets/` (fire-bg.mp4, mascot.mp4, logo-white.svg)
 
 ## Ad Campaign Usage
 

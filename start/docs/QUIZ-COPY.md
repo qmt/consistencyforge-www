@@ -1,15 +1,21 @@
 # ConsistencyForge Quiz Funnel Copy
-## "QuizFunnel" Conversion Copy -- v2.0 (Ad-Ready)
+## "QuizFunnel" Conversion Copy -- v3.0 (Branded)
 
 **Brand:** ConsistencyForge
 **Voice:** Empathetic coach meets tough-love mentor (SimonSays aggressive)
-**Palette:** Orange (#f97316) on Dark (#0a0a0a) with fire video background
-**Font:** Inter (400-800)
+**Palette:** Orange (#f97316 / #F08C2E brand) on Dark (#0a0a0a) with fire video background
+**Fonts:** Inter (400-800) for body; Exo 2 (700-800) for brand wordmark
 **Rule:** Every question builds emotional investment. By the time they reach email, they're already committed.
 
 ---
 
 ## PAGE 1: HERO -- "The Hook"
+
+### Brand Header (top of hero)
+- Logo: `/logo.svg` (orange hexagon+flame, 36px / 28px mobile)
+- Text: **CONSISTENCY** (white, Exo 2 700) **FORGE** (orange #F08C2E, Exo 2 800)
+- Layout: inline flex, centered, 2px letter-spacing
+- Only shown on hero page — omitted from quiz steps and subsequent pages
 
 ### Kicker
 NO EXCUSES
@@ -20,6 +26,11 @@ You've Been Lying
 
 ### Subheadline
 You know what you need to do. You've known for years. 2 minutes to stop lying — and finally start.
+
+### Tagline
+**RECLAIM YOUR TIME**
+- Exo 2, 800 weight, 15px, 4px letter-spacing, orange, uppercase
+- Placed between subheadline and feature bullets
 
 ### Feature bullets
 - "No time"? Excuse me? Still WORKS!
@@ -238,7 +249,9 @@ Placeholder: "you@example.com"
 - SimonSays: turns legal compliance into psychological micro-commitment
 
 ### CTA
-**I Commit ->** (disabled until consent checkbox checked)
+**[logo-white] I Commit ->** (disabled until consent checkbox checked)
+- White brand icon (`assets/logo-white.svg`, 22px) displayed before text
+- Button uses `display: flex` layout with centered alignment
 
 ### Legal links present on this page
 - Consent checkbox links to Terms + Privacy
@@ -379,4 +392,4 @@ Stored in `quiz_events` table on the app server. Rate limited: 30 req/5min per I
 
 ---
 
-*Copy version 2.0 (Ad-Ready) | QuizFunnel Framework | Updated 2026-02-20*
+*Copy version 3.0 (Branded) | QuizFunnel Framework | Updated 2026-02-21*
