@@ -76,11 +76,13 @@ consistencyforge-landing/
 │   │   ├── hamster-forge.png  # Static mascot fallback
 │   │   └── fox.png         # Fox illustration
 │   └── docs/
-│       ├── QUIZ-COPY.md    # Full quiz copy reference
-│       └── API-SPEC.md     # Onboard API endpoint spec
+│       ├── QUIZ-COPY.md    # Full quiz copy reference (v4.0 Facebook-compliant)
+│       ├── API-SPEC.md     # Onboard API endpoint spec
+│       └── CHANGELOG-v4.md # v4.0 Facebook compliance changelog
 │
-├── start-v1/               # Backup: QuizFunnel v1 (pre-compliance)
+├── start-v1/               # Backup: QuizFunnel v1 (initial)
 ├── start-v2/               # Backup: QuizFunnel v2 (pre-branding)
+├── start-v3/               # Backup: QuizFunnel v3 (pre-Facebook-compliance)
 │
 └── docs/
     ├── ARCHITECTURE.md     # This file
@@ -133,7 +135,7 @@ Similar scroll-triggered system to root, plus:
 
 #### Quiz Flow
 9-page sequential flow managed by `showPage()`:
-1. **Hero** — brand header (logo + CONSISTENCY FORGE wordmark) + "RECLAIM YOUR TIME" tagline + hook + CTA to start quiz
+1. **Hero** — brand header (logo + CONSISTENCY FORGE wordmark) + "OWN YOUR TIME" tagline + hook + CTA to start quiz
 2. **Q1-Q6** — single-answer questions with visual feedback
 3. **Results** — personalized text based on quiz answers + email collection
 4. **Commitment** — name, schedule, why fields
@@ -149,7 +151,7 @@ Fixed fire-bg.mp4 with dark gradient overlay. Mascot.mp4 displayed as circular a
 `submitCommitment()` sends POST to `app.consistencyforge.com/api/landing/onboard` with quiz answers, commitment details, and email. API creates account + $25 contract + sends magic link.
 
 #### Personalization
-`personalizeResults()` maps Q1 (activity) and Q2 (excuse) answers to generate customized result text.
+`personalizeResults()` maps Q1 (activity) and Q2 (barrier) answers to generate customized result text.
 
 ## Responsive Breakpoints
 
