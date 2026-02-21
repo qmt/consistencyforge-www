@@ -1,36 +1,4 @@
-/* ── Google Ads (gtag.js) — Consent Mode v2 ── */
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-
-// EEA + UK: deny by default (GDPR requires explicit consent)
-gtag('consent', 'default', {
-    'ad_storage': 'denied',
-    'ad_user_data': 'denied',
-    'ad_personalization': 'denied',
-    'analytics_storage': 'denied',
-    'region': ['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES','SE','IS','LI','NO','GB']
-});
-
-// Rest of world (incl. target markets: IN, AU, PH, MY, ZA, NG, KE, etc.): grant by default
-gtag('consent', 'default', {
-    'ad_storage': 'granted',
-    'ad_user_data': 'granted',
-    'ad_personalization': 'granted',
-    'analytics_storage': 'granted'
-});
-
-gtag('js', new Date());
-gtag('config', 'AW-17968071912');
-
-// If user previously accepted cookies, update consent immediately
-if (localStorage.getItem('cf-cookie-consent') === 'accepted') {
-    gtag('consent', 'update', {
-        'ad_storage': 'granted',
-        'ad_user_data': 'granted',
-        'ad_personalization': 'granted',
-        'analytics_storage': 'granted'
-    });
-}
+/* ── Google Ads gtag is initialized in <head> (index.html) ── */
 
 let answers = {};
 let currentPage = 'hero';
