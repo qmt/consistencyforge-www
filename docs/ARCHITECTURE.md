@@ -81,11 +81,11 @@ consistencyforge-landing/
 │       └── CHANGELOG-v4.md # v4.0 Facebook compliance changelog
 │
 ├── start-google/           # QuizFunnel-Google variant (/start-google/)
-│   ├── index.html          # 9-page quiz funnel (Google Ads-compliant copy)
+│   ├── index.html          # 9-page quiz funnel (Google Ads-compliant copy + gtag.js)
 │   ├── styles.css          # Quiz styles (copy of start/styles.css)
-│   ├── script.js           # Quiz logic (source='quiz-v3-google', shared assets)
+│   ├── script.js           # Quiz logic + gtag init + Consent Mode v2 + conversion event
 │   └── docs/
-│       └── GOOGLE-ADS-COPY.md  # Full copy reference (Google variant)
+│       └── GOOGLE-ADS-COPY.md  # Full copy reference (Google variant v1.2)
 │
 ├── start-v1/               # Backup: QuizFunnel v1 (initial)
 ├── start-v2/               # Backup: QuizFunnel v2 (pre-branding)
@@ -180,4 +180,4 @@ Applied to all paths via `/(.*)`-pattern:
 - `X-Content-Type-Options: nosniff`
 - `Referrer-Policy: strict-origin-when-cross-origin`
 - `Permissions-Policy: camera=(), microphone=(), geolocation=()`
-- CSP: `script-src 'self' cdnjs.cloudflare.com`, `style-src 'self' fonts.googleapis.com 'unsafe-inline'`, `connect-src 'self' app.consistencyforge.com`, `media-src 'self'`
+- CSP: `script-src 'self' cdnjs.cloudflare.com connect.facebook.net googletagmanager.com`, `style-src 'self' fonts.googleapis.com 'unsafe-inline'`, `img-src 'self' data: facebook.com googleads.g.doubleclick.net google.com googletagmanager.com`, `connect-src 'self' app.consistencyforge.com facebook.com google-analytics.com googleads.g.doubleclick.net google.com googletagmanager.com analytics.google.com`, `media-src 'self'`

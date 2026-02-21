@@ -227,6 +227,59 @@ ConsistencyForge is a habit accountability tool, not a medical or health service
 
 ---
 
+## GOOGLE ADS TAG & CONSENT MODE v2
+
+### Tag
+- **ID:** `AW-17968071912`
+- **Loaded:** async `<script>` in `<head>` (external src — CSP-compliant, no inline script)
+- **Init:** in `script.js` top-level (before DOMContentLoaded)
+
+### Consent Mode v2 (EU/GDPR compliant)
+Default consent state (before user interacts):
+```javascript
+gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied'
+});
+```
+
+On **Accept cookies** (cookie banner):
+```javascript
+gtag('consent', 'update', {
+    'ad_storage': 'granted',
+    'ad_user_data': 'granted',
+    'ad_personalization': 'granted',
+    'analytics_storage': 'granted'
+});
+```
+
+On **Decline cookies**: consent stays `denied` — zero Google cookies set.
+
+On **return visit**: if `localStorage 'cf-cookie-consent' === 'accepted'`, consent updated to `granted` immediately on page load (before DOMContentLoaded).
+
+### Conversion Event
+Fires on successful account creation (API returns `loginUrl`):
+```javascript
+gtag('event', 'conversion', {
+    'send_to': 'AW-17968071912',
+    'value': 1.0,
+    'currency': 'USD'
+});
+```
+
+### CSP (vercel.json)
+Google Ads domains added to:
+- `script-src`: `https://www.googletagmanager.com` (was already present)
+- `img-src`: `googleads.g.doubleclick.net`, `google.com`, `googletagmanager.com`
+- `connect-src`: `googleads.g.doubleclick.net`, `google.com`, `googletagmanager.com`, `analytics.google.com`
+
+### TODO
+- Configure **conversion action** in Google Ads (Tools > Conversions) and add conversion label to `send_to`
+
+---
+
 ## API PAYLOAD
 
 ```json
@@ -245,8 +298,9 @@ ConsistencyForge is a habit accountability tool, not a medical or health service
 | Version | Date | Changes |
 |---------|------|---------|
 | v1.0 | 2026-02-21 | Initial Google Ads variant — P0+P1 compliance fixes from `/start/` v4.0 |
-| v1.1 | 2026-02-21 | P2 polish — depersonalized results, "accountability goal", cookie Decline, thank-you nav, Q4 tone. Audit: ~85% approval |
+| v1.1 | 2026-02-21 | P2 polish — depersonalized results, "accountability goal", cookie Decline, thank-you nav, Q4 tone. Audit: ~90% approval |
+| v1.2 | 2026-02-21 | Google Ads tag (AW-17968071912) + Consent Mode v2 + conversion event |
 
 ---
 
-*Copy version 1.1 (Google Ads-Compliant) | QuizFunnel-Google Framework | Updated 2026-02-21*
+*Copy version 1.2 (Google Ads-Compliant) | QuizFunnel-Google Framework | Updated 2026-02-21*

@@ -50,17 +50,20 @@ The `/start/` path is designed for social media ad campaigns with a quiz-based e
 - Full changelog: `start/docs/CHANGELOG-v4.md`
 
 ### `/start-google/` — QuizFunnel-Google (9-page quiz)
-- Fork of `/start/` with Google Ads policy compliance fixes (P0 + P1)
-- **Copy v1.0 (Google Ads-compliant)**: Softened claims, added disclaimers, clarified $29 stake
-- Key differences from `/start/`: toned-down headline ("Discover Your Path to Better Habits"), results disclaimer, health disclaimer, neutral consent checkbox, clarified incentive box
+- Fork of `/start/` with Google Ads policy compliance fixes (P0 + P1 + P2)
+- **Copy v1.2 (Google Ads-compliant)**: Softened claims, depersonalized results, disclaimers, clarified $29 accountability goal
+- Key differences from `/start/`: toned-down headline ("Discover Your Path to Better Habits"), depersonalized results ("Based on your answers:"), results disclaimer, health disclaimer, neutral consent checkbox, cookie Decline button + Privacy link, thank-you navigation
+- **Google Ads tag:** `AW-17968071912` with Consent Mode v2 (EU/GDPR compliant)
+- **Conversion tracking:** fires on successful account creation
 - Shares assets from `start/assets/` via relative paths (no duplication)
 - API source: `quiz-v3-google` (vs `quiz-v3` for Facebook)
+- **Policy audit:** ~90% approval (Gemini 85% + Grok 95%, 0 FAILs)
 - Full copy reference: `start-google/docs/GOOGLE-ADS-COPY.md`
 
 ## Ad Campaign Usage
 
 Use variant URLs in ad platforms:
-- **Google Ads**: Use `/start-google/` quiz funnel (policy-compliant) or `/go/` for high-intent keywords
+- **Google Ads**: Use `/start-google/` quiz funnel (policy-compliant, gtag + Consent Mode v2 installed) or `/go/` for high-intent keywords
 - **Social Media (Meta, TikTok, Instagram)**: Use `/start/` quiz funnel for engagement
 - **Organic / SEO**: Root `/` handles broad discovery
 - **Retargeting**: Consider `/go/` for users who bounced from `/`
