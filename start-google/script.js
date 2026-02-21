@@ -319,7 +319,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Email submit — calls onboard API and redirects to app
+    // Email submit — calls onboard API then shows thank you page
     document.getElementById('btnEmail').addEventListener('click', async function () {
         var email = document.getElementById('email').value;
         if (!email || !email.includes('@')) {
@@ -340,6 +340,7 @@ document.addEventListener('DOMContentLoaded', function () {
             utm = JSON.parse(sessionStorage.getItem('cf_utm') || '{}');
         } catch (e) {}
 
+        var apiOk = false;
         try {
             var res = await fetch('https://app.consistencyforge.com/api/landing/onboard', {
                 method: 'POST',
@@ -364,23 +365,28 @@ document.addEventListener('DOMContentLoaded', function () {
 
             var data = await res.json();
             if (!res.ok) throw new Error(data.error || 'Something went wrong');
-
-            trackEvent('quiz_api_success');
-
-            // Google Ads conversion event (fire and forget — no redirect)
-            gtag_report_conversion();
-
-            // Show thank you page (user must check email for magic link)
-            pageHistory.push('thanks');
-            showPage('thanks');
+            apiOk = true;
         } catch (err) {
-            trackEvent('quiz_api_error', { error: err.message });
+            // API error or CORS block — show error but DON'T return yet
+            // The server may have processed the request even if the browser blocked the response (CORS)
+            trackEvent('quiz_api_error', { error: (err && err.message) || 'unknown' });
+            showError((err && err.message) || 'Network error. Please try again.');
             btn.disabled = false;
             btn.innerHTML = originalHTML;
-            // Re-check consent state — keep button disabled if unchecked
             var consent = document.getElementById('consentCheck');
             if (consent && !consent.checked) btn.disabled = true;
-            showError(err.message || 'Network error. Please try again.');
+            return;
+        }
+
+        // Success path — wrapped separately so gtag can't break navigation
+        if (apiOk) {
+            trackEvent('quiz_api_success');
+
+            // Google Ads conversion (safe — never blocks navigation)
+            try { gtag_report_conversion(); } catch (e) {}
+
+            pageHistory.push('thanks');
+            showPage('thanks');
         }
     });
 });
