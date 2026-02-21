@@ -390,15 +390,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
             trackEvent('quiz_api_success');
 
-            // Google Ads conversion event
-            gtag('event', 'conversion', {
-                'send_to': 'AW-17968071912/xkGrCPTGyvwbEOiJ7PdC',
-                'value': 1.0,
-                'currency': 'PLN'
-            });
-
-            // Redirect to app — user will be auto-logged in via magic link
-            window.location.href = data.loginUrl;
+            // Google Ads conversion event — redirects to app via callback
+            gtag_report_conversion(data.loginUrl);
         } catch (err) {
             trackEvent('quiz_api_error', { error: err.message });
             btn.disabled = false;

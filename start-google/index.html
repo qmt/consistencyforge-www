@@ -67,6 +67,24 @@
     <!-- Google tag (gtag.js) — AW-17968071912 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17968071912"></script>
 
+    <!-- Event snippet for Przesłanie formularza kontaktowego conversion page -->
+    <script>
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+          'send_to': 'AW-17968071912/xkGrCPTGyvwbEOiJ7PdC',
+          'value': 1.0,
+          'currency': 'PLN',
+          'event_callback': callback
+      });
+      return false;
+    }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
