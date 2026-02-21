@@ -1,13 +1,11 @@
 # ConsistencyForge Quiz Funnel Copy
-## "QuizFunnel" Conversion Copy -- v4.0 (Facebook-Compliant)
+## "QuizFunnel" Conversion Copy -- v3.0 (Branded)
 
 **Brand:** ConsistencyForge
-**Voice:** Empathetic guide meets motivational coach (Sinek empathy + Goggins directness, compliance-safe)
+**Voice:** Empathetic coach meets tough-love mentor (SimonSays aggressive)
 **Palette:** Orange (#f97316 / #F08C2E brand) on Dark (#0a0a0a) with fire video background
 **Fonts:** Inter (400-800) for body; Exo 2 (700-800) for brand wordmark
-**Rule:** Every question builds emotional investment through supportive self-reflection. By the time they reach email, they're already committed.
-
-**Compliance note:** v4.0 was rewritten to pass Meta Advertising Standards (Sections 4.3, 4.1, 4.11, 4.12). Tone shifted from accusatory/aggressive to guiding/supportive/aspirational. See `consistencyforge-ads/facebook/audits/AUDIT-v9-tired-time-postfix-2026-02-21.md` for the full compliance audit.
+**Rule:** Every question builds emotional investment. By the time they reach email, they're already committed.
 
 ---
 
@@ -20,30 +18,30 @@
 - Only shown on hero page — omitted from quiz steps and subsequent pages
 
 ### Kicker
-Start Strong
+NO EXCUSES
 
 ### Headline
-It's Time to Unlock
-**Your True Potential.**
+You've Been Lying
+**To Yourself.**
 
 ### Subheadline
-You know the goals that matter most. You've felt them for years. Take 2 minutes to get clear — and finally move forward.
+You know what you need to do. You've known for years. 2 minutes to stop lying — and finally start.
 
 ### Tagline
-**OWN YOUR TIME**
+**RECLAIM YOUR TIME**
 - Exo 2, 800 weight, 15px, 4px letter-spacing, orange, uppercase
 - Placed between subheadline and feature bullets
 
 ### Feature bullets
-- No time? We've got you — works in just 30 seconds a day
-- Personalized plans that fit your real life
-- Build habits that stick, with gentle reminders and real progress tracking
+- "No time"? Excuse me? Still WORKS!
+- Willpower builds slowly, but constantly
+- Commit to a personalized strategy
 
 ### Primary CTA
-**Uncover Your Path ->**
+**Face The Truth ->**
 
 ### Micro-copy
-(we'll guide you every step)
+(let yourself be guided)
 
 ### Legal Footer
 Terms · Privacy · ConsistencyForge by qmediat.io
@@ -61,13 +59,13 @@ Terms · Privacy · ConsistencyForge by qmediat.io
 
 ---
 
-## PAGE 2: QUESTION 1 -- "The Focus"
+## PAGE 2: QUESTION 1 -- "The Avoidance"
 
 ### Label
 Question 1 of 6
 
 ### Question
-What would you like to focus on?
+What have you been avoiding?
 
 ### Answers
 | Icon | Answer | Value |
@@ -80,17 +78,17 @@ What would you like to focus on?
 | Sparkles | Something else | `other` |
 
 ### Forge Quote
-"Clarity is the first step to real progress."
+"The fire starts with a single spark."
 
 ---
 
-## PAGE 3: QUESTION 2 -- "The Barrier"
+## PAGE 3: QUESTION 2 -- "The Bullshit"
 
 ### Label
 Question 2 of 6
 
 ### Question
-What story do you tell yourself about why it's hard?
+What bullshit do you tell yourself?
 
 ### Answers
 | Icon | Answer | Value |
@@ -103,17 +101,17 @@ What story do you tell yourself about why it's hard?
 | Flex | "I lack motivation" | `motivation` |
 
 ### Forge Quote
-"Acknowledge the hurdles to leap over them."
+"Excuses are comfortable lies."
 
 ---
 
-## PAGE 4: QUESTION 3 -- "The Duration"
+## PAGE 4: QUESTION 3 -- "The Waste"
 
 ### Label
 Question 3 of 6
 
 ### Question
-How long has this barrier been in your way?
+How many years have you wasted on this excuse?
 
 ### Answers
 | Icon | Answer | Value |
@@ -125,11 +123,11 @@ How long has this barrier been in your way?
 | Sad | Over 10 years... | `decade` |
 
 ### Forge Quote
-"Time invested in yourself is never lost."
+"Time you'll never get back. But today is new."
 
 ---
 
-## PAGE 5: QUESTION 4 -- "The Commitment"
+## PAGE 5: QUESTION 4 -- "The Honesty"
 
 ### Label
 Question 4 of 6
@@ -147,29 +145,29 @@ How much time can you ACTUALLY commit? Be honest.
 | Thinking | Not sure yet — any time counts to start | `unsure` |
 
 ### Forge Quote
-"Small commitments lead to big transformations."
+"Small steps forge mighty commitments."
 
 ---
 
-## PAGE 6: QUESTION 5 -- "The Gains"
+## PAGE 6: QUESTION 5 -- "The Stakes"
 
 ### Label
 Question 5 of 6
 
 ### Question
-What could you gain by overcoming this?
+What's at stake if you keep living in a lie?
 
 ### Answers
 | Icon | Answer | Value |
 |------|--------|-------|
-| Flex | Greater self-confidence | `respect` |
-| Green heart | Better health and energy | `health` |
-| Star | Finally pursuing my dreams | `dreams` |
-| Smile | Peace of mind and fulfillment | `regret` |
+| Skull | My self-respect | `respect` |
+| Warning | My health | `health` |
+| Broken heart | My dreams dying slowly | `dreams` |
+| Sad | A lifetime of regret | `regret` |
 | Fire | All of it. Everything. | `all` |
 
 ### Forge Quote
-"What's worth fighting for in your life?"
+"The truth hurts. Lies hurt more."
 
 ---
 
@@ -197,21 +195,21 @@ What's actually stopping you? Pick one.
 ## PAGE 8: RESULTS + EMAIL -- "The Reveal"
 
 ### Result Card Title
-You Have Everything You Need to Succeed.
+You have everything you need.
 
 ### Result Text (personalized)
 
-Dynamic text based on Q1 (activity), Q2 (barrier), and Q3 (duration):
+Dynamic text based on Q1 (activity), Q2 (excuse), and Q3 (duration):
 
-> You've been thinking about **{activity}** — and **{barrier}** keeps getting in the way.
+> I see you've been dreaming of **{activity}**, but **{excuse}** always gets in the way.
 >
-> [If Q3 = years or decade:] It's been a long road. But every moment is a chance to begin anew.
+> [If Q3 = years or decade:] It's been years. How much longer will you wait?
 >
-> But here's the truth: **You DO have time.** Today it can be 30 seconds. Tomorrow, 3 minutes. Next week? Maybe 30 minutes that change everything.
+> But here's the truth: **You DO have time.** Today it can be 30 seconds. Tomorrow, 3 minutes. Next week? Maybe 30 minutes — and you'll feel like a new person.
 >
-> You don't need hours. **Consistency beats intensity.** A small step every day. That's all it takes.
+> You don't have to do it like you used to, for 3-4 hours. **Consistency beats intensity.** A small step every day. That's all it takes.
 >
-> Even 30 seconds a day counts. Not hours — just 30 seconds, but **EVERY DAY.** That's how real consistency is built. The hardest part? Starting. But once you do, the rest follows.
+> Here's the secret: even 30 seconds a day counts. Not hours — just 30 seconds, but **EVERY DAY.** That's how real consistency is built. The hardest part? Starting. But once you do, the rest follows.
 
 ### Activity mapping (Q1)
 | Value | Text |
@@ -223,19 +221,19 @@ Dynamic text based on Q1 (activity), Q2 (barrier), and Q3 (duration):
 | `project` | your own project |
 | `other` | what matters to you |
 
-### Barrier mapping (Q2)
+### Excuse mapping (Q2)
 | Value | Text |
 |-------|------|
-| `time` | a busy schedule |
-| `tired` | feeling drained after work |
+| `time` | lack of time |
+| `tired` | exhaustion |
 | `kids` | family responsibilities |
-| `someday` | waiting for the right moment |
+| `someday` | endless postponing |
 | `perfect` | waiting for perfect conditions |
-| `motivation` | finding the motivation |
+| `motivation` | lack of motivation |
 
 ### Incentive Box
-**Free Commitment Contract**
-Get $29 motivational stake for habit accountability — no payment required!
+~~$29~~ -> **FREE**
+Your AI-powered commitment contract — on us
 
 ### Micro-copy (below incentive)
 *Start with 30 seconds today. That's literally all it takes.*
@@ -248,6 +246,7 @@ Placeholder: "you@example.com"
 **I'm ready to commit.** I agree to create my free ConsistencyForge account. Terms · Privacy
 - Button stays disabled until checked
 - Checking triggers glow animation on CTA
+- SimonSays: turns legal compliance into psychological micro-commitment
 
 ### CTA
 **[logo-white] I Commit ->** (disabled until consent checkbox checked)
@@ -307,7 +306,7 @@ Remember: Today, just 30 seconds is enough.
 Start small. Stay consistent. The rest will follow.
 
 ### Closing Quote
-"You have the power to forge ahead."
+"Now go forge yourself."
 
 ### Visual
 Animated hamster mascot (150px)
@@ -332,10 +331,10 @@ All quiz answers stored in `answers` object:
 ```javascript
 {
   q1: 'fitness',    // activity type
-  q2: 'time',       // barrier type
+  q2: 'time',       // excuse type
   q3: 'years',      // duration
   q4: '5-10min',    // time commitment
-  q5: 'all',        // gains
+  q5: 'all',        // stakes
   q6: 'system',     // blocker
   email: 'user@example.com'
 }
@@ -371,7 +370,7 @@ All quiz answers stored in `answers` object:
 Events sent to `/api/quiz/track` (dedicated quiz tracking endpoint):
 | Event | When | Data |
 |-------|------|------|
-| `quiz_start` | "Uncover Your Path" clicked | — |
+| `quiz_start` | "Face The Truth" clicked | — |
 | `quiz_q1` - `quiz_q6` | Each answer | `{ answer: value }` |
 | `quiz_complete` | Q6 answered | — |
 | `quiz_email_submit` | Email form triggered | `{ email_domain }` |
@@ -393,15 +392,4 @@ Stored in `quiz_events` table on the app server. Rate limited: 30 req/5min per I
 
 ---
 
-## VERSION HISTORY
-
-| Version | Date | Changes |
-|---------|------|---------|
-| v1.0 | 2026-02-17 | Initial quiz funnel (9-page flow) |
-| v2.0 | 2026-02-19 | Added cookie consent, WebView detection, funnel tracking |
-| v3.0 | 2026-02-21 | Branded (logo-v2), mascot, fire video bg |
-| v4.0 | 2026-02-21 | Facebook compliance rewrite — all copy softened from accusatory to supportive |
-
----
-
-*Copy version 4.0 (Facebook-Compliant) | QuizFunnel Framework | Updated 2026-02-21*
+*Copy version 3.0 (Branded) | QuizFunnel Framework | Updated 2026-02-21*

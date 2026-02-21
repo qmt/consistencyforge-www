@@ -105,30 +105,30 @@ function personalizeResults() {
         'other': 'what matters to you'
     }[answers.q1] || 'what matters';
 
-    var barrier = {
-        'time': 'a busy schedule',
-        'tired': 'feeling drained after work',
+    var excuse = {
+        'time': 'lack of time',
+        'tired': 'exhaustion',
         'kids': 'family responsibilities',
-        'someday': 'waiting for the right moment',
+        'someday': 'endless postponing',
         'perfect': 'waiting for perfect conditions',
-        'motivation': 'finding the motivation'
-    }[answers.q2] || 'everyday challenges';
+        'motivation': 'lack of motivation'
+    }[answers.q2] || 'daily excuses';
 
     var longTime = answers.q3 === 'decade' || answers.q3 === 'years';
 
-    var text = 'You\'ve been thinking about ' + activity + ' — and ' + barrier + ' keeps getting in the way.';
+    var text = 'I see you\'ve been dreaming of ' + activity + ', but ' + excuse + ' always gets in the way.';
     if (longTime) {
-        text += '<br><br>It\'s been a long road. But every moment is a chance to begin anew.';
+        text += '<br><br>It\'s been years. How much longer will you wait?';
     }
     text += '<br><br>';
     text += 'But here\'s the truth: <strong>You DO have time.</strong> ';
     text += 'Today it can be 30 seconds. Tomorrow, 3 minutes. ';
-    text += 'Next week? Maybe 30 minutes that change everything.';
+    text += 'Next week? Maybe 30 minutes — and you\'ll feel like a new person.';
     text += '<br><br>';
-    text += 'You don\'t need hours. <strong>Consistency beats intensity.</strong> ';
+    text += 'You don\'t have to do it like you used to, for 3-4 hours. <strong>Consistency beats intensity.</strong> ';
     text += 'A small step every day. That\'s all it takes.';
     text += '<br><br>';
-    text += 'Even 30 seconds a day counts. Not hours — just 30 seconds, but <strong>EVERY DAY.</strong> ';
+    text += 'Here\'s the secret: even 30 seconds a day counts. Not hours — just 30 seconds, but <strong>EVERY DAY.</strong> ';
     text += 'That\'s how real consistency is built. The hardest part? Starting. But once you do, the rest follows.';
 
     document.getElementById('resultText').innerHTML = text;
