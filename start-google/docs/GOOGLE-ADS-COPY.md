@@ -265,7 +265,7 @@ Fires on successful account creation (API returns `loginUrl`):
 gtag('event', 'conversion', {
     'send_to': 'AW-17968071912',
     'value': 1.0,
-    'currency': 'USD'
+    'currency': 'PLN'
 });
 ```
 
