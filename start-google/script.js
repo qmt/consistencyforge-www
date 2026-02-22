@@ -382,29 +382,11 @@ document.addEventListener('DOMContentLoaded', function () {
         if (apiOk) {
             trackEvent('quiz_api_success');
 
-            // Ensure consent is granted before firing conversion
-            // (user already accepted cookies + checked privacy consent)
-            try {
-                gtag('consent', 'update', {
-                    'ad_storage': 'granted',
-                    'ad_user_data': 'granted',
-                    'ad_personalization': 'granted',
-                    'analytics_storage': 'granted'
-                });
-            } catch (e) {}
+            // Google Ads conversion (safe — never blocks navigation)
+            try { gtag_report_conversion(); } catch (e) {}
 
-            // Show thank you page first (so Tag Assistant sees the page context)
             pageHistory.push('thanks');
             showPage('thanks');
-
-            // Fire Google Ads conversion + virtual pageview for SPA
-            try {
-                gtag('event', 'page_view', {
-                    page_title: 'Thank You',
-                    page_location: window.location.origin + '/start-google/thank-you/'
-                });
-                gtag_report_conversion();
-            } catch (e) {}
         }
     });
 });
