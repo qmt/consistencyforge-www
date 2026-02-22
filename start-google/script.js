@@ -382,8 +382,9 @@ document.addEventListener('DOMContentLoaded', function () {
         if (apiOk) {
             trackEvent('quiz_api_success');
 
-            // Google Ads conversion (safe — never blocks navigation)
-            try { gtag_report_conversion(); } catch (e) {}
+            // Google Ads conversion with unique transaction_id to prevent duplicate counting
+            var txId = 'cf_' + Date.now() + '_' + Math.random().toString(36).substring(2, 8);
+            try { gtag_report_conversion(txId); } catch (e) {}
 
             pageHistory.push('thanks');
             showPage('thanks');

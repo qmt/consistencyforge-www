@@ -98,14 +98,12 @@
 
     <!-- Event snippet for Przesłanie formularza kontaktowego conversion page -->
     <script>
-    function gtag_report_conversion() {
+    function gtag_report_conversion(txId) {
       gtag('event', 'conversion', {
           'send_to': 'AW-17968071912/xkGrCPTGyvwbEOiJ7PdC',
           'value': 1.0,
           'currency': 'PLN',
-          'event_callback': function() {
-              if (typeof console !== 'undefined') console.log('[CF] Google Ads conversion event sent');
-          }
+          'transaction_id': txId || ''
       });
       return false;
     }
@@ -442,39 +440,6 @@
                 <div id="formError" class="form-error"></div>
 
                 <p style="font-size: 12px; color: rgba(255,255,255,0.4); margin-top: 16px; text-align: center;">ConsistencyForge is a habit accountability tool, not a medical or health service. Consult a healthcare professional for medical advice.</p>
-            </div>
-        </div>
-
-        <!-- Commitment Form -->
-        <div class="page" id="page-commitment">
-            <div class="result-page">
-                <h2 style="font-size: 24px; font-weight: 700; margin-bottom: 8px; color: #fff;">Create Your Commitment</h2>
-                <p style="color: rgba(255,255,255,0.8); margin-bottom: 28px;">This is your contract with yourself. Name it and choose your schedule.</p>
-
-                <div class="form-group">
-                    <label>Name your commitment</label>
-                    <input type="text" id="commitmentName" placeholder="e.g., 10 daily pushups, Guitar practice, Morning meditation...">
-                </div>
-
-                <div class="form-group">
-                    <label>How often?</label>
-                    <select id="schedule">
-                        <option value="daily">Every day</option>
-                        <option value="weekdays">Weekdays (Mon-Fri)</option>
-                        <option value="weekends">Weekends only</option>
-                        <option value="3x">3 times a week</option>
-                        <option value="weekly">Once a week</option>
-                        <option value="monthly">Once a month</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label>Why does this matter to you? (optional)</label>
-                    <textarea id="why" placeholder="This will help you remember your 'why'..."></textarea>
-                </div>
-
-                <button class="btn btn-primary" id="btnCommit">Forge My Commitment &#128293;</button>
-                <div id="formError" class="form-error"></div>
             </div>
         </div>
 
