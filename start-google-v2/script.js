@@ -461,17 +461,30 @@ function initPhoneAutocomplete() {
     });
 }
 
-/* ── QR Code Generator (minimal inline implementation) ── */
+/* ── QR Code Generator (with fallback) ── */
 function generateQRCode(text, container) {
-    // Use a simple approach: create an img from a public QR API
-    // This avoids bundling a QR library for a landing page
+    var encoded = encodeURIComponent(text);
+    var primaryUrl = 'https://quickchart.io/qr?text=' + encoded + '&size=120&margin=1';
+    var fallbackUrl = 'https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=' + encoded;
+
+    container.innerHTML = '';
+
     var img = document.createElement('img');
-    img.src = 'https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=' + encodeURIComponent(text);
     img.alt = 'QR Code - Scan to open WhatsApp';
     img.width = 120;
     img.height = 120;
     img.style.borderRadius = '8px';
-    container.innerHTML = '';
+
+    img.onerror = function () {
+        if (img.src !== fallbackUrl) {
+            img.src = fallbackUrl;
+        } else {
+            // Both APIs failed — hide QR, show link-only
+            container.style.display = 'none';
+        }
+    };
+
+    img.src = primaryUrl;
     container.appendChild(img);
 
     var label = document.createElement('span');
@@ -496,6 +509,22 @@ function initWhatsAppFlow() {
 
     if (phoneInput) phoneInput.addEventListener('input', updateButtonState);
     if (consentCheck) consentCheck.addEventListener('change', updateButtonState);
+
+    // "Use different number" escape — go back to Step 1
+    var btnChangeNumber = document.getElementById('waChangeNumber');
+    if (btnChangeNumber) {
+        btnChangeNumber.addEventListener('click', function () {
+            document.getElementById('waStep2').style.display = 'none';
+            document.getElementById('waStep1').style.display = 'block';
+            // Re-enable the submit button
+            if (btnAddPhone) {
+                btnAddPhone.disabled = false;
+                btnAddPhone.textContent = 'Add WhatsApp Number';
+            }
+            // Focus the phone input for editing
+            if (phoneInput) phoneInput.focus();
+        });
+    }
 
     if (btnAddPhone) {
         btnAddPhone.addEventListener('click', async function () {
