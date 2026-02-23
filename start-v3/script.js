@@ -349,8 +349,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
             trackEvent('quiz_api_success');
 
-            // Redirect to app — user will be auto-logged in via magic link
-            window.location.href = data.loginUrl;
+            // Show thank-you page — user must click magic link in email to log in
+            pageHistory.push('thanks');
+            showPage('thanks');
         } catch (err) {
             trackEvent('quiz_api_error', { error: err.message });
             btn.disabled = false;
