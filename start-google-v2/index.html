@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConsistencyForge — Start Your Consistency Journey</title>
+    <meta name="description" content="Take a 2-minute quiz, discover your path to better habits, and create a personalized commitment contract. Free accountability platform — no app login needed.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.consistencyforge.com/start-google-v2/">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- Safari Pinned Tab -->
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#F08C2E">
+
+    <!-- Microsoft Tiles -->
+    <meta name="msapplication-TileColor" content="#0D1B2A">
+    <meta name="msapplication-config" content="/browserconfig.xml">
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#0a0a0a">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="ConsistencyForge — Start Your Consistency Journey">
+    <meta property="og:description" content="Take a 2-minute quiz, discover your path to better habits, and create a personalized commitment contract. Free accountability platform.">
+    <meta property="og:image" content="https://www.consistencyforge.com/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.consistencyforge.com/start-google-v2/">
+    <meta property="og:site_name" content="ConsistencyForge">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ConsistencyForge — Start Your Consistency Journey">
+    <meta name="twitter:description" content="Take a 2-minute quiz, discover your path to better habits, and create a personalized commitment contract.">
+    <meta name="twitter:image" content="https://www.consistencyforge.com/twitter-card.png">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "ConsistencyForge Quiz — Start Your Consistency Journey",
+        "description": "Take a 2-minute quiz to discover your path to better habits and create a personalized commitment contract.",
+        "url": "https://www.consistencyforge.com/start-google-v2/",
+        "isPartOf": {
+            "@type": "WebSite",
+            "name": "ConsistencyForge",
+            "url": "https://www.consistencyforge.com"
+        },
+        "provider": {
+            "@type": "Organization",
+            "name": "ConsistencyForge",
+            "url": "https://www.consistencyforge.com"
+        }
+    }
+    </script>
+
+    <!-- Google tag (gtag.js) — AW-17968071912 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17968071912"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+
+    // Consent Mode v2: deny by default for EEA + UK only
+    gtag('consent', 'default', {
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied',
+        'analytics_storage': 'denied',
+        'wait_for_update': 500,
+        'region': ['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES','SE','IS','LI','NO','GB']
+    });
+
+    if (localStorage.getItem('cf-cookie-consent') === 'accepted') {
+        gtag('consent', 'update', {
+            'ad_storage': 'granted',
+            'ad_user_data': 'granted',
+            'ad_personalization': 'granted',
+            'analytics_storage': 'granted'
+        });
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'AW-17968071912');
+    </script>
+
+    <!-- Event snippet for Rejestracja conversion page -->
+    <script>
+    function gtag_report_conversion(txId) {
+      gtag('event', 'conversion', {
+          'send_to': 'AW-17968071912/sDJ8COCyov0bEOiJ7PdC',
+          'value': 1.0,
+          'currency': 'PLN',
+          'transaction_id': txId || ''
+      });
+      return false;
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Video Background -->
+    <div class="video-bg">
+        <video autoplay muted loop playsinline preload="metadata" poster="../start/assets/fire-bg-poster.jpg">
+            <source src="../start/assets/fire-bg.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="progress-wrap" id="progressWrap">
+        <div class="progress-inner">
+            <button class="progress-back" id="btnBack" aria-label="Go back">&larr;</button>
+            <div class="progress-bar-bg">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+            <span class="progress-text" id="progressText">0%</span>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Hero / Landing -->
+        <div class="page active" id="page-hero">
+            <div class="hero">
+                <div class="brand-header">
+                    <img src="/logo.svg" alt="ConsistencyForge" class="brand-logo">
+                    <span class="brand-name"><span class="brand-consistency">CONSISTENCY</span> <span class="brand-forge">FORGE</span></span>
+                </div>
+                <div class="mascot-container">
+                    <video src="../start/assets/mascot.mp4" class="mascot" autoplay muted loop playsinline preload="metadata"></video>
+                </div>
+                <div style="font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; color: var(--orange-500); margin-bottom: 16px;">Start Strong</div>
+                <h1>Discover Your Path to<br><span>Better Habits.</span></h1>
+                <p class="hero-sub">Many people have goals they've been thinking about for years. A 2-minute quiz can help you get clear — and start moving forward.</p>
+                <div class="hero-reclaim">OWN YOUR TIME</div>
+
+                <ul class="hero-features">
+                    <li class="hero-feature">
+                        <span class="check" aria-hidden="true">&check;</span>
+                        <span>No time? We've got you — designed to fit into just 30 seconds a day</span>
+                    </li>
+                    <li class="hero-feature">
+                        <span class="check" aria-hidden="true">&check;</span>
+                        <span>Personalized plans that fit your real life</span>
+                    </li>
+                    <li class="hero-feature">
+                        <span class="check" aria-hidden="true">&check;</span>
+                        <span>A habit-tracking tool with gentle reminders and real progress tracking</span>
+                    </li>
+                </ul>
+
+                <button class="btn btn-primary" id="btnStart">Uncover Your Path &rarr;</button>
+                <div style="font-size: 13px; color: rgba(255,255,255,0.6); margin-top: 12px;">(we'll guide you every step)</div>
+                <div class="hero-legal">
+                    <a href="https://app.consistencyforge.com/terms" target="_blank" rel="noopener noreferrer">Terms</a> · <a href="https://app.consistencyforge.com/privacy" target="_blank" rel="noopener noreferrer">Privacy</a> · ConsistencyForge by <a href="https://qmediat.io" target="_blank" rel="noopener noreferrer">qmediat.io</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Q1: What do you want to do? -->
+        <div class="page" id="page-q1">
+            <div class="question-page">
+                <div class="question-header">
+                    <div class="mascot-container"><video data-src="../start/assets/mascot.mp4" class="mascot" muted loop playsinline preload="none"></video></div>
+                    <div class="question-header-text">
+                        <div class="question-label">Question 1 of 6</div>
+                        <div class="question-text">What would you like to focus on?</div>
+                    </div>
+                </div>
+                <div class="answers">
+                    <button class="answer-btn" data-q="1" data-value="fitness">
+                        <span class="answer-icon">&#127939;</span>
+                        <span>Exercise & fitness</span>
+                    </button>
+                    <button class="answer-btn" data-q="1" data-value="hobby">
+                        <span class="answer-icon">&#127912;</span>
+                        <span>Creative hobby (music, art, crafts...)</span>
+                    </button>
+                    <button class="answer-btn" data-q="1" data-value="learning">
+                        <span class="answer-icon">&#128218;</span>
+                        <span>Learning & self-improvement</span>
+                    </button>
+                    <button class="answer-btn" data-q="1" data-value="health">
+                        <span class="answer-icon">&#129496;</span>
+                        <span>Health & mindfulness</span>
+                    </button>
+                    <button class="answer-btn" data-q="1" data-value="project">
+                        <span class="answer-icon">&#128188;</span>
+                        <span>Side project or business</span>
+                    </button>
+                    <button class="answer-btn" data-q="1" data-value="other">
+                        <span class="answer-icon">&#10024;</span>
+                        <span>Something else</span>
+                    </button>
+                </div>
+                <div class="forge-quote">"Clarity is the first step to real progress."</div>
+            </div>
+        </div>
+
+        <!-- Q2: What's your barrier? -->
+        <div class="page" id="page-q2">
+            <div class="question-page">
+                <div class="question-header">
+                    <div class="mascot-container"><video data-src="../start/assets/mascot.mp4" class="mascot" muted loop playsinline preload="none"></video></div>
+                    <div class="question-header-text">
+                        <div class="question-label">Question 2 of 6</div>
+                        <div class="question-text">What story do you tell yourself about why it's hard?</div>
+                    </div>
+                </div>
+                <div class="answers">
+                    <button class="answer-btn" data-q="2" data-value="time">
+                        <span class="answer-icon">&#9200;</span>
+                        <span>"I don't have time"</span>
+                    </button>
+                    <button class="answer-btn" data-q="2" data-value="tired">
+                        <span class="answer-icon">&#128564;</span>
+                        <span>"I'm too tired after work"</span>
+                    </button>
+                    <button class="answer-btn" data-q="2" data-value="kids">
+                        <span class="answer-icon">&#128118;</span>
+                        <span>"When the kids are older..."</span>
+                    </button>
+                    <button class="answer-btn" data-q="2" data-value="someday">
+                        <span class="answer-icon">&#128197;</span>
+                        <span>"I'll start someday, not now"</span>
+                    </button>
+                    <button class="answer-btn" data-q="2" data-value="perfect">
+                        <span class="answer-icon">&#127919;</span>
+                        <span>"I need perfect conditions"</span>
+                    </button>
+                    <button class="answer-btn" data-q="2" data-value="motivation">
+                        <span class="answer-icon">&#128170;</span>
+                        <span>"I lack motivation"</span>
+                    </button>
+                </div>
+                <div class="forge-quote">"Acknowledge the hurdles to leap over them."</div>
+            </div>
+        </div>
+
+        <!-- Q3: How long? -->
+        <div class="page" id="page-q3">
+            <div class="question-page">
+                <div class="question-header">
+                    <div class="mascot-container"><video data-src="../start/assets/mascot.mp4" class="mascot" muted loop playsinline preload="none"></video></div>
+                    <div class="question-header-text">
+                        <div class="question-label">Question 3 of 6</div>
+                        <div class="question-text">How long has this barrier been in your way?</div>
+                    </div>
+                </div>
+                <div class="answers">
+                    <button class="answer-btn" data-q="3" data-value="weeks">
+                        <span class="answer-icon">&#128198;</span>
+                        <span>A few weeks</span>
+                    </button>
+                    <button class="answer-btn" data-q="3" data-value="months">
+                        <span class="answer-icon">&#128197;</span>
+                        <span>A few months</span>
+                    </button>
+                    <button class="answer-btn" data-q="3" data-value="year">
+                        <span class="answer-icon">&#128197;</span>
+                        <span>About a year</span>
+                    </button>
+                    <button class="answer-btn" data-q="3" data-value="years">
+                        <span class="answer-icon">&#9203;</span>
+                        <span>Several years</span>
+                    </button>
+                    <button class="answer-btn" data-q="3" data-value="decade">
+                        <span class="answer-icon">&#128532;</span>
+                        <span>Over 10 years...</span>
+                    </button>
+                </div>
+                <div class="forge-quote">"Time invested in yourself is never lost."</div>
+            </div>
+        </div>
+
+        <!-- Q4: 30 seconds -->
+        <div class="page" id="page-q4">
+            <div class="question-page">
+                <div class="question-header">
+                    <div class="mascot-container"><video data-src="../start/assets/mascot.mp4" class="mascot" muted loop playsinline preload="none"></video></div>
+                    <div class="question-header-text">
+                        <div class="question-label">Question 4 of 6</div>
+                        <div class="question-text">How much time could you realistically set aside?</div>
+                    </div>
+                </div>
+                <div class="answers">
+                    <button class="answer-btn" data-q="4" data-value="30sec">
+                        <span class="answer-icon">&#9889;</span>
+                        <span>30 seconds — just to start</span>
+                    </button>
+                    <button class="answer-btn" data-q="4" data-value="2-3min">
+                        <span class="answer-icon">&#128293;</span>
+                        <span>2-3 minutes — quick win</span>
+                    </button>
+                    <button class="answer-btn" data-q="4" data-value="5-10min">
+                        <span class="answer-icon">&#128170;</span>
+                        <span>5-10 minutes — solid effort</span>
+                    </button>
+                    <button class="answer-btn" data-q="4" data-value="15-30min">
+                        <span class="answer-icon">&#128640;</span>
+                        <span>15-30 minutes — I'm serious</span>
+                    </button>
+                    <button class="answer-btn" data-q="4" data-value="unsure">
+                        <span class="answer-icon">&#129300;</span>
+                        <span>Not sure yet — any time counts to start</span>
+                    </button>
+                </div>
+                <div class="forge-quote">"Small commitments lead to big transformations."</div>
+            </div>
+        </div>
+
+        <!-- Q5: What would it mean? -->
+        <div class="page" id="page-q5">
+            <div class="question-page">
+                <div class="question-header">
+                    <div class="mascot-container"><video data-src="../start/assets/mascot.mp4" class="mascot" muted loop playsinline preload="none"></video></div>
+                    <div class="question-header-text">
+                        <div class="question-label">Question 5 of 6</div>
+                        <div class="question-text">What could you gain by overcoming this?</div>
+                    </div>
+                </div>
+                <div class="answers">
+                    <button class="answer-btn" data-q="5" data-value="respect">
+                        <span class="answer-icon">&#128170;</span>
+                        <span>Greater self-confidence</span>
+                    </button>
+                    <button class="answer-btn" data-q="5" data-value="health">
+                        <span class="answer-icon">&#128154;</span>
+                        <span>More energy and motivation</span>
+                    </button>
+                    <button class="answer-btn" data-q="5" data-value="dreams">
+                        <span class="answer-icon">&#11088;</span>
+                        <span>Finally pursuing my dreams</span>
+                    </button>
+                    <button class="answer-btn" data-q="5" data-value="regret">
+                        <span class="answer-icon">&#128522;</span>
+                        <span>A sense of accomplishment</span>
+                    </button>
+                    <button class="answer-btn" data-q="5" data-value="all">
+                        <span class="answer-icon">&#128293;</span>
+                        <span>All of it. Everything.</span>
+                    </button>
+                </div>
+                <div class="forge-quote">"What's worth fighting for in your life?"</div>
+            </div>
+        </div>
+
+        <!-- Q6: What do you need? -->
+        <div class="page" id="page-q6">
+            <div class="question-page">
+                <div class="question-header">
+                    <div class="mascot-container"><video data-src="../start/assets/mascot.mp4" class="mascot" muted loop playsinline preload="none"></video></div>
+                    <div class="question-header-text">
+                        <div class="question-label">Question 6 of 6</div>
+                        <div class="question-text">What's actually stopping you? Pick one.</div>
+                    </div>
+                </div>
+                <div class="answers">
+                    <button class="answer-btn" data-q="6" data-value="plan">
+                        <span class="answer-icon">&#128203;</span>
+                        <span>A simple plan to start</span>
+                    </button>
+                    <button class="answer-btn" data-q="6" data-value="accountability">
+                        <span class="answer-icon">&#129309;</span>
+                        <span>Someone to hold me accountable</span>
+                    </button>
+                    <button class="answer-btn" data-q="6" data-value="motivation">
+                        <span class="answer-icon">&#9889;</span>
+                        <span>A boost of motivation</span>
+                    </button>
+                    <button class="answer-btn" data-q="6" data-value="system">
+                        <span class="answer-icon">&#9881;&#65039;</span>
+                        <span>A system that works</span>
+                    </button>
+                </div>
+                <div class="forge-quote">"Forge the willpower that sleeps inside you."</div>
+
+            </div>
+        </div>
+
+        <!-- Results + Email -->
+        <div class="page" id="page-results">
+            <div class="result-page">
+                <div class="result-card">
+                    <h3>&#128293; What It Takes to Start</h3>
+                    <p id="resultText">
+                        Based on your answers: everyday challenges keep getting in the way of what matters most.
+                        <br><br>
+                        But here's the good news: <strong>there IS time.</strong>
+                        Today it can be 30 seconds. Tomorrow, 3 minutes.
+                        Next week? Maybe 30 minutes that make a real difference.
+                        <br><br>
+                        Hours aren't necessary. <strong>Consistency beats intensity.</strong>
+                        A small step every day. That's how real consistency is built.
+                    </p>
+                    <p style="font-size: 13px; color: rgba(255,255,255,0.5); margin-top: 16px; font-style: italic;">Individual results vary. ConsistencyForge is a habit-tracking tool, not a guarantee of outcomes.</p>
+                </div>
+
+                <div class="incentive-box" style="display: flex; align-items: center; justify-content: center; gap: 16px; text-align: left;">
+                    <div>
+                        <div class="incentive-value">
+                            <span class="free">Free Commitment Contract</span>
+                        </div>
+                        <div class="incentive-text">Your free commitment contract includes a $29 accountability goal. The app is 100% free — no payment required, ever. The goal is a self-motivation tool you control.</div>
+                    </div>
+                    <video data-src="../start/assets/mascot.mp4" class="mascot" muted loop playsinline preload="none" style="width:60px;height:60px;border-radius:50%;flex-shrink:0;"></video>
+                </div>
+
+                <div class="micro-copy">Start with 30 seconds today. That's literally all it takes.</div>
+
+                <div class="form-group">
+                    <label>Your email</label>
+                    <input type="email" id="email" placeholder="you@example.com">
+                </div>
+
+                <label class="consent-label" for="consentCheck">
+                    <input type="checkbox" id="consentCheck">
+                    <span class="consent-checkmark"></span>
+                    <span class="consent-text">I agree to create a free ConsistencyForge account and accept the <a href="https://app.consistencyforge.com/terms" target="_blank" rel="noopener noreferrer">Terms</a> and <a href="https://app.consistencyforge.com/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>.</span>
+                </label>
+
+                <button class="btn btn-primary btn-branded" id="btnEmail" disabled><img src="../start/assets/logo-white.svg" alt="" class="btn-logo" aria-hidden="true"><span>I Commit &rarr;</span></button>
+
+                <div id="formError" class="form-error"></div>
+
+                <p style="font-size: 12px; color: rgba(255,255,255,0.4); margin-top: 16px; text-align: center;">ConsistencyForge is a habit accountability tool, not a medical or health service. Consult a healthcare professional for medical advice.</p>
+            </div>
+        </div>
+
+        <!-- Thank You -->
+        <div class="page" id="page-thanks">
+            <div class="thankyou">
+                <a href="https://www.consistencyforge.com/" style="font-size: 13px; color: rgba(255,255,255,0.5); text-decoration: none; display: inline-block; margin-bottom: 16px;">&larr; Back to ConsistencyForge</a>
+                <div class="mascot-container"><video data-src="../start/assets/mascot.mp4" class="mascot" muted loop playsinline preload="none" style="width:150px;height:150px"></video></div>
+                <h2>Almost There — Check Your Email!</h2>
+                <p>We sent a login link to your email.<br>Open your email app now and click the link to access your account.</p>
+                <div class="thankyou-note">
+                    Don't see it? Check your spam folder. The link works for 7 days.
+                </div>
+
+                <!-- WhatsApp Phone Collection Card -->
+                <div class="wa-phone-card" id="waPhoneCard">
+                    <div class="wa-phone-header">
+                        <svg class="wa-icon" viewBox="0 0 24 24" width="20" height="20"><path fill="#25D366" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        <div>
+                            <div class="wa-phone-title">Get WhatsApp Reminders</div>
+                            <div class="wa-phone-subtitle">Never miss a check-in — get reminders directly on WhatsApp</div>
+                        </div>
+                    </div>
+
+                    <!-- Step 1: Phone Input -->
+                    <div id="waStep1">
+                        <div class="wa-phone-input-wrap">
+                            <select id="waCountrySelect" class="wa-country-select">
+                                <option value="+1">+1 US</option>
+                            </select>
+                            <input type="tel" id="waPhoneInput" class="wa-phone-input" placeholder="Phone number">
+                        </div>
+
+                        <div class="wa-consent-wrap">
+                            <label class="wa-consent-label">
+                                <input type="checkbox" id="waConsentCheck" class="wa-consent-checkbox">
+                                <span>I consent to receive check-in reminders and account notifications via WhatsApp from ConsistencyForge. I can opt out anytime by sending STOP via WhatsApp or removing my phone number. Message frequency depends on my contract schedule. <span style="color: #f87171;">*</span></span>
+                            </label>
+                            <label class="wa-consent-label">
+                                <input type="checkbox" id="waMarketingCheck" class="wa-consent-checkbox">
+                                <span>I also consent to receive occasional product updates, tips and promotional messages via WhatsApp. These will be kept to a minimum and sent with respect for your time. You can withdraw this consent anytime.</span>
+                            </label>
+                        </div>
+
+                        <button class="btn-wa" id="btnAddPhone" disabled>Add WhatsApp Number</button>
+                        <div id="waError" class="wa-error"></div>
+                    </div>
+
+                    <!-- Step 2: Verification -->
+                    <div id="waStep2" style="display: none;">
+                        <div class="wa-verify-steps">
+                            <div class="wa-verify-step">
+                                <span class="wa-step-num">1</span>
+                                <span>Click the button below (or scan the QR code)</span>
+                            </div>
+                            <div class="wa-verify-step">
+                                <span class="wa-step-num">2</span>
+                                <span>WhatsApp will open with a pre-filled verification message</span>
+                            </div>
+                            <div class="wa-verify-step">
+                                <span class="wa-step-num">3</span>
+                                <span><strong style="color: #25D366;">Tap Send</strong> — this confirms you own this number</span>
+                            </div>
+                        </div>
+
+                        <a id="waVerifyLink" href="#" target="_blank" rel="noopener noreferrer" class="btn-wa btn-wa-verify">
+                            <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            Open WhatsApp to Verify
+                        </a>
+
+                        <div class="wa-qr" id="waQrContainer"></div>
+
+                        <p class="wa-verify-note">Your number will be verified automatically after you send the message. You'll see the status when you log in.</p>
+                    </div>
+                </div>
+
+                <div class="thankyou-note" style="margin-top: 12px;">
+                    Remember: Today, just 30 seconds is enough.<br>
+                    Start small. Stay consistent. The rest will follow.
+                </div>
+                <div class="forge-quote" style="font-size: 18px; color: var(--orange-500); opacity: 1;">
+                    "You have the power to forge ahead."
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cookie Consent Banner -->
+    <div class="cookie-banner" id="cookieBanner">
+        <span>We use analytics cookies to improve your experience. <a href="https://app.consistencyforge.com/privacy" target="_blank" rel="noopener noreferrer" style="color: rgba(255,255,255,0.7); text-decoration: underline;">Privacy Policy</a></span>
+        <button class="cookie-accept" id="cookieAccept">Accept</button>
+        <button class="cookie-decline" id="cookieDecline" style="background: rgba(255,255,255,0.15); color: rgba(255,255,255,0.7); border: none; padding: 8px 16px; border-radius: 6px; font-size: 13px; cursor: pointer;">Decline</button>
+    </div>
+
+    <!-- WebView Banner -->
+    <div class="webview-banner" id="webviewBanner">
+        <span>For the best experience, open in your browser</span>
+        <div class="webview-actions">
+            <button id="webviewOpen">Open</button>
+            <button id="webviewCopy">Copy link</button>
+        </div>
+        <button class="webview-close" id="webviewClose">&times;</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
