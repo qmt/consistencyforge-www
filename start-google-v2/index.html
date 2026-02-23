@@ -463,10 +463,9 @@
                     <!-- Step 1: Phone Input -->
                     <div id="waStep1">
                         <div class="wa-phone-input-wrap">
-                            <select id="waCountrySelect" class="wa-country-select">
-                                <option value="+1">+1 US</option>
-                            </select>
-                            <input type="tel" id="waPhoneInput" class="wa-phone-input" placeholder="Phone number">
+                            <input type="tel" id="waPhoneInput" class="wa-phone-input" inputmode="tel" autocomplete="tel" placeholder="+91 9876543210" value="" aria-label="Phone number with country code" aria-describedby="waCountryHint" aria-autocomplete="list" aria-controls="waSuggestions" role="combobox" aria-expanded="false">
+                            <div id="waCountryHint" class="wa-country-hint" role="status" aria-live="polite">Detecting your country...</div>
+                            <div id="waSuggestions" class="wa-suggestions" role="listbox" aria-label="Country code suggestions"></div>
                         </div>
 
                         <div class="wa-consent-wrap">
