@@ -8,7 +8,7 @@ let pageHistory = ['hero'];
 /* ── UTM Capture ── */
 function captureUTM() {
     var params = new URLSearchParams(window.location.search);
-    var utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'fbclid', 'gclid'];
+    var utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'fbclid', 'gclid', 'gbraid', 'wbraid'];
     var utm = {};
     utmKeys.forEach(function (key) {
         var val = params.get(key);
@@ -168,10 +168,12 @@ function trackAdClick() {
         if (sessionStorage.getItem('cf_click_tracked')) return;
 
         var clickParams = new URLSearchParams(window.location.search);
-        if (clickParams.get('gclid') || clickParams.get('utm_source')) {
+        if (clickParams.get('gclid') || clickParams.get('gbraid') || clickParams.get('wbraid') || clickParams.get('utm_source')) {
             var payload = JSON.stringify({
                 landing_page: window.location.pathname,
                 gclid: clickParams.get('gclid'),
+                gbraid: clickParams.get('gbraid'),
+                wbraid: clickParams.get('wbraid'),
                 utm_source: clickParams.get('utm_source'),
                 utm_medium: clickParams.get('utm_medium'),
                 utm_campaign: clickParams.get('utm_campaign'),

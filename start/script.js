@@ -6,7 +6,7 @@ let pageHistory = ['hero'];
 /* ── UTM Capture ── */
 function captureUTM() {
     var params = new URLSearchParams(window.location.search);
-    var utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'fbclid', 'gclid'];
+    var utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'fbclid', 'gclid', 'gbraid', 'wbraid'];
     var utm = {};
     utmKeys.forEach(function (key) {
         var val = params.get(key);
