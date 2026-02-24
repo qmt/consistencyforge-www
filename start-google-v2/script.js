@@ -461,31 +461,28 @@ function initPhoneAutocomplete() {
     });
 }
 
-/* ── QR Code Generator (with fallback) ── */
+/* ── QR Code Generator (client-side, qrcode-generator library) ── */
 function generateQRCode(text, container) {
-    var encoded = encodeURIComponent(text);
-    var primaryUrl = 'https://quickchart.io/qr?text=' + encoded + '&size=120&margin=1';
-    var fallbackUrl = 'https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=' + encoded;
-
     container.innerHTML = '';
 
-    var img = document.createElement('img');
-    img.alt = 'QR Code - Scan to open WhatsApp';
-    img.width = 120;
-    img.height = 120;
-    img.style.borderRadius = '8px';
+    try {
+        var qr = qrcode(0, 'M');
+        qr.addData(text);
+        qr.make();
 
-    img.onerror = function () {
-        if (img.src !== fallbackUrl) {
-            img.src = fallbackUrl;
-        } else {
-            // Both APIs failed — hide QR, show link-only
-            container.style.display = 'none';
-        }
-    };
-
-    img.src = primaryUrl;
-    container.appendChild(img);
+        var svg = qr.createSvgTag({ cellSize: 3, margin: 2, scalable: true });
+        var wrapper = document.createElement('div');
+        wrapper.innerHTML = svg;
+        var svgEl = wrapper.firstChild;
+        svgEl.setAttribute('width', '120');
+        svgEl.setAttribute('height', '120');
+        svgEl.style.borderRadius = '8px';
+        svgEl.style.background = '#fff';
+        container.appendChild(svgEl);
+    } catch (e) {
+        container.style.display = 'none';
+        return;
+    }
 
     var label = document.createElement('span');
     label.className = 'wa-qr-label';
