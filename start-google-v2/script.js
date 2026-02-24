@@ -239,6 +239,43 @@ function detectWebView() {
     }
 }
 
+/* ── Ad Click Tracking ── */
+function trackAdClick() {
+    try {
+        if (sessionStorage.getItem('cf_click_tracked')) return;
+
+        var clickParams = new URLSearchParams(window.location.search);
+        if (clickParams.get('gclid') || clickParams.get('utm_source')) {
+            var payload = JSON.stringify({
+                landing_page: window.location.pathname,
+                gclid: clickParams.get('gclid'),
+                utm_source: clickParams.get('utm_source'),
+                utm_medium: clickParams.get('utm_medium'),
+                utm_campaign: clickParams.get('utm_campaign'),
+                utm_content: clickParams.get('utm_content'),
+                utm_term: clickParams.get('utm_term'),
+                cookies_enabled: navigator.cookieEnabled,
+                referrer: document.referrer
+            });
+
+            var url = API_BASE + '/api/track/click';
+            var sent = false;
+            if (navigator.sendBeacon) {
+                sent = navigator.sendBeacon(url, new Blob([payload], { type: 'application/json' }));
+            }
+            if (!sent) {
+                fetch(url, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: payload,
+                    keepalive: true
+                }).catch(function() {});
+            }
+            sessionStorage.setItem('cf_click_tracked', 'true');
+        }
+    } catch (e) {}
+}
+
 /* ── Hero Scroll Tracking ── */
 function initScrollTracking() {
     var btn = document.getElementById('btnStart');
@@ -618,6 +655,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 'ad_personalization': 'granted',
                 'analytics_storage': 'granted'
             });
+            trackAdClick();
         });
     }
 
@@ -628,6 +666,11 @@ document.addEventListener('DOMContentLoaded', function () {
             localStorage.setItem('cf-cookie-consent', 'declined');
             document.getElementById('cookieBanner').classList.remove('visible');
         });
+    }
+
+    // If consent was already granted in a previous visit, track immediately
+    if (localStorage.getItem('cf-cookie-consent') === 'accepted') {
+        trackAdClick();
     }
 
     // WebView banner
