@@ -18,10 +18,6 @@
     --white: #ffffff;
     --green-600: #16a34a;
     --green-100: #dcfce7;
-    --wa-green: #25D366;
-    --wa-green-hover: #20bd5a;
-    --wa-green-bg: rgba(37, 211, 102, 0.15);
-    --wa-green-border: rgba(37, 211, 102, 0.3);
 }
 
 body {
@@ -573,10 +569,10 @@ body {
 
 /* Thank You */
 .thankyou {
-    min-height: auto;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     text-align: center;
     padding: 40px 0;
 }
@@ -609,263 +605,6 @@ body {
     border: 1px solid rgba(255,255,255,0.1);
     font-size: 15px;
     color: rgba(255,255,255,0.6);
-}
-
-/* ── WhatsApp Phone Card ── */
-
-.wa-phone-card {
-    margin-top: 24px;
-    padding: 20px;
-    background: rgba(0,0,0,0.5);
-    border: 1px solid var(--wa-green-border);
-    border-radius: 16px;
-    text-align: left;
-    backdrop-filter: blur(10px);
-    animation: fadeIn 0.4s ease;
-}
-
-.wa-phone-header {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    margin-bottom: 16px;
-}
-
-.wa-icon {
-    flex-shrink: 0;
-    margin-top: 2px;
-}
-
-.wa-phone-title {
-    font-size: 16px;
-    font-weight: 700;
-    color: var(--wa-green);
-}
-
-.wa-phone-subtitle {
-    font-size: 13px;
-    color: rgba(255,255,255,0.6);
-    margin-top: 2px;
-}
-
-.wa-phone-input-wrap {
-    position: relative;
-    margin-bottom: 12px;
-}
-
-.wa-phone-input {
-    width: 100%;
-    padding: 14px 12px;
-    font-size: 18px;
-    font-family: 'Inter', monospace;
-    letter-spacing: 0.5px;
-    border: 1px solid rgba(255,255,255,0.2);
-    border-radius: 8px;
-    background: rgba(0,0,0,0.5);
-    color: #fff;
-    transition: border-color 0.2s;
-    box-sizing: border-box;
-}
-
-.wa-phone-input:focus {
-    outline: none;
-    border-color: var(--wa-green);
-}
-
-.wa-phone-input::placeholder {
-    color: rgba(255,255,255,0.3);
-    font-size: 16px;
-}
-
-.wa-country-hint {
-    font-size: 12px;
-    color: rgba(255,255,255,0.45);
-    margin-top: 6px;
-    opacity: 0;
-    transition: opacity 0.3s;
-}
-
-.wa-country-hint.visible {
-    opacity: 1;
-}
-
-/* ── Autocomplete suggestions ── */
-.wa-suggestions {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    z-index: 50;
-    background: rgba(15,15,20,0.97);
-    border: 1px solid rgba(255,255,255,0.15);
-    border-top: none;
-    border-radius: 0 0 8px 8px;
-    max-height: 200px;
-    overflow-y: auto;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-}
-
-.wa-suggestion-item {
-    padding: 10px 12px;
-    font-size: 14px;
-    color: rgba(255,255,255,0.8);
-    cursor: pointer;
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-    transition: background 0.15s;
-}
-
-.wa-suggestion-item:last-child {
-    border-bottom: none;
-}
-
-.wa-suggestion-item:hover,
-.wa-suggestion-item.active {
-    background: rgba(37,211,102,0.15);
-    color: #fff;
-}
-
-.wa-consent-wrap {
-    margin-bottom: 12px;
-}
-
-.wa-consent-label {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    cursor: pointer;
-    padding: 8px 0;
-    font-size: 12px;
-    color: rgba(255,255,255,0.6);
-    line-height: 1.5;
-}
-
-.wa-consent-checkbox {
-    margin-top: 2px;
-    accent-color: var(--wa-green);
-    flex-shrink: 0;
-}
-
-/* WhatsApp Green Button */
-.btn-wa {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    width: 100%;
-    padding: 14px 24px;
-    font-size: 15px;
-    font-weight: 600;
-    font-family: inherit;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: all 0.2s;
-    text-decoration: none;
-    color: #fff;
-    background: var(--wa-green);
-    box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
-}
-
-.btn-wa:hover {
-    background: var(--wa-green-hover);
-    transform: translateY(-1px);
-    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
-}
-
-.btn-wa:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-    transform: none;
-}
-
-.btn-wa-verify {
-    margin-bottom: 16px;
-}
-
-.wa-error {
-    color: #f87171;
-    font-size: 13px;
-    margin-top: 8px;
-    display: none;
-}
-
-.wa-error.visible {
-    display: block;
-}
-
-/* Verification Steps */
-.wa-verify-steps {
-    margin-bottom: 16px;
-}
-
-.wa-verify-step {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    padding: 6px 0;
-    font-size: 14px;
-    color: rgba(255,255,255,0.8);
-}
-
-.wa-step-num {
-    width: 22px;
-    height: 22px;
-    min-width: 22px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--wa-green-bg);
-    border: 1px solid var(--wa-green-border);
-    border-radius: 50%;
-    font-size: 12px;
-    font-weight: 700;
-    color: var(--wa-green);
-}
-
-/* QR Code */
-.wa-qr {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 6px;
-    margin-bottom: 12px;
-}
-
-.wa-qr canvas {
-    border-radius: 8px;
-}
-
-.wa-qr-label {
-    font-size: 12px;
-    color: rgba(255,255,255,0.5);
-}
-
-.wa-verify-note {
-    font-size: 13px;
-    color: rgba(255,255,255,0.5);
-    text-align: center;
-    font-style: italic;
-}
-
-.wa-change-number {
-    display: block;
-    margin: 16px auto 0;
-    padding: 8px 16px;
-    background: none;
-    border: 1px solid rgba(255,255,255,0.2);
-    border-radius: 8px;
-    color: rgba(255,255,255,0.6);
-    font-size: 13px;
-    font-family: inherit;
-    cursor: pointer;
-    transition: all 0.2s;
-}
-
-.wa-change-number:hover {
-    border-color: var(--wa-green);
-    color: var(--wa-green);
 }
 
 /* Typing dots */
@@ -1124,9 +863,6 @@ body {
     .webview-banner {
         background: rgba(15,15,15,0.98);
     }
-    .wa-phone-card {
-        background: rgba(0,0,0,0.9);
-    }
 }
 
 /* Mobile adjustments */
@@ -1136,6 +872,7 @@ body {
     .question-text { font-size: 22px; }
     .question-page { padding-top: 90px; }
 
+    /* CTA above fold — push features below button */
     .brand-logo {
         width: 28px;
         height: 28px;
@@ -1168,20 +905,17 @@ body {
         margin-top: 20px;
     }
 
+    /* Compact answer buttons */
     .answer-btn {
         padding: 14px 16px;
         font-size: 15px;
     }
 
+    /* Cookie banner stacks on small screens */
     .cookie-banner {
         flex-direction: column;
         gap: 10px;
         text-align: center;
-    }
-
-    .wa-phone-input {
-        font-size: 18px;
-        padding: 14px 12px;
     }
 }
 
