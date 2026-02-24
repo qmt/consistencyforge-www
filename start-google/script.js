@@ -245,10 +245,12 @@ function trackAdClick() {
         if (sessionStorage.getItem('cf_click_tracked')) return;
 
         var clickParams = new URLSearchParams(window.location.search);
-        if (clickParams.get('gclid') || clickParams.get('utm_source')) {
+        if (clickParams.get('gclid') || clickParams.get('gbraid') || clickParams.get('wbraid') || clickParams.get('utm_source')) {
             var payload = JSON.stringify({
                 landing_page: window.location.pathname,
                 gclid: clickParams.get('gclid'),
+                gbraid: clickParams.get('gbraid'),
+                wbraid: clickParams.get('wbraid'),
                 utm_source: clickParams.get('utm_source'),
                 utm_medium: clickParams.get('utm_medium'),
                 utm_campaign: clickParams.get('utm_campaign'),
