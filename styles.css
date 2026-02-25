@@ -453,6 +453,24 @@ body {
     transition: filter 0.3s ease;
 }
 
+.step-icon-wrap {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 1.5rem;
+    color: var(--color-accent);
+    transition: color 0.3s ease, transform 0.3s var(--ease-out-expo);
+}
+
+.step-svg {
+    width: 100%;
+    height: 100%;
+}
+
+.how-step:hover .step-icon-wrap {
+    color: var(--color-text);
+    transform: scale(1.1);
+}
+
 .how-step:hover .step-icon {
     filter: brightness(1);
 }
@@ -511,6 +529,24 @@ body {
     margin-bottom: 1rem;
     filter: brightness(0.85);
     transition: filter 0.3s ease;
+}
+
+.feature-icon-wrap {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 1rem;
+    color: var(--color-accent);
+    transition: color 0.3s ease, transform 0.3s var(--ease-out-expo);
+}
+
+.feature-svg {
+    width: 100%;
+    height: 100%;
+}
+
+.feature-card:hover .feature-icon-wrap {
+    color: var(--color-text);
+    transform: scale(1.1);
 }
 
 .feature-card:hover .feature-icon {
