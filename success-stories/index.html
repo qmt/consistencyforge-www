@@ -308,6 +308,40 @@
         });
 
         if (consent === 'accepted') { trackAdClick(); }
+
+        // A/B test: track sitelink page visit + CTA clicks
+        (function() {
+            var AB_API = 'https://app.consistencyforge.com/api/ab';
+            var ab = null;
+            try { ab = JSON.parse(localStorage.getItem('cf_ab_v1')); } catch(e) {}
+            if (!ab || !ab.testId || !ab.visitorId) return;
+
+            fetch(AB_API + '/track', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    testId: ab.testId,
+                    visitorId: ab.visitorId,
+                    eventType: 'landing_visit',
+                    pageUrl: window.location.href
+                })
+            }).catch(function() {});
+
+            document.querySelectorAll('.btn-primary, .btn-nav-cta').forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    fetch(AB_API + '/track', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            testId: ab.testId,
+                            visitorId: ab.visitorId,
+                            eventType: 'landing_cta_click',
+                            pageUrl: window.location.href
+                        })
+                    }).catch(function() {});
+                });
+            });
+        })();
     });
     </script>
 </body>
