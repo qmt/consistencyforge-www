@@ -649,7 +649,6 @@ img {
     z-index: 200;
     font-size: 13px;
     color: var(--color-muted);
-    display: flex;
     align-items: center;
     gap: 16px;
     max-width: 600px;
