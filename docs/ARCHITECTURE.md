@@ -83,9 +83,11 @@ consistencyforge-landing/
 ├── start-google/           # QuizFunnel-Google variant (/start-google/)
 │   ├── index.html          # 9-page quiz funnel (Google Ads-compliant copy + gtag.js)
 │   ├── styles.css          # Quiz styles (copy of start/styles.css)
-│   ├── script.js           # Quiz logic + gtag init + Consent Mode v2 + conversion event
+│   ├── script.js           # Quiz logic + gtag init + Consent Mode v2 + conversion event + phone normalization
+│   ├── assets/
+│   │   └── libphonenumber-js.min.js  # Self-hosted phone normalization (~183KB)
 │   └── docs/
-│       └── GOOGLE-ADS-COPY.md  # Full copy reference (Google variant v1.2)
+│       └── GOOGLE-ADS-COPY.md  # Full copy reference (Google variant v1.3)
 │
 ├── start-v1/               # Backup: QuizFunnel v1 (initial)
 ├── start-v2/               # Backup: QuizFunnel v2 (pre-branding)

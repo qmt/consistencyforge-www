@@ -51,11 +51,11 @@ The `/start/` path is designed for social media ad campaigns with a quiz-based e
 
 ### `/start-google/` — QuizFunnel-Google (9-page quiz)
 - Fork of `/start/` with Google Ads policy compliance fixes (P0 + P1 + P2)
-- **Copy v1.2 (Google Ads-compliant)**: Softened claims, depersonalized results, disclaimers, clarified $29 accountability goal
+- **Copy v1.3 (Google Ads-compliant)**: Softened claims, depersonalized results, disclaimers, clarified $29 accountability goal. Client-side phone normalization via self-hosted `libphonenumber-js`.
 - Key differences from `/start/`: toned-down headline ("Discover Your Path to Better Habits"), depersonalized results ("Based on your answers:"), results disclaimer, health disclaimer, neutral consent checkbox, cookie Decline button + Privacy link, thank-you navigation
 - **Google Ads tag:** `AW-17968071912` with Consent Mode v2 (EU/GDPR compliant)
 - **Conversion tracking:** fires on successful account creation
-- Shares assets from `start/assets/` via relative paths (no duplication)
+- Shares assets from `start/assets/` via relative paths (no duplication). Own assets in `start-google/assets/` (libphonenumber-js bundle)
 - API source: `quiz-v3-google` (vs `quiz-v3` for Facebook)
 - **Policy audit:** ~90% approval (Gemini 85% + Grok 95%, 0 FAILs)
 - Full copy reference: `start-google/docs/GOOGLE-ADS-COPY.md`

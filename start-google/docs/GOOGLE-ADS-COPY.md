@@ -14,6 +14,7 @@
 **Source:** `quiz-v3-google` (distinguishes Google traffic from Facebook `quiz-v3` in API analytics)
 
 **Assets:** Shared from `../start/assets/` — no duplication of fire-bg.mp4, mascot.mp4, logo-white.svg.
+**Phone normalization:** Self-hosted `libphonenumber-js` bundle at `assets/libphonenumber-js.min.js` (~183KB). Normalizes phone numbers to E.164 client-side before API call (strips trunk prefixes). Server-side normalization as defense-in-depth.
 
 ---
 
@@ -300,7 +301,8 @@ Google Ads domains added to:
 | v1.0 | 2026-02-21 | Initial Google Ads variant — P0+P1 compliance fixes from `/start/` v4.0 |
 | v1.1 | 2026-02-21 | P2 polish — depersonalized results, "accountability goal", cookie Decline, thank-you nav, Q4 tone. Audit: ~90% approval |
 | v1.2 | 2026-02-21 | Google Ads tag (AW-17968071912) + Consent Mode v2 + conversion event |
+| v1.3 | 2026-02-28 | Phone normalization: self-hosted `libphonenumber-js` bundle for client-side E.164 normalization. Fixes trunk prefix issue (e.g., Nigeria `+23407xxx` → `+2347xxx`) that caused 53% verification failures. |
 
 ---
 
-*Copy version 1.2 (Google Ads-Compliant) | QuizFunnel-Google Framework | Updated 2026-02-21*
+*Copy version 1.3 (Google Ads-Compliant) | QuizFunnel-Google Framework | Updated 2026-02-28*
