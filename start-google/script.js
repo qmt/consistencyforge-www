@@ -574,6 +574,12 @@ function initWhatsAppFlow() {
                 phone = detectedCallingCode + phone;
             }
 
+            // Normalize via libphonenumber-js (strips trunk prefixes, e.g. +234 0xxx → +234 xxx)
+            try {
+                var parsed = libphonenumber.parsePhoneNumber(phone);
+                if (parsed && parsed.isValid()) phone = parsed.format('E.164');
+            } catch(e) { /* server-side normalization catches edge cases */ }
+
             // Basic E.164 validation
             if (!/^\+[1-9]\d{6,14}$/.test(phone)) {
                 showWaError('Please enter a valid phone number starting with + and country code (e.g., ' + detectedCallingCode + '9876543210).');
